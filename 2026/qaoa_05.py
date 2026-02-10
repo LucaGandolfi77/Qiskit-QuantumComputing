@@ -22,6 +22,18 @@ from pathlib import Path
 from qiskit import QuantumCircuit
 from qiskit.quantum_info import SparsePauliOp
 import importlib, subprocess, sys
+import warnings
+import logging
+
+# Suppress annoying sparse matrix warnings from scipy/qiskit interactions
+try:
+    from scipy.sparse import SparseEfficiencyWarning
+    warnings.simplefilter('ignore', category=SparseEfficiencyWarning)
+    warnings.filterwarnings('ignore', message='spsolve is more efficient when sparse b')
+except ImportError:
+    pass
+
+
 
 # ============================================================================
 # PERFORMANCE MONITORING WRAPPER
@@ -239,16 +251,29 @@ def run_qaoa(hamiltonian, sampler_or_backend=None, reps=3):
     if QAOA is None:
         raise RuntimeError("QAOA not available")
 
+    print(f"    Hamiltonian has {len(hamiltonian)} Pauli terms. Preparing QAOA...")
+
     optimizer = None
     if COBYLA is not None:
         try:
-            optimizer = COBYLA(maxiter=100, tol=1e-6)
+            # Added disp=True to see internal optimizer logs if possible
+            optimizer = COBYLA(maxiter=100, tol=1e-6, disp=True)
         except Exception:
             optimizer = None
 
+    # Callback to show aliveness
+    def _qaoa_callback(eval_count, params, mean, std):
+        # Print update; keep a history every 5 steps, otherwise update in-place
+        ender = "\n" if eval_count % 5 == 0 else "\r"
+        sys.stdout.write(f"    🔄 QAOA Opt Step {eval_count}: Energy={mean:.4f} (std={std:.4f}){ender}")
+        sys.stdout.flush()
+
     # Try a few constructor keyword combinations to be tolerant
     # to different QAOA class signatures across versions.
+    # We prioritize attempts with 'callback' to give user feedback.
     ctor_attempts = [
+        {'sampler': sampler_or_backend, 'optimizer': optimizer, 'reps': reps, 'callback': _qaoa_callback},
+        {'quantum_instance': sampler_or_backend, 'optimizer': optimizer, 'reps': reps, 'callback': _qaoa_callback},
         {'sampler': sampler_or_backend, 'optimizer': optimizer, 'reps': reps},
         {'quantum_instance': sampler_or_backend, 'optimizer': optimizer, 'reps': reps},
         {'backend': sampler_or_backend, 'optimizer': optimizer, 'reps': reps},
@@ -270,10 +295,20 @@ def run_qaoa(hamiltonian, sampler_or_backend=None, reps=3):
     if qaoa is None:
         raise RuntimeError(f"Failed to construct QAOA instance: {last_exc}")
 
-    print(f"⚛️  Running QAOA with {reps} layers...")
+    print(f"⚛️  Running QAOA with {reps} layers... (May take time)")
+    
+    # Enable extensive logging to debug "stuck" processes
+    # This reveals transpilation steps, gradient calculations, etc.
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    logging.getLogger('qiskit.transpiler').setLevel(logging.INFO)
+    logging.getLogger('qiskit_algorithms').setLevel(logging.INFO)
+
+    start_t = time.time()
     result = qaoa.compute_minimum_eigenvalue(hamiltonian)
+    print(f"\n    Done in {time.time()-start_t:.2f}s")
 
     return result
+
 
 # ============================================================================
 # SOLUTION EXTRACTION
@@ -306,14 +341,31 @@ def extract_solution(result, eigenstate_idx=None, nbits=15):
 @monitor_performance
 def main():
     # New behavior: process all problems found in QISKIT/all_qiskit_lp.csv
-    csv_path = Path('all_qiskit_lp.csv')
-    if not csv_path.exists():
-        print(f"CSV not found: {csv_path}. Run merge first.")
+    # Try looking in common locations
+    candidates = [
+        Path('QISKIT') / 'all_qiskit_lp.csv',
+        Path('all_qiskit_lp.csv'),
+        Path('..') / 'QISKIT' / 'all_qiskit_lp.csv',
+    ]
+    csv_path = None
+    for p in candidates:
+        if p.exists():
+            csv_path = p
+            break
+            
+    if csv_path is None:
+        print(f"CSV not found in candidates: {[str(c) for c in candidates]}. Run merge first.")
         return
 
+    print(f"Using CSV: {csv_path}")
     problems = load_problems_from_csv(csv_path)
     results = []
-    for nb_name, sections in problems.items():
+    
+    total_problems = len(problems)
+    print(f"📋 Found {total_problems} problems to process.")
+
+    for i, (nb_name, sections) in enumerate(problems.items(), 1):
+        print(f"⚙️  [{i}/{total_problems}] {i/total_problems:.1%} Processing: {nb_name}")
         try:
             res = process_problem(nb_name, sections)
             results.append(res)
@@ -411,8 +463,10 @@ def process_problem(nb_name, sections):
             result = qres
             method = 'qaoa'
         except Exception as e:
+            print(f"⚠️  QAOA Execution Failed: {e} -> Falling back to classical")
             note = f'QAOA failed: {e}'
             result = None
+
 
     if result is None:
         try:

@@ -1,0 +1,23 @@
+section,content
+Problem name,"ex7
+mdl"
+Maximize,(pi*s0+pd*(sum0
+Subject To,"sum0 <= c0*s0, ""cons0""
+sum1 <= c1*s1, ""cons1""
+sum2 == 1, ""cons2""
+sum3 == 1, ""cons3""
+sum4 == 1, ""cons4"""
+Bounds,"pi (continuous)
+pd (continuous)"
+Binaries,"s0
+s1
+v00
+v10
+v20
+v01
+v11
+v21
+pi
+pd
+u0
+u1"

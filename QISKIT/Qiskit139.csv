@@ -1,0 +1,67 @@
+section,content
+Problem name,"ex139
+mdl"
+Minimize,pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+Subject To,"(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(si4
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj2i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj3i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj4i0+vj4i1+vj4i2+vj4i3+vj4i4
+uj0 >= 1,""cons22""
+uj1 >= 1,""cons23""
+uj2 >= 1,""cons24""
+uj3 >= 1,""cons25""
+uj4 >= 1,""cons25a"""
+Bounds,"vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)"
+Binaries,"si0
+si1
+si2
+si3
+si4"

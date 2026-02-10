@@ -1,0 +1,42 @@
+section,content
+Problem name,"ex7
+mdl"
+Maximize,(pi*s0+pd*(sum0
+Subject To,"v + 2 * w + t + u <= 3, ""cons1""
+v + w + t >= 1, ""cons2""
+v + w == 1, ""cons3"""
+Bounds,"pi (continuous)
+pd (continuous)"
+Generals,"u00
+u10
+u20
+u30
+u40
+u01
+u11
+u21
+u31
+u41
+u02
+u12
+u22
+u32
+u42"
+Binaries,"s0
+s1
+s2
+v00
+v10
+v20
+v30
+v40
+v01
+v11
+v21
+v31
+v41
+v02
+v12
+v22
+v32
+v42"

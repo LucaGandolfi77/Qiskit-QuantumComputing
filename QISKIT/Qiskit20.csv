@@ -1,0 +1,79 @@
+section,content
+Problem name,"ex19
+mdl"
+Minimize,pi*si0+pd*uj0*(vj0i0+vj1i0+vj2i0
+Subject To,"uj0*sum0 <= ci0*si0, ""cons0""
+uj1*sum1 <= ci1*si1, ""cons1""
+uj2*sum2 <= ci2*si2, ""cons2""
+sum3 <= ci3*si3, ""cons3""
+sum4 <= ci4*si4, ""cons4""
+uj0*sum0 <= ci0*si0, ""cons0""
+uj1*sum1 <= ci1*si1, ""cons1""
+uj2*sum2 <= ci2*si2, ""cons2""
+sum3 <= ci3*si3, ""cons3""
+sum4 <= ci4*si4, ""cons4""
+(vj0i0+vj1i0
+(vj0i1+vj1i1
+(vj0i2+vj1i2
+(vj0i3+vj1i3
+(vj0i4+vj1i4
+sum8 == 1, ""cons8""
+sum9 == 1, ""cons9""
+uj0 <= ci0, ""cons10""
+uj1 <= ci1, ""cons11""
+uj2 <= ci2, ""cons12""
+uj3 <= ci3, ""cons13""
+uj4 <= ci4, ""cons14""
+uj0 >= 1, ""cons15""
+uj1 >= 1, ""cons16""
+uj2 >= 1, ""cons17""
+uj3 >= 1, ""cons18""
+uj4 >= 1, ""cons19""
+si0 == 1, ""cons20""
+si1 == 1, ""cons21""
+si2 == 1, ""cons22""
+si3 >= 1, ""cons23""
+si4 >= 1, ""cons24""
+(uj0*(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(uj1*(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(uj0*vj0i0+uj1*vj1i0 <= ci0*si0
+(uj0*vj0i1+uj1*vj1i1 <= ci1*si1
+(uj0*vj0i2+uj1*vj1i2 <= ci2*si2
+(uj0*vj0i3+uj1*vj1i3 <= ci3*si3
+(uj0*vj0i4+uj1*vj1i4 <= ci4*si4"
+Bounds,"vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+pi (continuous)
+pd (continuous)
+uj0 (continuous)
+uj1 (continuous)"
+Generals,"uj0
+uj1
+uj2
+uj3
+uj4"
+Binaries,"pi
+pd"

@@ -1,0 +1,44 @@
+section,content
+Problem name,"ex33
+mdl"
+Minimize,pi0*si0+pd0*(sumi0
+Subject To,"(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0+vj5i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1+vj5i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2+vj5i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+sumj0 >= 15, ""cons0""
+sumj1 >= 15, ""cons1""
+sumj2 >= 15, ""cons2""
+sumj3 >= 15, ""cons3""
+sumj4 >= 15, ""cons4""
+sumj5 >= 15, ""cons5""
+sumj5 >= 3, ""cons6"""
+Bounds,"vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj5i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj5i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj5i2 (continuous)"
+Generals,"uj0
+uj1
+uj2
+uj3
+uj4
+uj5"
+Binaries,"si0
+si1
+si2"

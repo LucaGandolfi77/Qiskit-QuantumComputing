@@ -1,0 +1,12080 @@
+# Qiskit Problems Report
+Total: 174
+
+| notebook | problem | num_qubits | method | energy | solution | note |
+|---|---|---:|---|---:|---|---|
+| Qiskit01.csv | ex7 mdl | 15 | classical-diagonal | -150.0 | `111111111111111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex7
+mdl
+```
+**Maximize**
+```
+(pi*s0+pd*(sum0
+```
+**Subject To**
+```
+v + 2 * w + t + u <= 3, "cons1"
+v + w + t >= 1, "cons2"
+v + w == 1, "cons3"
+```
+**Bounds**
+```
+pi (continuous)
+pd (continuous)
+```
+**Generals**
+```
+u00
+u10
+u20
+u30
+u40
+u01
+u11
+u21
+u31
+u41
+u02
+u12
+u22
+u32
+u42
+```
+**Binaries**
+```
+s0
+s1
+s2
+v00
+v10
+v20
+v30
+v40
+v01
+v11
+v21
+v31
+v41
+v02
+v12
+v22
+v32
+v42
+```
+</details>
+
+| Qiskit01_executed.csv | ex7 mdl | 15 | classical-diagonal | -150.0 | `111111111111111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex7
+mdl
+```
+**Maximize**
+```
+(pi*s0+pd*(sum0
+```
+**Subject To**
+```
+v + 2 * w + t + u <= 3, "cons1"
+v + w + t >= 1, "cons2"
+v + w == 1, "cons3"
+```
+**Bounds**
+```
+pi (continuous)
+pd (continuous)
+```
+**Generals**
+```
+u00
+u10
+u20
+u30
+u40
+u01
+u11
+u21
+u31
+u41
+u02
+u12
+u22
+u32
+u42
+```
+**Binaries**
+```
+s0
+s1
+s2
+v00
+v10
+v20
+v30
+v40
+v01
+v11
+v21
+v31
+v41
+v02
+v12
+v22
+v32
+v42
+```
+</details>
+
+| Qiskit02.csv | ex7 mdl | 9 | classical-diagonal | -90.0 | `000000111111111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex7
+mdl
+```
+**Maximize**
+```
+(pi*s0+pd*(sum0
+```
+**Subject To**
+```
+v + 2 * w + t + u <= 3, "cons1"
+v + w + t >= 1, "cons2"
+v + w == 1, "cons3"
+```
+**Bounds**
+```
+pi (continuous)
+pd (continuous)
+```
+**Generals**
+```
+u00
+u10
+u20
+u01
+u11
+u21
+u02
+u12
+u22
+```
+**Binaries**
+```
+s0
+s1
+s2
+v00
+v10
+v20
+v01
+v11
+v21
+v02
+v12
+v22
+```
+</details>
+
+| Qiskit03.csv | ex7 mdl | 15 | classical-diagonal | -150.0 | `111111111111111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex7
+mdl
+```
+**Maximize**
+```
+(pi*s0+pd*(sum0
+```
+**Subject To**
+```
+v + 2 * w + t + u <= 3, "cons1"
+v + w + t >= 1, "cons2"
+v + w == 1, "cons3"
+```
+**Bounds**
+```
+pi (continuous)
+pd (continuous)
+```
+**Generals**
+```
+u00
+u10
+u20
+u30
+u40
+u01
+u11
+u21
+u31
+u41
+u02
+u12
+u22
+u32
+u42
+```
+**Binaries**
+```
+s0
+s1
+s2
+v00
+v10
+v20
+v30
+v40
+v01
+v11
+v21
+v31
+v41
+v02
+v12
+v22
+v32
+v42
+```
+</details>
+
+| Qiskit04.csv |  |  |  |  | `` | classical failed: Problem too large: 2^24 = 16777216 states |
+| Qiskit05.csv | ex7 mdl | 12 | classical-diagonal | -120.0 | `000111111111111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex7
+mdl
+```
+**Maximize**
+```
+(pi*s0+pd*(sum0
+```
+**Subject To**
+```
+sum0 <= c0*s0, "cons0"
+sum1 <= c1*s1, "cons1"
+sum2 == 1, "cons2"
+sum3 == 1, "cons3"
+sum4 == 1, "cons4"
+```
+**Bounds**
+```
+pi (continuous)
+pd (continuous)
+```
+**Binaries**
+```
+s0
+s1
+v00
+v10
+v20
+v01
+v11
+v21
+pi
+pd
+u0
+u1
+```
+</details>
+
+| Qiskit06.csv |  |  |  |  | `` | classical failed: Problem too large: 2^23 = 8388608 states |
+| Qiskit07.csv | ex7 mdl | 16 | classical-diagonal | -160.0 | `1111111111111111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex7
+mdl
+```
+**Maximize**
+```
+(pi*s0+pd*(sum0
+```
+**Subject To**
+```
+sum0 <= c0*s0, "cons0"
+sum1 <= c1*s1, "cons1"
+sum3 == 1, "cons3"
+sum4 == 1, "cons4"
+sum5 == 1, "cons5"
+sum6 == 1, "cons6"
+sum7 == 1, "cons7"
+```
+**Bounds**
+```
+pi (continuous)
+pd (continuous)
+```
+**Binaries**
+```
+s0
+s1
+v00
+v10
+v20
+v30
+v40
+v01
+v11
+v21
+v31
+v41
+pi
+pd
+u0
+u1
+```
+</details>
+
+| Qiskit08.csv |  |  |  |  | `` | classical failed: Problem too large: 2^21 = 2097152 states |
+| Qiskit09.csv |  |  |  |  | `` | classical failed: Problem too large: 2^24 = 16777216 states |
+| Qiskit10.csv |  |  |  |  | `` | classical failed: Problem too large: 2^24 = 16777216 states |
+| Qiskit100.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit101.csv | ex51 mdl | 4 | classical-diagonal | -40.0 | `000000000001111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i3+vj1i3+vj2i3
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i3+vj1i3+vj2i3
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+(vj3i0+vj3i1+vj3i2
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+```
+</details>
+
+| Qiskit102 2.csv | ex51 mdl | 4 | classical-diagonal | -40.0 | `000000000001111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i3+vj1i3+vj2i3
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i3+vj1i3+vj2i3
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+(vj3i0+vj3i1+vj3i2
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+```
+</details>
+
+| Qiskit102.csv | ex51 mdl | 4 | classical-diagonal | -40.0 | `000000000001111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i3+vj1i3+vj2i3
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i3+vj1i3+vj2i3
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+(vj3i0+vj3i1+vj3i2
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+```
+</details>
+
+| Qiskit103.csv | ex51 mdl | 4 | classical-diagonal | -40.0 | `000000000001111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i3+vj1i3+vj2i3
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i3+vj1i3+vj2i3
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+(vj3i0+vj3i1+vj3i2
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+```
+</details>
+
+| Qiskit104.csv | ex51 mdl | 4 | classical-diagonal | -40.0 | `000000000001111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i3+vj1i3+vj2i3
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i3+vj1i3+vj2i3
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+(vj3i0+vj3i1+vj3i2
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+```
+</details>
+
+| Qiskit105.csv | ex105 mdl | 4 | classical-diagonal | -40.0 | `000000000001111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex105
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i3+vj1i3+vj2i3
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i3+vj1i3+vj2i3
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+(vj3i0+vj3i1+vj3i2
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+```
+</details>
+
+| Qiskit106.csv | ex105 mdl | 4 | classical-diagonal | -40.0 | `000000000001111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex105
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i3+vj1i3+vj2i3
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i3+vj1i3+vj2i3
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+(vj3i0+vj3i1+vj3i2
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+```
+</details>
+
+| Qiskit107.csv | ex105 mdl | 4 | classical-diagonal | -40.0 | `000000000001111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex105
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0
+(vj0i1+vj1i1
+(vj0i2+vj1i2
+(vj0i3+vj1i3
+(vj0i0+vj1i0
+(vj0i1+vj1i1
+(vj0i2+vj1i2
+(vj0i3+vj1i3
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(vj0i0+vj0i1+vj0i2+vj0i3
+(vj1i0+vj1i1+vj1i2+vj1i3
+(vj2i0+vj2i1+vj2i2+vj2i3
+(vj3i0+vj3i1+vj3i2
+uj0 >= 0.99,"cons22"
+uj1 >= 0.99,"cons23"
+uj2 >= 0.99,"cons24"
+uj3 >= 1,"cons25"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+```
+</details>
+
+| Qiskit108.csv | ex108 mdl | 4 | classical-diagonal | -40.0 | `000000000001111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex108
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i3+vj1i3+vj2i3
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i3+vj1i3+vj2i3
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(vj0i0+vj0i1+vj0i2+vj0i3
+(vj1i0+vj1i1+vj1i2+vj1i3
+(vj2i0+vj2i1+vj2i2+vj2i3
+(vj3i0+vj3i1+vj3i2+vj3i3
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+```
+</details>
+
+| Qiskit109.csv | ex109 mdl | 4 | classical-diagonal | -40.0 | `000000000001111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex109
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0
+(vj0i1+vj1i1+vj2i1+vj3i1
+(vj0i2+vj1i2+vj2i2+vj3i2
+(vj0i3+vj1i3+vj2i3+vj3i3
+(vj0i0+vj1i0+vj2i0+vj3i0
+(vj0i1+vj1i1+vj2i1+vj3i1
+(vj0i2+vj1i2+vj2i2+vj3i2
+(vj0i3+vj1i3+vj2i3+vj3i3
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(vj0i0+vj0i1+vj0i2+vj0i3
+(vj1i0+vj1i1+vj1i2+vj1i3
+(vj2i0+vj2i1+vj2i2+vj2i3
+(vj3i0+vj3i1+vj3i2+vj3i3
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+```
+</details>
+
+| Qiskit11.csv |  |  |  |  | `` | classical failed: Problem too large: 2^24 = 16777216 states |
+| Qiskit110.csv | ex110 mdl | 4 | classical-diagonal | -40.0 | `000000000001111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex110
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0
+(vj0i1+vj1i1+vj2i1+vj3i1
+(vj0i2+vj1i2+vj2i2+vj3i2
+(vj0i3+vj1i3+vj2i3+vj3i3
+(vj0i0+vj1i0+vj2i0+vj3i0
+(vj0i1+vj1i1+vj2i1+vj3i1
+(vj0i2+vj1i2+vj2i2+vj3i2
+(vj0i3+vj1i3+vj2i3+vj3i3
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(vj0i0+vj0i1+vj0i2+vj0i3
+(vj1i0+vj1i1+vj1i2+vj1i3
+(vj2i0+vj2i1+vj2i2+vj2i3
+(vj3i0+vj3i1+vj3i2+vj3i3
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+```
+</details>
+
+| Qiskit111.csv | ex110 mdl | 4 | classical-diagonal | -40.0 | `000000000001111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex110
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0
+(vj0i1+vj1i1+vj2i1+vj3i1
+(vj0i2+vj1i2+vj2i2+vj3i2
+(vj0i3+vj1i3+vj2i3+vj3i3
+(vj0i0+vj1i0+vj2i0+vj3i0
+(vj0i1+vj1i1+vj2i1+vj3i1
+(vj0i2+vj1i2+vj2i2+vj3i2
+(vj0i3+vj1i3+vj2i3+vj3i3
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(vj0i0+vj0i1+vj0i2+vj0i3
+(vj1i0+vj1i1+vj1i2+vj1i3
+(vj2i0+vj2i1+vj2i2+vj2i3
+(vj3i0+vj3i1+vj3i2+vj3i3
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+```
+</details>
+
+| Qiskit112.csv | ex112 mdl | 4 | classical-diagonal | -40.0 | `000000000001111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex112
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0
+(vj0i1+vj1i1+vj2i1+vj3i1
+(vj0i2+vj1i2+vj2i2+vj3i2
+(vj0i3+vj1i3+vj2i3+vj3i3
+(vj0i0+vj1i0+vj2i0+vj3i0
+(vj0i1+vj1i1+vj2i1+vj3i1
+(vj0i2+vj1i2+vj2i2+vj3i2
+(vj0i3+vj1i3+vj2i3+vj3i3
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(vj0i0+vj0i1+vj0i2+vj0i3
+(vj1i0+vj1i1+vj1i2+vj1i3
+(vj2i0+vj2i1+vj2i2+vj2i3
+(vj3i0+vj3i1+vj3i2+vj3i3
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+```
+</details>
+
+| Qiskit113.csv | ex113 mdl | 4 | classical-diagonal | -40.0 | `000000000001111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex113
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0
+(vj0i1+vj1i1+vj2i1+vj3i1
+(vj0i2+vj1i2+vj2i2+vj3i2
+(vj0i3+vj1i3+vj2i3+vj3i3
+(vj0i0+vj1i0+vj2i0+vj3i0
+(vj0i1+vj1i1+vj2i1+vj3i1
+(vj0i2+vj1i2+vj2i2+vj3i2
+(vj0i3+vj1i3+vj2i3+vj3i3
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(vj0i0+vj0i1+vj0i2+vj0i3
+(vj1i0+vj1i1+vj1i2+vj1i3
+(vj2i0+vj2i1+vj2i2+vj2i3
+(vj3i0+vj3i1+vj3i2+vj3i3
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+```
+</details>
+
+| Qiskit114.csv | ex114 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex114
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(si4
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj2i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj3i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj4i0+vj4i1+vj4i2+vj4i3+vj4i4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit115.csv | ex115 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex115
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(si4
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj2i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj3i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj4i0+vj4i1+vj4i2+vj4i3+vj4i4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit116.csv | ex116 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex116
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(si4
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj2i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj3i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj4i0+vj4i1+vj4i2+vj4i3+vj4i4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit117.csv | ex116 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex116
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(si4
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj2i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj3i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj4i0+vj4i1+vj4i2+vj4i3+vj4i4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit118.csv | ex116 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex116
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(si4
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj2i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj3i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj4i0+vj4i1+vj4i2+vj4i3+vj4i4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit119.csv | ex119 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex119
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(si4
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj2i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj3i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj4i0+vj4i1+vj4i2+vj4i3+vj4i4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit12.csv |  |  |  |  | `` | classical failed: Problem too large: 2^24 = 16777216 states |
+| Qiskit120.csv | ex120 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex120
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(si4
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj2i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj3i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj4i0+vj4i1+vj4i2+vj4i3+vj4i4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit121.csv | ex121 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex121
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(si4
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj2i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj3i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj4i0+vj4i1+vj4i2+vj4i3+vj4i4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit122.csv | ex122 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex122
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(si4
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj2i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj3i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj4i0+vj4i1+vj4i2+vj4i3+vj4i4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit123.csv | ex123 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex123
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(si4
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj2i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj3i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj4i0+vj4i1+vj4i2+vj4i3+vj4i4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit124.csv | ex124 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex124
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(si4
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj2i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj3i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj4i0+vj4i1+vj4i2+vj4i3+vj4i4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit125.csv | ex125 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex125
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(si4
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj2i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj3i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj4i0+vj4i1+vj4i2+vj4i3+vj4i4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit126.csv | ex126 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex126
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(si4
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj2i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj3i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj4i0+vj4i1+vj4i2+vj4i3+vj4i4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit127.csv | ex127 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex127
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(si4
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj2i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj3i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj4i0+vj4i1+vj4i2+vj4i3+vj4i4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit128.csv | ex128 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex128
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(si4
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj2i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj3i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj4i0+vj4i1+vj4i2+vj4i3+vj4i4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit129.csv | ex129 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex129
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(si4
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj2i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj3i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj4i0+vj4i1+vj4i2+vj4i3+vj4i4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit129B.csv | ex128 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex128
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(si4
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj2i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj3i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj4i0+vj4i1+vj4i2+vj4i3+vj4i4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit13.csv |  |  |  |  | `` | classical failed: Problem too large: 2^24 = 16777216 states |
+| Qiskit130.csv | ex130 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex130
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(si4
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj2i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj3i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj4i0+vj4i1+vj4i2+vj4i3+vj4i4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit131.csv | ex131 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex131
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(si4
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj2i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj3i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj4i0+vj4i1+vj4i2+vj4i3+vj4i4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit132.csv | ex132 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex132
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(si4
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj2i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj3i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj4i0+vj4i1+vj4i2+vj4i3+vj4i4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit133.csv | ex133 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex133
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(si4
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj2i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj3i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj4i0+vj4i1+vj4i2+vj4i3+vj4i4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit134.csv | ex134 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex134
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(si4
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj2i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj3i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj4i0+vj4i1+vj4i2+vj4i3+vj4i4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit135.csv | ex135 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex135
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(si4
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj2i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj3i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj4i0+vj4i1+vj4i2+vj4i3+vj4i4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit136.csv | ex136 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex136
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(si4
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj2i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj3i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj4i0+vj4i1+vj4i2+vj4i3+vj4i4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit137.csv | ex137 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex137
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(si4
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj2i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj3i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj4i0+vj4i1+vj4i2+vj4i3+vj4i4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit138.csv | ex138 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex138
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(si4
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj2i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj3i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj4i0+vj4i1+vj4i2+vj4i3+vj4i4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit139.csv | ex139 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex139
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(si4
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj2i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj3i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj4i0+vj4i1+vj4i2+vj4i3+vj4i4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit14.csv |  |  |  |  | `` | classical failed: Problem too large: 2^24 = 16777216 states |
+| Qiskit140.csv | ex140 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex140
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(si3
+(si4
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj2i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj3i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj4i0+vj4i1+vj4i2+vj4i3+vj4i4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit141.csv | ex141 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex141
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(si0
+(si1
+(si2
+(si3
+(si4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit142.csv | ex142 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex142
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(si0
+(si1
+(si2
+(si3
+(si4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit142B.csv | ex142B mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex142B
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(si0
+(si1
+(si2
+(si3
+(si4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit143.csv | ex143 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex143
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(si0
+(si1
+(si2
+(si3
+(si4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit144.csv | ex144 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex144
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(si0
+(si1
+(si2
+(si3
+(si4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit145.csv | ex145 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex145
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(si0
+(si1
+(si2
+(si3
+(si4
+uj0 >= 1,"cons22"
+uj1 >= 2,"cons23"
+uj2 >= 2,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit146.csv | ex146 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex146
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(si0
+(si1
+(si2
+(si3
+(si4
+uj0 >= 1,"cons22"
+uj1 >= 1.1,"cons23"
+uj2 >= 1.1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit147B.csv | ex147 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex147
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(si0
+(si1
+(si2
+(si3
+(si4
+uj0 >= 1,"cons22"
+uj1 >= 1.05,"cons23"
+uj2 >= 1.05,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit148.csv | ex147 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex147
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(si0
+(si1
+(si2
+(si3
+(si4
+uj0 >= 1,"cons22"
+uj1 >= 1.05,"cons23"
+uj2 >= 1.05,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit149.csv | ex147 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex147
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(si0
+(si1
+(si2
+(si3
+(si4
+uj0 >= 1,"cons22"
+uj1 >= 1.05,"cons23"
+uj2 >= 1.05,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit15.csv |  |  |  |  | `` | classical failed: Problem too large: 2^24 = 16777216 states |
+| Qiskit150.csv | ex150 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex150
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(si0
+(si1
+(si2
+(si3
+(si4
+uj0 >= 1,"cons22"
+uj1 >= 1.05,"cons23"
+uj2 >= 1.05,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj0i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj0i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj0i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj0i0+vj4i1+vj4i2+vj4i3+vj4i4
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit151.csv | ex151 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex151
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(si0
+(si1
+(si2
+(si3
+(si4
+uj0 >= 1,"cons22"
+uj1 >= 1.05,"cons23"
+uj2 >= 1.05,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj0i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj0i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj0i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj0i0+vj4i1+vj4i2+vj4i3+vj4i4
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit152.csv | ex152 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex152
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(si0
+(si1
+(si2
+(si3
+(si4
+uj0 >= 1,"cons22"
+uj1 >= 1.05,"cons23"
+uj2 >= 1.05,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit153.csv | ex153 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex153
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(si0
+(si1
+(si2
+(si3
+(si4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj0i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj0i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj0i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj0i0+vj4i1+vj4i2+vj4i3+vj4i4
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit154.csv | ex154 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex154
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(si0
+(si1
+(si2
+(si3
+(si4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj0i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj0i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj0i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj0i0+vj4i1+vj4i2+vj4i3+vj4i4
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit155.csv | ex155 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex155
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(si0
+(si1
+(si2
+(si3
+(si4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj0i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj0i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj0i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj0i0+vj4i1+vj4i2+vj4i3+vj4i4
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit156.csv | ex156 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex156
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(si0
+(si1
+(si2
+(si3
+(si4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj0i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj0i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj0i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj0i0+vj4i1+vj4i2+vj4i3+vj4i4
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit157.csv | ex157 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex157
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(si0
+(si1
+(si2
+(si3
+(si4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj0i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj0i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj0i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj0i0+vj4i1+vj4i2+vj4i3+vj4i4
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit157B.csv | ex157 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex157
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(si0
+(si1
+(si2
+(si3
+(si4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj0i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj0i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj0i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj0i0+vj4i1+vj4i2+vj4i3+vj4i4
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit157C.csv | ex157C mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex157C
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(si0
+(si1
+(si2
+(si3
+(si4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj0i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj0i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj0i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj0i0+vj4i1+vj4i2+vj4i3+vj4i4
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit157D.csv | ex157D mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex157D
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(si0
+(si1
+(si2
+(si3
+(si4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj0i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj0i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj0i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj0i0+vj4i1+vj4i2+vj4i3+vj4i4
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit157E.csv | ex157D mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex157D
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(si0
+(si1
+(si2
+(si3
+(si4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj0i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj0i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj0i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj0i0+vj4i1+vj4i2+vj4i3+vj4i4
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit157F.csv | ex157D mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex157D
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(si0
+(si1
+(si2
+(si3
+(si4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj0i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj0i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj0i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj0i0+vj4i1+vj4i2+vj4i3+vj4i4
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit157G.csv | ex157D mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex157D
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(si0
+(si1
+(si2
+(si3
+(si4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj0i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj0i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj0i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj0i0+vj4i1+vj4i2+vj4i3+vj4i4
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit157H.csv | ex157D mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex157D
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(si0
+(si1
+(si2
+(si3
+(si4
+uj0 >= 1,"cons22"
+uj1 >= 1,"cons23"
+uj2 >= 1,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(vj0i0+vj1i1+vj1i2+vj1i3+vj1i4
+(vj0i0+vj2i1+vj2i2+vj2i3+vj2i4
+(vj0i0+vj3i1+vj3i2+vj3i3+vj3i4
+(vj0i0+vj4i1+vj4i2+vj4i3+vj4i4
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit158.csv | ex152 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex152
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(si0
+(si1
+(si2
+(si3
+(si4
+uj0 >= 1,"cons22"
+uj1 >= 1.05,"cons23"
+uj2 >= 1.05,"cons24"
+uj3 >= 1,"cons25"
+uj4 >= 1,"cons25a"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit159.csv | Problem name:  Problem name: | 1 | classical-diagonal | -10.0 | `000000000000001` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+Problem name:
+
+Problem name:
+```
+**Minimize**
+```
+x*y - x*z + 2*y*z + x - 2*y + 3*z
+
+Subject to
+  No constraints
+
+  Binary variables (3)
+    x y z
+
+
+op, offset = qubo.to_ising()
+print("offset: {}".format(offset))
+print("operator:")
+print(op)
+offset: 1.5
+operator:
+SparsePauliOp(['IIZ', 'IZI', 'ZII', 'IZZ', 'ZIZ', 'ZZI'],
+              coeffs=[-0.5 +0.j,  0.25+0.j, -1.75+0.j,  0.25+0.j, -0.25+0.j,  0.5 +0.j])
+
+qp = QuadraticProgram()
+qp.from_ising(op, offset, linear=True)
+print(qp.prettyprint())
+
+  x0*x1 - x0*x2 + 2*x1*x2 + x0 - 2*x1 + 3*x2
+
+Subject to
+  No constraints
+
+  Binary variables (3)
+    x0 x1 x2
+
+
+algorithm_globals.random_seed = 10598
+qaoa_mes = QAOA(sampler=Sampler(), optimizer=COBYLA(), initial_point=[0.0, 0.0])
+exact_mes = NumPyMinimumEigensolver()
+qaoa = MinimumEigenOptimizer(qaoa_mes)  # using QAOA
+exact = MinimumEigenOptimizer(exact_mes)  # using the exact classical numpy minimum eigen solver
+exact_result = exact.solve(qubo)
+print(exact_result.prettyprint())
+objective function value: -2.0
+variable values: x=0.0, y=1.0, z=0.0
+status: SUCCESS
+
+qaoa_result = qaoa.solve(qubo)
+print(qaoa_result.prettyprint())
+objective function value: -2.0
+variable values: x=0.0, y=1.0, z=0.0
+status: SUCCESS
+
+print("variable order:", [var.name for var in qaoa_result.variables])
+for s in qaoa_result.samples:
+    print(s)
+variable order: ['x', 'y', 'z']
+SolutionSample(x=array([0., 1., 0.]), fval=-2.0, probability=0.441060556229305, status=<OptimizationResultStatus.SUCCESS: 0>)
+SolutionSample(x=array([0., 0., 0.]), fval=0.0, probability=0.2276358338592764, status=<OptimizationResultStatus.SUCCESS: 0>)
+SolutionSample(x=array([1., 1., 0.]), fval=0.0, probability=0.1413286540160573, status=<OptimizationResultStatus.SUCCESS: 0>)
+SolutionSample(x=array([1., 0., 0.]), fval=1.0, probability=0.125721012041142, status=<OptimizationResultStatus.SUCCESS: 0>)
+SolutionSample(x=array([0., 0., 1.]), fval=3.0, probability=0.0205135502889646, status=<OptimizationResultStatus.SUCCESS: 0>)
+SolutionSample(x=array([1., 0., 1.]), fval=3.0, probability=0.0304358403671234, status=<OptimizationResultStatus.SUCCESS: 0>)
+SolutionSample(x=array([0., 1., 1.]), fval=3.0, probability=0.012388100140798, status=<OptimizationResultStatus.SUCCESS: 0>)
+SolutionSample(x=array([1., 1., 1.]), fval=4.0, probability=0.0009164530573331, status=<OptimizationResultStatus.SUCCESS: 0>)
+
+def get_filtered_samples(
+    samples: List[SolutionSample],
+    threshold: float = 0,
+    allowed_status: Tuple[OptimizationResultStatus] = (OptimizationResultStatus.SUCCESS,),
+):
+    res = []
+    for s in samples:
+        if s.status in allowed_status and s.probability > threshold:
+            res.append(s)
+
+    return res
+
+filtered_samples = get_filtered_samples(
+    qaoa_result.samples, threshold=0.005, allowed_status=(OptimizationResultStatus.SUCCESS,)
+)
+for s in filtered_samples:
+    print(s)
+SolutionSample(x=array([0., 1., 0.]), fval=-2.0, probability=0.441060556229305, status=<OptimizationResultStatus.SUCCESS: 0>)
+SolutionSample(x=array([0., 0., 0.]), fval=0.0, probability=0.2276358338592764, status=<OptimizationResultStatus.SUCCESS: 0>)
+SolutionSample(x=array([1., 1., 0.]), fval=0.0, probability=0.1413286540160573, status=<OptimizationResultStatus.SUCCESS: 0>)
+SolutionSample(x=array([1., 0., 0.]), fval=1.0, probability=0.125721012041142, status=<OptimizationResultStatus.SUCCESS: 0>)
+SolutionSample(x=array([0., 0., 1.]), fval=3.0, probability=0.0205135502889646, status=<OptimizationResultStatus.SUCCESS: 0>)
+SolutionSample(x=array([1., 0., 1.]), fval=3.0, probability=0.0304358403671234, status=<OptimizationResultStatus.SUCCESS: 0>)
+SolutionSample(x=array([0., 1., 1.]), fval=3.0, probability=0.012388100140798, status=<OptimizationResultStatus.SUCCESS: 0>)
+
+
+fvals = [s.fval for s in qaoa_result.samples]
+probabilities = [s.probability for s in qaoa_result.samples]
+np.mean(fvals)
+1.5
+
+np.std(fvals)
+1.9364916731037085
+
+samples_for_plot = {
+    " ".join(f"{qaoa_result.variables[i].name}={int(v)}" for i, v in enumerate(s.x)): s.probability
+    for s in filtered_samples
+}
+samples_for_plot
+{'x=0 y=1 z=0': 0.441060556229305,
+ 'x=0 y=0 z=0': 0.2276358338592764,
+ 'x=1 y=1 z=0': 0.1413286540160573,
+ 'x=1 y=0 z=0': 0.125721012041142,
+ 'x=0 y=0 z=1': 0.0205135502889646,
+ 'x=1 y=0 z=1': 0.0304358403671234,
+ 'x=0 y=1 z=1': 0.012388100140798}
+plot_histogram(samples_for_plot)
+<Figure size 700x500 with 1 Axes>
+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hwoXo37+/pbtHREREZDWs7mtWa8WvWakk4NesRES2w2a/ZiUiIiIi0zHMEREREdkwhjkiIiIiG8YwR0RERGTDGOaIiIiIbBjDHBEREZENY5gjIiIismEMc0REREQ2jGGOiIiIyIYxzBERERHZMIY5IiIiIhvGMEdERERkwxjmiIiIiGwYwxwRERGRDWOYIyIiIrJhDHNERERENoxhjoiIiMiGMcwRERER2TCGOSIiIiIbxjBHREREZMMY5oiIiIhsGMMcERERkQ1jmCMiIiKyYQxzRERERDaMYY6IiIjIhjHMEREREdkwhjkiIiIiG8YwR0RERGTDGOaIiIiIbBjDHBEREZENY5gjIiIismEMc0REREQ2jGGOiIiIyIYxzBERERHZMIY5IiIiIhvGMEdERERkwxjmiIiIiGyY2WGufv36+Pe//4179+4VZn+IiIiISAWzw1xUVBSmTJmCqlWrYuDAgdi9e3dh9ouIiIiITGB2mIuNjcVXX32Fhg0bYtOmTejevTtq1aqFBQsWIDY2tjD7SERERER5MDvMlSlTBmPGjMHx48dx5swZvP3220hMTMSMGTPg5+eH1157Ddu3b4eIFGZ/iYiIiOgxhXIBRKNGjfDll18iJiYG69atQ/v27fH777/jxRdfRPXq1TF37lzcunWrMH4VERERET2mUK9mdXZ2RmBgIHr27AlfX1+ICG7evIm5c+eiZs2aGDduHB48eFCYv5KIiIjIrhVamNuxYwf69euHqlWrYtq0aVAUBR9++CGuXr2Kn3/+Gc2bN8c333yDcePGFdavJCIiIrJ7jgV58q1bt7Bq1SqsXr0akZGRAICAgACMGTMGvXv3hkajAQDUrFkTr7/+Onr37o3ff/+94L0mIiIiIgAFCHMvvvgigoODodPp4OPjg2nTpmH06NHw9/fP8zlt27bFtm3bzP2VRERERPQEs8Pctm3b0LVrV4wZMwavvvoqHB3z31Xv3r1RuXJlc38lERERET3B7DB35coV1KpVS9VzGjZsiIYNG5r7K4mIiIjoCWZfADFv3jz88ccfT93mzz//xMiRI839FURERESUD7PD3Jo1axAWFvbUbc6cOYO1a9ea+yuIiIiIKB+Fus7ck9LT0006l46IiIiIzFOgpKUoSq7tIoLo6Ghs376dFzwQERERFSFVR+YcHByg0WiM68fNmTPH+PP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EVsHsMHf79m306NHD+PPFixcRHR2NRYsWoX379gCAX375RdV6dAZdunTBwYMHMXv2bGzatAlZWVlo1KgRFi5ciP79++f7/OTkZCQmJgIAgoKCEBQUlGOb6tWrM8wRERGRzTM7zGVkZKBUqVLGn/ft2wdFUbItxluzZk388ccfZu2/ZcuW2L59e77brVmzBmvWrMnW5u/vDxNXXCEiIiKyaWafM1e1alWcPXvW+POff/6J8uXLo3Hjxsa2e/fuoUyZMgXrIRERERHlyewjc//4xz+wYsUKTJkyBS4uLggKCsp2YQIAXLlyBX5+fgXuJBERERHlzuwwN336dGzZsgWff/45AKBSpUr46KOPjI/fuXMHhw4dwvjx4wveSyIiIiLKldlhztfXFxcuXMCuXbsAAB07dsx2q4n4+HgsXrwYgYGBBe8lEREREeWqQPf8cXV1xYsvvpjrY/Xr10f9+vULsnsiIiIiyofV3c6LiIiIiExXoCNzOp0OP//8M3bu3ImYmBhkZGTk2EZRFONXsURERERUuMwOc2lpaQgICMCRI0cgIlAUJdvaboafFUUplI4SERERUU5mf836ySefIDQ0FHPnzkV8fDxEBHPmzMHt27exadMm1KxZE3379s31aB0RERERFQ6zw9yvv/6K1q1b44MPPkD58uWN7T4+Pujbty/27NmDnTt3YvHixYXSUSIiIiLKyewwFxUVhdatW/+9IweHbEfhqlatil69emHt2rUF6yERERER5cnsMOfm5gYHh7+f7unpidu3b2fbxtfXF1FRUeb3joiIiIieyuwwV7169WxBrWHDhti9e7fx6JyIYNeuXahUqVLBe0lEREREuTI7zL3wwgvYs2cPtFotAGDYsGGIiopCmzZtMHXqVLRv3x5hYWHo06dPoXWWiIiIiLIze2mSUaNGwcvLC3fv3kWlSpUwcuRInD59Gl999RXCwsIAAH369MGcOXMKqatERERE9CSzw1zt2rUxbdq0bG1ffvklZs2ahevXr6N69erw9fUtcAeJiIiIKG8FugNEbipUqIAKFSoU9m6JiIiIKBe8NysRERGRDTP7yFzNmjVN2k5RFFy7ds3cX0NERERET2F2mNPr9bnedzUpKQn3798HAFSqVAmlSpUyu3NERERE9HRmf80aERGBGzdu5PgvISEB169fxyuvvAJ/f39cuHChMPt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
+
+rqaoa = RecursiveMinimumEigenOptimizer(qaoa, min_num_vars=1, min_num_vars_optimizer=exact)
+rqaoa_result = rqaoa.solve(qubo)
+print(rqaoa_result.prettyprint())
+objective function value: -2.0
+variable values: x=0.0, y=1.0, z=0.0
+status: SUCCESS
+
+
+filtered_samples = get_filtered_samples(
+    rqaoa_result.samples, threshold=0.005, allowed_status=(OptimizationResultStatus.SUCCESS,)
+)
+samples_for_plot = {
+    " ".join(f"{rqaoa_result.variables[i].name}={int(v)}" for i, v in enumerate(s.x)): s.probability
+    for s in filtered_samples
+}
+samples_for_plot
+
+{'x=0 y=1 z=0': 1.0}
+plot_histogram(samples_for_plot)
+<Figure size 700x500 with 1 Axes>
+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wmfoDAABUV5aqLuDXMjMzJanQMuz1AgMDXX0qMsb1/Zx/bty4cZn7FycvL095eXlF6khPT1dBQYEkycfHR2azWTabTXa73dXX2W61WnX9bZlms1k+Pj4ltufnlloSAADwEllZ1zap2mw2V5vJZJLFYimxvaS8UFx7Tk6OJKks2zu8LgBWZ3PnztXs2bOLtLdq1aoKqgEAAN7kbzNuznWuXLlS4iSYk9cFQGfBJc22ZWVlqV69ehUe4/p+zj+Xp39xZsyYoalTp7o+2+12paenq0GDBoU2ogBAabKystSiRQudPn260p4gAODW43A4dOXKFTVr1uyGfb0uAF5/v93dd99d6Nj58+eVnZ2tyMjIUscIDw+Xj49PiffsFXefYUREhOLj43X+/Pki9wGWdl/i9fz8/OTn51eorW7duqWeAwAlCQwMJAACKJcbTVY5ed0mkL59+0qS1q5dW+RYbGxsoT4lqVmzpiIjI3X06FElJSUVOuZwOBQXF6eAgAB17drVo9cFAACoDrwuAA4YMEDh4eFasmSJ9u3b52rPzMzUnDlzVKNGDY0ePdrVnpKSoiNHjhRZvp04caKka8uy198M+emnn+rEiRN67LHHVLNmTVf7U089JYvFotdff73QWPv27dPf//533Xbbberdu7envy4AAMBN53VvApGuvQouOjpa/v7+GjFihOrUqaMVK1YoKSlJb7/9tqZNm+bqO2bMGC1evFgLFy7UmDFjXO12u10xMTGKjY1V9+7d1bdvXx0/flz/+Mc/1LJlS/3www9q1KhRoeu+/vrreuWVVxQWFqYhQ4boypUrWrp0qfLz87V+/Xr16tXrZv0VADCwvLw8zZ07VzNmzChyWwkAeIJXBkBJ2rlzp2bOnKnvv/9eBQUF6tixo6ZOnarhw4cX6ldSAJSu/RKdN2+evvjiC50+fVr169fXQw89pD/96U9q0qRJsdf96quv9N577+nQoUOqUaOGevXqpddee0133XVXZX1VAACAm8prAyAAAAAqh9fdAwgAAIDKRQAEAAAwGAIgAACAwRAAAQAADIYACADV3PV7+ex2u7Kzs5WcnFyFFQHwdl73KjgAQPmYTCZdunRJixcvdj271OFwqEGDBurTp4+GDRumDh06VHWZALwIj4EBgGru7Nmzmjx5slatWqWGDRuqQ4cOSkpK0smTJ119evXqpae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
+
+import qiskit.tools.jupyter
+
+%qiskit_version_table
+%qiskit_copyright
+<IPython.core.display.HTML object>
+<h3>Version Information</h3><table><tr><th>Software</th><th>Version</th></tr><tr><td><code>qiskit</code></td><td>0.45.1</td></tr><tr><td><code>qiskit_optimization</code></td><td>0.6.0</td></tr><tr><td><code>qiskit_algorithms</code></td><td>0.2.1</td></tr><tr><th colspan='2'>System information</th></tr><tr><td>Python version</td><td>3.10.12</td></tr><tr><td>Python compiler</td><td>GCC 11.4.0</td></tr><tr><td>Python build</td><td>main, Nov 20 2023 15:14:05</td></tr><tr><td>OS</td><td>Linux</td></tr><tr><td>CPUs</td><td>1</td></tr><tr><td>Memory (Gb)</td><td>12.674789428710938</td></tr><tr><td colspan='2'>Mon Jan 08 11:52:14 2024 UTC</td></tr></table>
+<IPython.core.display.HTML object>
+<div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2024.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div>
+```
+</details>
+
+| Qiskit16.csv |  |  |  |  | `` | classical failed: Problem too large: 2^24 = 16777216 states |
+| Qiskit17.csv | ex6 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex6
+mdl
+```
+**Minimize**
+```
+v + w + t + 5 * (u-2
+```
+**Subject To**
+```
+v + 2 * w + t + u <= 3, "cons1"
+v + w + t >= 1, "cons2"
+v + w == 1, "cons3"
+```
+**Bounds**
+```
+u (continuous)
+```
+**Binaries**
+```
+v
+w
+t
+```
+</details>
+
+| Qiskit18.csv |  |  |  |  | `` | classical failed: Problem too large: 2^24 = 16777216 states |
+| Qiskit19.csv |  |  |  |  | `` | classical failed: Problem too large: 2^22 = 4194304 states |
+| Qiskit20.csv | ex19 mdl | 7 | classical-diagonal | -70.0 | `000000001111111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex19
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*uj0*(vj0i0+vj1i0+vj2i0
+```
+**Subject To**
+```
+uj0*sum0 <= ci0*si0, "cons0"
+uj1*sum1 <= ci1*si1, "cons1"
+uj2*sum2 <= ci2*si2, "cons2"
+sum3 <= ci3*si3, "cons3"
+sum4 <= ci4*si4, "cons4"
+uj0*sum0 <= ci0*si0, "cons0"
+uj1*sum1 <= ci1*si1, "cons1"
+uj2*sum2 <= ci2*si2, "cons2"
+sum3 <= ci3*si3, "cons3"
+sum4 <= ci4*si4, "cons4"
+(vj0i0+vj1i0
+(vj0i1+vj1i1
+(vj0i2+vj1i2
+(vj0i3+vj1i3
+(vj0i4+vj1i4
+sum8 == 1, "cons8"
+sum9 == 1, "cons9"
+uj0 <= ci0, "cons10"
+uj1 <= ci1, "cons11"
+uj2 <= ci2, "cons12"
+uj3 <= ci3, "cons13"
+uj4 <= ci4, "cons14"
+uj0 >= 1, "cons15"
+uj1 >= 1, "cons16"
+uj2 >= 1, "cons17"
+uj3 >= 1, "cons18"
+uj4 >= 1, "cons19"
+si0 == 1, "cons20"
+si1 == 1, "cons21"
+si2 == 1, "cons22"
+si3 >= 1, "cons23"
+si4 >= 1, "cons24"
+(uj0*(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(uj1*(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(uj0*vj0i0+uj1*vj1i0 <= ci0*si0
+(uj0*vj0i1+uj1*vj1i1 <= ci1*si1
+(uj0*vj0i2+uj1*vj1i2 <= ci2*si2
+(uj0*vj0i3+uj1*vj1i3 <= ci3*si3
+(uj0*vj0i4+uj1*vj1i4 <= ci4*si4
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+pi (continuous)
+pd (continuous)
+uj0 (continuous)
+uj1 (continuous)
+```
+**Generals**
+```
+uj0
+uj1
+uj2
+uj3
+uj4
+```
+**Binaries**
+```
+pi
+pd
+```
+</details>
+
+| Qiskit21.csv | ex21 mdl | 7 | classical-diagonal | -70.0 | `000000001111111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex21
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*uj0*(vj0i0+vj1i0+vj2i0
+```
+**Subject To**
+```
+uj0*sum0 <= ci0*si0, "cons0"
+uj1*sum1 <= ci1*si1, "cons1"
+uj2*sum2 <= ci2*si2, "cons2"
+sum3 <= ci3*si3, "cons3"
+sum4 <= ci4*si4, "cons4"
+uj0*sum0 <= ci0*si0, "cons0"
+uj1*sum1 <= ci1*si1, "cons1"
+uj2*sum2 <= ci2*si2, "cons2"
+sum3 <= ci3*si3, "cons3"
+sum4 <= ci4*si4, "cons4"
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+sum8 == 1, "cons8"
+sum9 == 1, "cons9"
+uj0 <= ci0, "cons10"
+uj1 <= ci1, "cons11"
+uj2 <= ci2, "cons12"
+uj3 <= ci3, "cons13"
+uj4 <= ci4, "cons14"
+uj0 >= 1, "cons15"
+uj1 >= 1, "cons16"
+uj2 >= 1, "cons17"
+uj3 >= 1, "cons18"
+uj4 >= 1, "cons19"
+si0 == 1, "cons20"
+si1 == 1, "cons21"
+si2 == 1, "cons22"
+si3 >= 1, "cons23"
+si4 >= 1, "cons24"
+(uj0*(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(uj1*(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(uj0*vj0i0+uj1*vj1i0 <= ci0*si0
+(uj0*vj0i1+uj1*vj1i1 <= ci1*si1
+(uj0*vj0i2+uj1*vj1i2 <= ci2*si2
+(uj0*vj0i3+uj1*vj1i3 <= ci3*si3
+(uj0*vj0i4+uj1*vj1i4 <= ci4*si4
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+pi (continuous)
+pd (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Generals**
+```
+uj0
+uj1
+uj2
+uj3
+uj4
+```
+**Binaries**
+```
+pi
+pd
+```
+</details>
+
+| Qiskit22.csv | ex22 mdl | 7 | classical-diagonal | -70.0 | `000000001111111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex22
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*uj0*(vj0i0+vj1i0+vj2i0
+```
+**Subject To**
+```
+uj0*sum0 <= ci0*si0, "cons0"
+uj1*sum1 <= ci1*si1, "cons1"
+uj2*sum2 <= ci2*si2, "cons2"
+sum3 <= ci3*si3, "cons3"
+sum4 <= ci4*si4, "cons4"
+uj0*sum0 <= ci0*si0, "cons0"
+uj1*sum1 <= ci1*si1, "cons1"
+uj2*sum2 <= ci2*si2, "cons2"
+sum3 <= ci3*si3, "cons3"
+sum4 <= ci4*si4, "cons4"
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+sum8 == 1, "cons8"
+sum9 == 1, "cons9"
+uj0 <= ci0, "cons10"
+uj1 <= ci1, "cons11"
+uj2 <= ci2, "cons12"
+uj3 <= ci3, "cons13"
+uj4 <= ci4, "cons14"
+uj0 >= 1, "cons15"
+uj1 >= 1, "cons16"
+uj2 >= 1, "cons17"
+uj3 >= 1, "cons18"
+uj4 >= 1, "cons19"
+si0 == 1, "cons20"
+si1 == 1, "cons21"
+si2 == 1, "cons22"
+si3 >= 1, "cons23"
+si4 >= 1, "cons24"
+(uj0*(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(uj1*(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(uj0*vj0i0+uj1*vj1i0 <= ci0*si0
+(uj0*vj0i1+uj1*vj1i1 <= ci1*si1
+(uj0*vj0i2+uj1*vj1i2 <= ci2*si2
+(uj0*vj0i3+uj1*vj1i3 <= ci3*si3
+(uj0*vj0i4+uj1*vj1i4 <= ci4*si4
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+pi (continuous)
+pd (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Generals**
+```
+uj0
+uj1
+uj2
+uj3
+uj4
+```
+**Binaries**
+```
+pi
+pd
+```
+</details>
+
+| Qiskit23.csv | Problem name: ex23 | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+Problem name: ex23
+```
+**Minimize**
+```
+5*u^2 + t - 20*u + v + vj0i0 + w + 20
+
+Subject to
+  Linear constraints (3)
+    t + u + v + 2*w <= 3  'cons1'
+    t + v + w >= 1  'cons2'
+    v + w == 1  'cons3'
+
+  Continuous variables (26)
+    0 <= u
+    0 <= vj0i0
+    0 <= vj1i0
+    0 <= vj2i0
+    0 <= vj3i0
+    0 <= vj4i0
+    0 <= vj0i1
+    0 <= vj1i1
+    0 <= vj2i1
+    0 <= vj3i1
+    0 <= vj4i1
+    0 <= vj0i2
+    0 <= vj1i2
+    0 <= vj2i2
+    0 <= vj3i2
+    0 <= vj4i2
+    0 <= vj0i3
+    0 <= vj1i3
+    0 <= vj2i3
+    0 <= vj3i3
+    0 <= vj4i3
+    0 <= vj0i4
+    0 <= vj1i4
+    0 <= vj2i4
+    0 <= vj3i4
+    0 <= vj4i4
+
+  Binary variables (3)
+    v w t
+
+
+![Immagine 2022-06-27 075042.png](data:image/png;base64,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)
+![Immagine 2022-06-27 081850.png](data:image/png;base64,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)
+# load quadratic program from docplex model
+qp = from_docplex_mp(mdl)
+print(qp.export_as_lp_string())
+\ This file has been generated by DOcplex
+\ ENCODING=ISO-8859-1
+\Problem name: ex23
+
+ obj: v + w + t - 20 u + vj0i0 + [ 10 u^2 ]/2 + 20
+```
+**Subject To**
+```
+cons1: v + 2 w + t + u <= 3
+ cons2: v + w + t >= 1
+ cons3: v + w = 1
+```
+**Bounds**
+```
+0 <= v <= 1
+ 0 <= w <= 1
+ 0 <= t <= 1
+```
+**Binaries**
+```
+v w t
+```
+**End**
+```
+
+```
+</details>
+
+| Qiskit24.csv | Problem name: ex23 | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+Problem name: ex23
+```
+**Minimize**
+```
+5*u^2 + t - 20*u + v + vj0i0 + w + 20
+
+Subject to
+  Linear constraints (3)
+    t + u + v + 2*w <= 3  'cons1'
+    t + v + w >= 1  'cons2'
+    v + w == 1  'cons3'
+
+  Continuous variables (26)
+    0 <= u
+    0 <= vj0i0
+    0 <= vj1i0
+    0 <= vj2i0
+    0 <= vj3i0
+    0 <= vj4i0
+    0 <= vj0i1
+    0 <= vj1i1
+    0 <= vj2i1
+    0 <= vj3i1
+    0 <= vj4i1
+    0 <= vj0i2
+    0 <= vj1i2
+    0 <= vj2i2
+    0 <= vj3i2
+    0 <= vj4i2
+    0 <= vj0i3
+    0 <= vj1i3
+    0 <= vj2i3
+    0 <= vj3i3
+    0 <= vj4i3
+    0 <= vj0i4
+    0 <= vj1i4
+    0 <= vj2i4
+    0 <= vj3i4
+    0 <= vj4i4
+
+  Binary variables (3)
+    v w t
+
+
+![Immagine 2022-06-27 075042.png](data:image/png;base64,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)
+![Immagine 2022-06-27 081850.png](data:image/png;base64,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)
+# load quadratic program from docplex model
+qp = from_docplex_mp(mdl)
+print(qp.export_as_lp_string())
+\ This file has been generated by DOcplex
+\ ENCODING=ISO-8859-1
+\Problem name: ex23
+
+ obj: v + w + t - 20 u + vj0i0 + [ 10 u^2 ]/2 + 20
+```
+**Subject To**
+```
+cons1: v + 2 w + t + u <= 3
+ cons2: v + w + t >= 1
+ cons3: v + w = 1
+```
+**Bounds**
+```
+0 <= v <= 1
+ 0 <= w <= 1
+ 0 <= t <= 1
+```
+**Binaries**
+```
+v w t
+```
+**End**
+```
+
+```
+</details>
+
+| Qiskit25.csv | ex22 mdl | 15 | classical-diagonal | -150.0 | `111111111111111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex22
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(sum0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+uj0*sum0 <= ci0*si0, "cons0"
+uj1*sum1 <= ci1*si1, "cons1"
+uj2*sum2 <= ci2*si2, "cons2"
+sum3 <= ci3*si3, "cons3"
+sum4 <= ci4*si4, "cons4"
+uj0*sum0 <= ci0*si0, "cons0"
+uj1*sum1 <= ci1*si1, "cons1"
+uj2*sum2 <= ci2*si2, "cons2"
+sum3 <= ci3*si3, "cons3"
+sum4 <= ci4*si4, "cons4"
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+sum8 == 1, "cons8"
+sum9 == 1, "cons9"
+uj0 <= ci0, "cons10"
+uj1 <= ci1, "cons11"
+uj2 <= ci2, "cons12"
+uj3 <= ci3, "cons13"
+uj4 <= ci4, "cons14"
+uj0 >= 1, "cons15"
+uj1 >= 1, "cons16"
+uj2 >= 1, "cons17"
+uj3 >= 1, "cons18"
+uj4 >= 1, "cons19"
+si0 == 1, "cons20"
+si1 == 1, "cons21"
+si2 == 1, "cons22"
+si3 >= 1, "cons23"
+si4 >= 1, "cons24"
+(uj0*(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(uj1*(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(uj0*vj0i0+uj1*vj1i0 <= ci0*si0
+(uj0*vj0i1+uj1*vj1i1 <= ci1*si1
+(uj0*vj0i2+uj1*vj1i2 <= ci2*si2
+(uj0*vj0i3+uj1*vj1i3 <= ci3*si3
+(uj0*vj0i4+uj1*vj1i4 <= ci4*si4
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+pi (continuous)
+pd (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Generals**
+```
+uj0
+uj1
+uj2
+uj3
+uj4
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+pi
+pd
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit26.csv | ex22 mdl | 16 | classical-diagonal | -160.0 | `1111111111111111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex22
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(sum0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+uj0*sum0 <= ci0*si0, "cons0"
+uj1*sum1 <= ci1*si1, "cons1"
+uj2*sum2 <= ci2*si2, "cons2"
+sum3 <= ci3*si3, "cons3"
+sum4 <= ci4*si4, "cons4"
+uj0*sum0 <= ci0*si0, "cons0"
+uj1*sum1 <= ci1*si1, "cons1"
+uj2*sum2 <= ci2*si2, "cons2"
+sum3 <= ci3*si3, "cons3"
+sum4 <= ci4*si4, "cons4"
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+sum8 == 1, "cons8"
+sum9 == 1, "cons9"
+uj0 <= ci0, "cons10"
+uj1 <= ci1, "cons11"
+uj2 <= ci2, "cons12"
+uj3 <= ci3, "cons13"
+uj4 <= ci4, "cons14"
+uj0 >= 1, "cons15"
+uj1 >= 1, "cons16"
+uj2 >= 1, "cons17"
+uj3 >= 1, "cons18"
+uj4 >= 1, "cons19"
+si0 == 1, "cons20"
+si1 == 1, "cons21"
+si2 == 1, "cons22"
+si3 >= 1, "cons23"
+si4 >= 1, "cons24"
+(uj0*(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4
+(uj1*(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4
+(uj0*vj0i0+uj1*vj1i0 <= ci0*si0
+(uj0*vj0i1+uj1*vj1i1 <= ci1*si1
+(uj0*vj0i2+uj1*vj1i2 <= ci2*si2
+(uj0*vj0i3+uj1*vj1i3 <= ci3*si3
+(uj0*vj0i4+uj1*vj1i4 <= ci4*si4
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+pi (continuous)
+pd (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Generals**
+```
+uj0
+uj1
+uj2
+uj3
+uj4
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+pi
+pd
+si0
+si1
+si2
+si3
+```
+</details>
+
+| Qiskit27.csv | ex25 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex25
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(sum0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit28 2.csv | ex25 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex25
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(sum0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit28.csv | ex25 mdl | 5 | classical-diagonal | -50.0 | `000000000011111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex25
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(sum0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+si4
+```
+</details>
+
+| Qiskit29.csv | ex25 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex25
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(sum0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0+vj5i0+vj6i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1+vj5i1+vj6i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2+vj5i2+vj6i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3+vj5i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4+vj5i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0+vj5i0+vj6i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1+vj5i1+vj6i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2+vj5i2+vj6i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3+vj5i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4+vj5i4
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj5i0 (continuous)
+vj6i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj5i1 (continuous)
+vj6i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj5i2 (continuous)
+vj6i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+uj5 (continuous)
+uj5 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit30.csv | ex25 mdl | 4 | classical-diagonal | -40.0 | `000000000001111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex25
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(sum0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0+vj5i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1+vj5i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2+vj5i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3+vj5i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4+vj5i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0+vj5i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1+vj5i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2+vj5i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3+vj5i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4+vj5i4
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj5i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj5i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj5i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj5i3 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+uj5 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+```
+</details>
+
+| Qiskit31.csv | ex25 mdl | 4 | classical-diagonal | -40.0 | `000000000001111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex25
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(sum0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0+vj5i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1+vj5i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2+vj5i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3+vj5i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4+vj5i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0+vj5i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1+vj5i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2+vj5i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3+vj5i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4+vj5i4
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj5i0 (continuous)
+vj6i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj5i1 (continuous)
+vj6i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj5i2 (continuous)
+vj6i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj5i3 (continuous)
+vj6i3 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+uj5 (continuous)
+uj6 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+```
+</details>
+
+| Qiskit32.csv | ex25 mdl | 4 | classical-diagonal | -40.0 | `000000000001111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex25
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(sum0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0+vj5i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1+vj5i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2+vj5i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3+vj5i3
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0+vj5i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1+vj5i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2+vj5i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3+vj5i3
+(si0
+(si1
+(si2
+(si3
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0+vj5i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1+vj5i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2+vj5i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3+vj5i3
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0+vj5i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1+vj5i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2+vj5i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3+vj5i3
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj5i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj5i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj5i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj5i3 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+uj5 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+```
+</details>
+
+| Qiskit33.csv | ex33 mdl | 9 | classical-diagonal | -90.0 | `000000111111111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex33
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(sumi0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0+vj5i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1+vj5i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2+vj5i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+sumj0 >= 15, "cons0"
+sumj1 >= 15, "cons1"
+sumj2 >= 15, "cons2"
+sumj3 >= 15, "cons3"
+sumj4 >= 15, "cons4"
+sumj5 >= 15, "cons5"
+sumj5 >= 3, "cons6"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj5i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj5i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj5i2 (continuous)
+```
+**Generals**
+```
+uj0
+uj1
+uj2
+uj3
+uj4
+uj5
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit34.csv | ex33 mdl | 6 | classical-diagonal | -60.0 | `000000000111111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex33
+mdl
+```
+**Minimize**
+```
+pd0*(sumi0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0+vj5i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1+vj5i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2+vj5i2
+sumi0 <= ci0,"cons10"
+sumi1 <= ci1, "cons11"
+sumi2 <= ci2, "cons12"
+sumj0 >= 10, "cons0"
+sumj1 >= 10, "cons1"
+sumj2 >= 10, "cons2"
+sumj3 >= 10, "cons3"
+sumj4 >= 10, "cons4"
+sumj5 >= 10, "cons5"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj5i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj5i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj5i2 (continuous)
+```
+**Generals**
+```
+uj0
+uj1
+uj2
+uj3
+uj4
+uj5
+```
+</details>
+
+| Qiskit35 2.csv | ex25 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex25
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(sum0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0+vj5i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1+vj5i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2+vj5i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3+vj5i3
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0+vj5i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1+vj5i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2+vj5i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3+vj5i3
+(si0
+(si1
+(si2
+(si3
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0+vj5i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1+vj5i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2+vj5i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3+vj5i3
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0+vj5i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1+vj5i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2+vj5i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3+vj5i3
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj5i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj5i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj5i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj5i3 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+uj5 (continuous)
+```
+**Binaries**
+```
+si0 = 1#mdl.binary_var(name="si0")
+```
+</details>
+
+| Qiskit35.csv | ex25 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex25
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(sum0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0+vj5i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1+vj5i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2+vj5i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3+vj5i3
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0+vj5i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1+vj5i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2+vj5i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3+vj5i3
+(si0
+(si1
+(si2
+(si3
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0+vj5i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1+vj5i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2+vj5i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3+vj5i3
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0+vj5i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1+vj5i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2+vj5i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3+vj5i3
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj5i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj5i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj5i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj5i3 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+uj5 (continuous)
+```
+**Binaries**
+```
+si0 = 1#mdl.binary_var(name="si0")
+```
+</details>
+
+| Qiskit36.csv | ex25 mdl | 4 | classical-diagonal | -40.0 | `000000000001111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex25
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(sum0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0+vj5i0+vj6i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1+vj5i1+vj6i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2+vj5i2+vj6i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3+vj5i3+vj6i3
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0+vj5i0+vj6i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1+vj5i1+vj6i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2+vj5i2+vj6i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3+vj5i3+vj6i3
+(si0
+(si1
+(si2
+(si3
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0+vj5i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1+vj5i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2+vj5i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3+vj5i3
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0+vj5i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1+vj5i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2+vj5i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3+vj5i3
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj5i0 (continuous)
+vj6i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj5i1 (continuous)
+vj6i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj5i2 (continuous)
+vj6i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj5i3 (continuous)
+vj6i3 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+uj5 (continuous)
+uj6 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+```
+</details>
+
+| Qiskit37.csv | ex25 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex25
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(sum0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0+vj5i0+vj6i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1+vj5i1+vj6i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2+vj5i2+vj6i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3+vj5i3+vj6i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4+vj5i4+vj6i4
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0+vj5i0+vj6i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1+vj5i1+vj6i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2+vj5i2+vj6i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3+vj5i3+vj6i3
+(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4+vj5i4+vj6i4
+(si0
+(si1
+(si2
+(si3
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0+vj5i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1+vj5i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2+vj5i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3+vj5i3
+(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0+vj5i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1+vj5i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2+vj5i2
+(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3+vj5i3
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj5i0 (continuous)
+vj6i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj5i1 (continuous)
+vj6i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj5i2 (continuous)
+vj6i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+vj4i3 (continuous)
+vj5i3 (continuous)
+vj6i3 (continuous)
+vj0i4 (continuous)
+vj1i4 (continuous)
+vj2i4 (continuous)
+vj3i4 (continuous)
+vj4i4 (continuous)
+vj5i4 (continuous)
+vj6i4 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+uj4 (continuous)
+uj5 (continuous)
+uj6 (continuous)
+```
+**Binaries**
+```
+si0 = 1#mdl.binary_var(name="si0")
+```
+</details>
+
+| Qiskit38.csv | ex25 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex25
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+uj0*(vj0i0+vj0i1+vj0i2
+uj1*(vj1i0+vj1i1+vj1i2
+uj2*(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit39.csv | ex25 mdl | 4 | classical-diagonal | -40.0 | `000000000001111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex25
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i3+vj1i3+vj2i3
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i3+vj1i3+vj2i3
+(si0
+(si1
+(si2
+(si3
+uj0*(vj0i0+vj0i1+vj0i2+vj0i3
+uj1*(vj1i0+vj1i1+vj1i2+vj1i3
+uj2*(vj2i0+vj2i1+vj2i2+vj2i3
+uj0 >= 1.0,"cons21"
+uj1 >= 1.0,"cons22"
+uj2 >= 1.0,"cons23"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+```
+</details>
+
+| Qiskit40.csv | ex25 mdl | 4 | classical-diagonal | -40.0 | `000000000001111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex25
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i3+vj1i3+vj2i3
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i3+vj1i3+vj2i3
+(si0
+(si1
+(si2
+(si3
+uj0*(vj0i0+vj0i1+vj0i2
+uj1*(vj1i0+vj1i1+vj1i2
+uj2*(vj2i0+vj2i1+vj2i2
+uj0 >= 0.8,"cons21"
+uj1 >= 0.8,"cons22"
+uj2 >= 0.8,"cons23"
+uj3 >= 0.8,"cons24"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+```
+</details>
+
+| Qiskit41.csv | ex25 mdl | 4 | classical-diagonal | -40.0 | `000000000001111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex25
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i3+vj1i3+vj2i3
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i3+vj1i3+vj2i3
+(si0
+(si1
+(si2
+(si3
+uj0*(vj0i0+vj0i1+vj0i2
+uj1*(vj1i0+vj1i1+vj1i2
+uj2*(vj2i0+vj2i1+vj2i2
+vj0i0 >= 0,"cons25"
+vj0i0 >= 0,"cons26"
+vj0i0 >= 0,"cons27"
+vj0i0 >= 0,"cons28"
+vj0i0 >= 0,"cons29"
+vj0i0 >= 0,"cons30"
+vj0i0 >= 0,"cons31"
+vj0i0 >= 0,"cons32"
+vj0i0 >= 0,"cons33"
+uj0 >= 0.1,"cons21"
+uj1 >= 0.1,"cons22"
+uj2 >= 0.1,"cons23"
+uj3 >= 0.1,"cons24"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj0i3 (continuous)
+vj1i3 (continuous)
+vj2i3 (continuous)
+vj3i3 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+uj3 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+si3
+```
+</details>
+
+| Qiskit42.csv | ex25 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex25
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+uj0*(vj0i0+vj0i1+vj0i2
+uj1*(vj1i0+vj1i1+vj1i2
+uj2*(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit43.csv | ex25 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex25
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+uj0*(vj0i0+vj0i1+vj0i2
+uj1*(vj1i0+vj1i1+vj1i2
+uj2*(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit44.csv | ex25 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex25
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+uj0*(vj0i0+vj0i1+vj0i2
+uj1*(vj1i0+vj1i1+vj1i2
+uj2*(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit45.csv | ex25 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex25
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit46.csv | ex46 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex46
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+sumj0 >= ci0 ,"cons18"
+sumj1 >= ci1 ,"cons19"
+sumj2 >= ci2 ,"cons20"
+sumi0 >= ci0 ,"cons21"
+sumi1 >= ci1 ,"cons22"
+sumi2 >= ci2 ,"cons23"
+uj0 >= 1,"cons24"
+uj1 >= 1,"cons25"
+uj2 >= 1,"cons26"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit47.csv | ex25 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex25
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= 0,"cons32"
+vj0i1 >= 0,"cons24"
+vj0i2 >= 0,"cons25"
+vj1i0 >= 0,"cons26"
+vj1i1 >= 0,"cons27"
+vj1i2 >= 0,"cons28"
+vj2i0 >= 0,"cons29"
+vj2i1 >= 0,"cons30"
+vj2i2 >= 0,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit48.csv | ex25 mdl | 15 | classical-diagonal | -150.0 | `111111111111111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex25
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= 0,"cons32"
+vj0i1 >= 0,"cons24"
+vj0i2 >= 0,"cons25"
+vj1i0 >= 0,"cons26"
+vj1i1 >= 0,"cons27"
+vj1i2 >= 0,"cons28"
+vj2i0 >= 0,"cons29"
+vj2i1 >= 0,"cons30"
+vj2i2 >= 0,"cons31"
+```
+**Bounds**
+```
+si0 (continuous)
+si1 (continuous)
+si2 (continuous)
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+</details>
+
+| Qiskit48B.csv | ex25 mdl | 15 | classical-diagonal | -150.0 | `111111111111111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex25
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= 0,"cons32"
+vj0i1 >= 0,"cons24"
+vj0i2 >= 0,"cons25"
+vj1i0 >= 0,"cons26"
+vj1i1 >= 0,"cons27"
+vj1i2 >= 0,"cons28"
+vj2i0 >= 0,"cons29"
+vj2i1 >= 0,"cons30"
+vj2i2 >= 0,"cons31"
+```
+**Bounds**
+```
+si0 (continuous)
+si1 (continuous)
+si2 (continuous)
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+</details>
+
+| Qiskit49.csv | ex49 mdl | 15 | classical-diagonal | -150.0 | `111111111111111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex49
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(pi0
+(pd0
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 0,"cons21"
+uj1 >= 0,"cons22"
+uj2 >= 0,"cons23"
+vj0i0 >= 0,"cons32"
+vj0i1 >= 0,"cons24"
+vj0i2 >= 0,"cons25"
+vj1i0 >= 0,"cons26"
+vj1i1 >= 0,"cons27"
+vj1i2 >= 0,"cons28"
+vj2i0 >= 0,"cons29"
+vj2i1 >= 0,"cons30"
+vj2i2 >= 0,"cons31"
+```
+**Bounds**
+```
+si0 (continuous)
+si1 (continuous)
+si2 (continuous)
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+pi0 (continuous)
+pd0 (continuous)
+```
+</details>
+
+| Qiskit50.csv | ex49 mdl | 15 | classical-diagonal | -150.0 | `111111111111111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex49
+mdl
+```
+**Minimize**
+```
+pi0*pd0*0+1*si0+1*(vj0i0+vj1i0+vj2i0
+```
+**Subject To**
+```
+(pi0
+(pd0
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 0,"cons21"
+uj1 >= 0,"cons22"
+uj2 >= 0,"cons23"
+vj0i0 >= 0,"cons32"
+vj0i1 >= 0,"cons24"
+vj0i2 >= 0,"cons25"
+vj1i0 >= 0,"cons26"
+vj1i1 >= 0,"cons27"
+vj1i2 >= 0,"cons28"
+vj2i0 >= 0,"cons29"
+vj2i1 >= 0,"cons30"
+vj2i2 >= 0,"cons31"
+```
+**Bounds**
+```
+si0 (continuous)
+si1 (continuous)
+si2 (continuous)
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+</details>
+
+| Qiskit51.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit52.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit53.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit54.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit55.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit56.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit57.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit58.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit59.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit60.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit61.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit62.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit63.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit64.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit65.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit66.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit67.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit68.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit69.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit70.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit71.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit72.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit73.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit74 2.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit74.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit75.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit76.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit77.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit78.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit79.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit80.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit81.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit82.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit83.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit84.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit85.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit86.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit87.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit88.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit89.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit90.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit91.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit92.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit93.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit94.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit95.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit96.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit97.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit98.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>
+
+| Qiskit99.csv | ex51 mdl | 3 | classical-diagonal | -30.0 | `000000000000111` |  |
+
+<details>
+<summary>Sections</summary>
+
+**Problem name**
+```
+ex51
+mdl
+```
+**Minimize**
+```
+pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+```
+**Subject To**
+```
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,"cons21"
+uj1 >= 1,"cons22"
+uj2 >= 1,"cons23"
+vj0i0 >= -1,"cons32"
+vj0i1 >= -1,"cons24"
+vj0i2 >= -1,"cons25"
+vj1i0 >= -1,"cons26"
+vj1i1 >= -1,"cons27"
+vj1i2 >= -1,"cons28"
+vj2i0 >= -1,"cons29"
+vj2i1 >= -1,"cons30"
+vj2i2 >= -1,"cons31"
+```
+**Bounds**
+```
+vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)
+```
+**Binaries**
+```
+si0
+si1
+si2
+```
+</details>

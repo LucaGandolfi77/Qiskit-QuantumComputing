@@ -1,0 +1,60 @@
+section,content
+Problem name,"ex7
+mdl"
+Maximize,(pi*s0+pd*(sum0
+Subject To,"sum0 <= c0*s0, ""cons0""
+sum1 <= c5*s1, ""cons1""
+sum2 <= c10*s2, ""cons2""
+sum3 == 1, ""consv""
+u00 <= c0, ""consu0""
+u10 <= c1, ""consu1""
+u20 <= c2, ""consu2""
+u30 <= c3, ""consu3""
+u40 <= c4, ""consu4""
+u01 <= c5, ""consu5""
+u11 <= c6, ""consu6""
+u21 <= c7, ""consu7""
+u31 <= c8, ""consu8""
+u41 <= c9, ""consu9""
+u02 <= c10, ""consu10""
+u12 <= c11, ""consu11""
+u22 <= c12, ""consu12""
+u32 <= c13, ""consu13""
+u42 <= c14, ""consu14"""
+Bounds,"pi (continuous)
+pd (continuous)"
+Binaries,"s0
+s1
+s2
+v00
+v10
+v20
+v30
+v40
+v01
+v11
+v21
+v31
+v41
+v02
+v12
+v22
+v32
+v42
+pi
+pd
+u00
+u10
+u20
+u30
+u40
+u01
+u11
+u21
+u31
+u41
+u02
+u12
+u22
+u32
+u42"

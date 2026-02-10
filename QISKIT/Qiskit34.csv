@@ -1,0 +1,40 @@
+section,content
+Problem name,"ex33
+mdl"
+Minimize,pd0*(sumi0
+Subject To,"(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0+vj5i0
+(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1+vj5i1
+(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2+vj5i2
+sumi0 <= ci0,""cons10""
+sumi1 <= ci1, ""cons11""
+sumi2 <= ci2, ""cons12""
+sumj0 >= 10, ""cons0""
+sumj1 >= 10, ""cons1""
+sumj2 >= 10, ""cons2""
+sumj3 >= 10, ""cons3""
+sumj4 >= 10, ""cons4""
+sumj5 >= 10, ""cons5"""
+Bounds,"vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj3i0 (continuous)
+vj4i0 (continuous)
+vj5i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj3i1 (continuous)
+vj4i1 (continuous)
+vj5i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+vj3i2 (continuous)
+vj4i2 (continuous)
+vj5i2 (continuous)"
+Generals,"uj0
+uj1
+uj2
+uj3
+uj4
+uj5"

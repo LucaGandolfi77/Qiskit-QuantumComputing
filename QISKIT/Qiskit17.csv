@@ -1,0 +1,11 @@
+section,content
+Problem name,"ex6
+mdl"
+Minimize,v + w + t + 5 * (u-2
+Subject To,"v + 2 * w + t + u <= 3, ""cons1""
+v + w + t >= 1, ""cons2""
+v + w == 1, ""cons3"""
+Bounds,u (continuous)
+Binaries,"v
+w
+t"

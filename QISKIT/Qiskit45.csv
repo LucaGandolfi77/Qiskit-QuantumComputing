@@ -1,0 +1,34 @@
+section,content
+Problem name,"ex25
+mdl"
+Minimize,pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0
+Subject To,"(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(vj0i0+vj1i0+vj2i0
+(vj0i1+vj1i1+vj2i1
+(vj0i2+vj1i2+vj2i2
+(si0
+(si1
+(si2
+(vj0i0+vj0i1+vj0i2
+(vj1i0+vj1i1+vj1i2
+(vj2i0+vj2i1+vj2i2
+uj0 >= 1,""cons21""
+uj1 >= 1,""cons22""
+uj2 >= 1,""cons23"""
+Bounds,"vj0i0 (continuous)
+vj1i0 (continuous)
+vj2i0 (continuous)
+vj0i1 (continuous)
+vj1i1 (continuous)
+vj2i1 (continuous)
+vj0i2 (continuous)
+vj1i2 (continuous)
+vj2i2 (continuous)
+uj0 (continuous)
+uj1 (continuous)
+uj2 (continuous)"
+Binaries,"si0
+si1
+si2"

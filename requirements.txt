@@ -1,0 +1,10 @@
+qiskit>=0.45
+qiskit-optimization>=0.5
+docplex>=2.20
+matplotlib>=3.6
+numpy>=1.24
+ipywidgets>=8.0
+# Needed to execute notebooks programmatically
+nbclient>=0.8
+# Optional (requires IBM/IBM ILOG/Cplex licensing):
+# cplex

@@ -1,5 +1,7 @@
 qiskit>=0.45
 qiskit-optimization>=0.5
+qiskit-aer>=0.17
+qiskit-ibm-provider>=0.11
 docplex>=2.20
 matplotlib>=3.6
 numpy>=1.24

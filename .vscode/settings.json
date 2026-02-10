@@ -1,0 +1,12 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^bash -lc \"source \\.venv/bin/activate && python3 -u 2026/qaoa_ex7\\.py > /tmp/qaoa_out4\\.log 2>&1 \\|\\| true; echo EXIT:\\$\\?; tail -n 500 /tmp/qaoa_out4\\.log\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^bash -lc \"source \\.venv/bin/activate && python3 - << 'PY'\ntry:\n    import qiskit\\.algorithms as qa\n    print\\('qiskit\\.algorithms members:', \\[n for n in dir\\(qa\\) if not n\\.startswith\\('_'\\)\\]\\[:200\\]\\)\nexcept Exception as e:\n    print\\('cannot import qiskit\\.algorithms:', type\\(e\\)\\.__name__, e\\)\ntry:\n    import qiskit_algorithms as qalg\n    print\\('qiskit_algorithms members:', \\[n for n in dir\\(qalg\\) if not n\\.startswith\\('_'\\)\\]\\[:200\\]\\)\nexcept Exception as e:\n    print\\('cannot import qiskit_algorithms:', type\\(e\\)\\.__name__, e\\)\nPY\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}

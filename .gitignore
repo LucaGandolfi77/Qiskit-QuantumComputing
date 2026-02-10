@@ -1,3 +1,5 @@
 .venv
 .venv/
 venv/
+2026/.venv_qiskit
+2026/.venv_qiskit/

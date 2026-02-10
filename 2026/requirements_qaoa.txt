@@ -1,0 +1,6 @@
+qiskit
+qiskit-ibm-runtime
+qiskit-algorithms
+qiskit-aer
+matplotlib
+numpy

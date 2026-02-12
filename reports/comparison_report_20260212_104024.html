@@ -1,0 +1,5300 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gurobi vs QAOA - Comparison Report</title>
+<style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);padding:20px}
+        .container{max-width:1400px;margin:0 auto;background:#fff;border-radius:15px;box-shadow:0 20px 60px rgba(0,0,0,0.3);overflow:hidden}
+        .header{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:40px;text-align:center}
+        .header h1{font-size:2.5em;margin-bottom:10px}
+        .header p{font-size:1.1em;opacity:.9}
+        .summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;padding:30px;background:#f8f9fa}
+        .summary-card{background:#fff;padding:20px;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.1);text-align:center}
+        .summary-card h3{color:#667eea;font-size:2em;margin-bottom:5px}
+        .summary-card p{color:#666;font-size:.9em}
+        .models{padding:30px}
+        .model-card{background:#fff;border:2px solid #e0e0e0;border-radius:10px;padding:25px;margin-bottom:25px;transition:transform .2s,box-shadow .2s}
+        .model-card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,0,0,0.15)}
+        .model-header{border-bottom:2px solid #667eea;padding-bottom:15px;margin-bottom:20px}
+        .model-header h2{color:#333;font-size:1.5em}
+        .model-info{display:flex;gap:30px;margin-bottom:20px;flex-wrap:wrap}
+        .info-item{flex:1;min-width:150px}
+        .info-label{font-weight:700;color:#666;font-size:.85em;text-transform:uppercase;margin-bottom:5px}
+        .info-value{font-size:1.05em;color:#333;word-break:break-word}
+        table{width:100%;border-collapse:collapse;margin-top:20px}
+        th{background:#667eea;color:#fff;padding:15px;text-align:left;font-weight:600}
+        td{padding:12px 15px;border-bottom:1px solid #e0e0e0}
+        tr:hover{background:#f8f9fa}
+        .status-optimal{background:#4caf50;color:#fff;padding:5px 10px;border-radius:5px;font-size:.85em;font-weight:700}
+        .status-error{background:#f44336;color:#fff;padding:5px 10px;border-radius:5px;font-size:.85em;font-weight:700}
+        .status-skipped{background:#9e9e9e;color:#fff;padding:5px 10px;border-radius:5px;font-size:.85em;font-weight:700}
+        .winner{background:#fff9c4;font-weight:700}
+        .footer{background:#333;color:#fff;text-align:center;padding:20px;font-size:.9em}
+        .mono{font-family:Consolas,Monaco,monospace;font-size:10px}
+        </style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>🚀 Gurobi vs QAOA</h1>
+<p>Comparison Report - Optimization Results</p>
+<p style="font-size:0.9em;margin-top:10px;">12/02/2026 10:40:24</p>
+</div>
+<div class="summary">
+  <div class="summary-card"><h3>169</h3><p>Modelli Testati</p></div>
+  <div class="summary-card"><h3>0</h3><p>Gurobi Optimal</p></div>
+  <div class="summary-card"><h3>0</h3><p>QAOA Completati</p></div>
+  <div class="summary-card"><h3>0.000s</h3><p>Tempo Medio Gurobi</p></div>
+</div>
+<div class="models">
+<h2 style="margin-bottom:20px;color:#333;">Dettagli Modelli</h2>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit01.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">33</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=(pi*s0+pd*(sum0</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit01_executed.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">33</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=(pi*s0+pd*(sum0</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit02.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">21</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=(pi*s0+pd*(sum0</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit03.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">33</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=(pi*s0+pd*(sum0</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit04.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">35</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=(pi*s0+pd*(sum0</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit05.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">12</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=(pi*s0+pd*(sum0</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit06.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">23</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=(pi*s0+pd*(sum0</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit07.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">16</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=(pi*s0+pd*(sum0</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit08.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">21</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=maxim</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit09.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">37</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=(pi*s0+pd*(sum0</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit10.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">37</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit100.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit101.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">4</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit102 2.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">4</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit102.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">4</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit103.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">4</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit104.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">4</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit105.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">4</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit106.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">4</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit107.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">4</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit108.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">4</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit109.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">4</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit11.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">37</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit110.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">4</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit111.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">4</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit112.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">4</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit113.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">4</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit114.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit115.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit116.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit117.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit118.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit119.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit12.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">37</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit120.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit121.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit122.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit123.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit124.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit125.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit126.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit127.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit128.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit129.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit129B.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit13.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">37</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit130.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit131.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit132.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit133.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit134.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit135.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit136.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit137.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit138.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit139.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit14.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">37</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit140.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit141.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit142.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit142B.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit143.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit144.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit145.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit146.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit147B.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit148.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit149.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit15.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">37</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit150.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit151.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit152.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit153.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit154.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit155.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit156.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit157.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit157B.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit157C.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit157D.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit157E.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit157F.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit157G.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit157H.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit158.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit16.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">34</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit17.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit18.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">28</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit19.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">22</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit20.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">7</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit21.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">7</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit22.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">7</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit23.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit24.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit25.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">12</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit26.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">12</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit27.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit28 2.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit28.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">5</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit29.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit30.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">4</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit31.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">4</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit32.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">4</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit33.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">9</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit34.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">6</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit35 2.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit35.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit36.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">4</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit37.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit38.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit39.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">4</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit40.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">4</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit41.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">4</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit42.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit43.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit44.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit45.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit46.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit47.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit51.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit52.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit53.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit54.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit55.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit56.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit57.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit58.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit59.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit60.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit61.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit62.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit63.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit64.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit65.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit66.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit67.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit68.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit69.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit70.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit71.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit72.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit73.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit74 2.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit74.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit75.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit76.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit77.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit78.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit79.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit80.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit81.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit82.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit83.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit84.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit85.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit86.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit87.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit88.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit89.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit90.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit91.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit92.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit93.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit94.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit95.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit96.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit97.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit98.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div class="model-card">
+  <div class="model-header">
+    <h2>📊 Qiskit99.csv</h2>
+  </div>
+  <div class="model-info">
+    <div class="info-item"><div class="info-label">Variabili</div><div class="info-value">3</div></div>
+    <div class="info-item"><div class="info-label">Vincoli</div><div class="info-value">0</div></div>
+    <div class="info-item"><div class="info-label">Parametri</div><div class="info-value">maximize_raw=</div></div>
+  </div>
+
+  <table>
+    <tr><th>Metodo</th><th>Status</th><th>Obiettivo</th><th>Tempo (s)</th><th>Soluzioni</th><th>Preview</th></tr>
+    <tr class="">
+      <td><strong>🔵 Gurobi</strong></td>
+      <td><span class="status-error">ERROR</span></td>
+      <td>N/A</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+    <tr class="">
+      <td><strong>🟣 QAOA</strong></td>
+      <td><span class="status-skipped">SKIPPED</span></td>
+      <td>Qiskit not installed</td>
+      <td>0.0000</td>
+      <td>0</td>
+      <td class="mono">N/A</td>
+    </tr>
+  </table>
+</div>
+
+</div>
+<div class="footer">
+<p>Generated by run_and_compare_gui_fixed.py | Powered by Gurobi & Qiskit</p>
+</div>
+</div>
+</body>
+</html>

@@ -1,6 +1,6 @@
 [
   {
-    "source_file": "Qiskit01",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit01.ipynb",
     "variables": {
       "s0": {
         "type": "binary",
@@ -212,7 +212,7 @@
     ],
     "objective": {
       "type": "MAXIMIZE",
-      "expression": "(pi*s0+pd*(sum0))+(pi*s1+pd*(sum1))+(pi*s2+pd*(sum2))",
+      "expression": "(pi*s0+pd*(sum0",
       "gurobi_sense": "GRB.MAXIMIZE"
     },
     "constants": {
@@ -226,7 +226,7 @@
     }
   },
   {
-    "source_file": "Qiskit02",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit02.ipynb",
     "variables": {
       "s0": {
         "type": "binary",
@@ -378,7 +378,7 @@
     ],
     "objective": {
       "type": "MAXIMIZE",
-      "expression": "(pi*s0+pd*(sum0))+(pi*s1+pd*(sum1))+(pi*s2+pd*(sum2))",
+      "expression": "(pi*s0+pd*(sum0",
       "gurobi_sense": "GRB.MAXIMIZE"
     },
     "constants": {
@@ -392,7 +392,7 @@
     }
   },
   {
-    "source_file": "Qiskit03",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit03.ipynb",
     "variables": {
       "s0": {
         "type": "binary",
@@ -604,7 +604,7 @@
     ],
     "objective": {
       "type": "MAXIMIZE",
-      "expression": "((pi*s0+pd*(sum0))+(pi*s1+pd*(sum1))+(pi*s2+pd*(sum2)))",
+      "expression": "(pi*s0+pd*(sum0",
       "gurobi_sense": "GRB.MAXIMIZE"
     },
     "constants": {
@@ -618,7 +618,7 @@
     }
   },
   {
-    "source_file": "Qiskit04",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit04.ipynb",
     "variables": {
       "s0": {
         "type": "binary",
@@ -915,7 +915,7 @@
     ],
     "objective": {
       "type": "MAXIMIZE",
-      "expression": "(pi*s0+pd*(sum0))+(pi*s1+pd*(sum1))+(pi*s2+pd*(sum2))",
+      "expression": "(pi*s0+pd*(sum0",
       "gurobi_sense": "GRB.MAXIMIZE"
     },
     "constants": {
@@ -929,7 +929,7 @@
     }
   },
   {
-    "source_file": "Qiskit05",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit05.ipynb",
     "variables": {
       "s0": {
         "type": "binary",
@@ -1046,7 +1046,7 @@
     ],
     "objective": {
       "type": "MAXIMIZE",
-      "expression": "(pi*s0+pd*(sum0))+(pi*s1+pd*(sum1))",
+      "expression": "(pi*s0+pd*(sum0",
       "gurobi_sense": "GRB.MAXIMIZE"
     },
     "constants": {
@@ -1061,7 +1061,7 @@
     }
   },
   {
-    "source_file": "Qiskit06",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit06.ipynb",
     "variables": {
       "s0": {
         "type": "binary",
@@ -1263,7 +1263,7 @@
     ],
     "objective": {
       "type": "MAXIMIZE",
-      "expression": "(pi*s0+pd*(sum0))+(pi*s1+pd*(sum1))+(pi*s2+pd*(sum2))",
+      "expression": "(pi*s0+pd*(sum0",
       "gurobi_sense": "GRB.MAXIMIZE"
     },
     "constants": {
@@ -1279,7 +1279,7 @@
     }
   },
   {
-    "source_file": "Qiskit07",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit07.ipynb",
     "variables": {
       "s0": {
         "type": "binary",
@@ -1436,7 +1436,7 @@
     ],
     "objective": {
       "type": "MAXIMIZE",
-      "expression": "(pi*s0+pd*(sum0))+(pi*s1+pd*(sum1))",
+      "expression": "(pi*s0+pd*(sum0",
       "gurobi_sense": "GRB.MAXIMIZE"
     },
     "constants": {
@@ -1451,7 +1451,7 @@
     }
   },
   {
-    "source_file": "Qiskit08",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit08.ipynb",
     "variables": {
       "s0": {
         "type": "binary",
@@ -1647,7 +1647,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit09",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit09.ipynb",
     "variables": {
       "s0": {
         "type": "binary",
@@ -2004,7 +2004,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit10",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit10.ipynb",
     "variables": {
       "s0": {
         "type": "binary",
@@ -2359,7 +2359,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit100",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit100.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -2610,7 +2610,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit101",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit101.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -2894,7 +2894,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit102 2",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit102 2.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -3178,7 +3178,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit102",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit102.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -3462,7 +3462,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit103",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit103.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -3746,7 +3746,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit104",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit104.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -4028,7 +4028,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit105",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit105.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -4312,7 +4312,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit106",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit106.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -4596,7 +4596,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit107",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit107.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -4880,7 +4880,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit108",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit108.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -5164,7 +5164,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit109",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit109.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -5448,7 +5448,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit11",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit11.ipynb",
     "variables": {
       "s0": {
         "type": "binary",
@@ -5803,7 +5803,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit110",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit110.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -6087,7 +6087,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit111",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit111.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -6371,7 +6371,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit112",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit112.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -6655,7 +6655,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit113",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit113.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -6939,7 +6939,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit114",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit114.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -7311,7 +7311,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit115",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit115.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -7683,7 +7683,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit116",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit116.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -8055,7 +8055,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit117",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit117.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -8427,7 +8427,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit118",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit118.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -8799,7 +8799,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit119",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit119.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -9171,7 +9171,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit12",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit12.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -9526,7 +9526,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit120",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit120.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -9898,7 +9898,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit121",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit121.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -10270,7 +10270,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit122",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit122.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -10642,7 +10642,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit123",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit123.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -11014,7 +11014,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit124",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit124.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -11386,7 +11386,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit125",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit125.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -11758,7 +11758,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit126",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit126.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -12130,7 +12130,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit127",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit127.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -12502,7 +12502,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit128",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit128.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -12874,7 +12874,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit129",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit129.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -13246,7 +13246,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit129B",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit129B.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -13618,7 +13618,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit13",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit13.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -13975,7 +13975,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit130",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit130.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -14347,7 +14347,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit131",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit131.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -14719,7 +14719,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit132",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit132.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -15091,7 +15091,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit133",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit133.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -15463,7 +15463,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit134",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit134.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -15835,7 +15835,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit135",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit135.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -16207,7 +16207,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit136",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit136.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -16579,7 +16579,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit137",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit137.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -16951,7 +16951,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit138",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit138.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -17323,7 +17323,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit139",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit139.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -17695,7 +17695,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit14",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit14.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -18051,7 +18051,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit140",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit140.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -18423,7 +18423,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit141",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit141.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -18705,7 +18705,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit142",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit142.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -18987,7 +18987,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit142B",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit142B.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -19269,7 +19269,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit143",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit143.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -19551,7 +19551,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit144",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit144.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -19831,7 +19831,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit145",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit145.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -20111,7 +20111,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit146",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit146.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -20391,7 +20391,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit147B",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit147B.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -20671,7 +20671,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit148",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit148.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -20951,7 +20951,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit149",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit149.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -21231,7 +21231,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit15",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit15.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -21587,7 +21587,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit150",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit150.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -21892,7 +21892,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit151",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit151.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -22197,7 +22197,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit152",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit152.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -22477,7 +22477,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit153",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit153.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -22782,7 +22782,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit154",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit154.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -23087,7 +23087,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit155",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit155.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -23392,7 +23392,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit156",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit156.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -23697,7 +23697,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit157",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit157.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -24002,7 +24002,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit157B",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit157B.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -24307,7 +24307,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit157C",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit157C.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -24612,7 +24612,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit157D",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit157D.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -24917,7 +24917,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit157E",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit157E.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -25222,7 +25222,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit157F",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit157F.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -25527,7 +25527,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit157G",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit157G.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -25832,7 +25832,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit157H",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit157H.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -26137,7 +26137,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit158",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit158.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -26417,7 +26417,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit159",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit159.ipynb",
     "variables": {},
     "constraints": [],
     "objective": null,
@@ -26425,7 +26425,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit16",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit16.ipynb",
     "variables": {
       "si3": {
         "type": "binary",
@@ -26796,7 +26796,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit17",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit17.ipynb",
     "variables": {
       "v": {
         "type": "binary",
@@ -26845,7 +26845,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit18",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit18.ipynb",
     "variables": {
       "si3": {
         "type": "binary",
@@ -27223,7 +27223,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit19",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit19.ipynb",
     "variables": {
       "vj2i0": {
         "type": "binary",
@@ -27650,7 +27650,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit20",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit20.ipynb",
     "variables": {
       "pi": {
         "type": "continuous",
@@ -28077,7 +28077,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit21",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit21.ipynb",
     "variables": {
       "pi": {
         "type": "continuous",
@@ -28529,7 +28529,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit22",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit22.ipynb",
     "variables": {
       "pi": {
         "type": "continuous",
@@ -28981,7 +28981,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit23",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit23.ipynb",
     "variables": {
       "v": {
         "type": "binary",
@@ -29238,7 +29238,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit24",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit24.ipynb",
     "variables": {
       "v": {
         "type": "binary",
@@ -29495,7 +29495,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit25",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit25.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -30030,7 +30030,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit26",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit26.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -30586,7 +30586,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit27",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit27.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -30883,7 +30883,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit28 2",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit28 2.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -31180,7 +31180,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit28",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit28.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -31477,7 +31477,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit29",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit29.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -31798,7 +31798,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit30",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit30.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -32088,7 +32088,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit31",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit31.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -32404,7 +32404,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit32",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit32.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -32763,7 +32763,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit33",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit33.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -33055,7 +33055,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit34",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit34.ipynb",
     "variables": {
       "uj0": {
         "type": "integer",
@@ -33327,7 +33327,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit35 2",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit35 2.ipynb",
     "variables": {
       "vj0i0": {
         "type": "continuous",
@@ -33675,7 +33675,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit35",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit35.ipynb",
     "variables": {
       "vj0i0": {
         "type": "continuous",
@@ -34023,7 +34023,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit36",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit36.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -34412,7 +34412,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit37",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit37.ipynb",
     "variables": {
       "vj0i0": {
         "type": "continuous",
@@ -34850,7 +34850,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit38",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit38.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -35083,7 +35083,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit39",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit39.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -35357,7 +35357,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit40",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit40.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -35650,7 +35650,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit41",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit41.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -35998,7 +35998,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit42",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit42.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -36235,7 +36235,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit43",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit43.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -36472,7 +36472,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit44",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit44.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -36709,7 +36709,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit45",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit45.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -36922,7 +36922,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit46",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit46.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -37165,7 +37165,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit47",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit47.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -37443,7 +37443,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit48",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit48.ipynb",
     "variables": {
       "si0": {
         "type": "continuous",
@@ -37749,7 +37749,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit48B",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit48B.ipynb",
     "variables": {
       "si0": {
         "type": "continuous",
@@ -38055,7 +38055,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit49",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit49.ipynb",
     "variables": {
       "si0": {
         "type": "continuous",
@@ -38379,7 +38379,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit50",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit50.ipynb",
     "variables": {
       "si0": {
         "type": "continuous",
@@ -38695,7 +38695,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit51",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit51.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -38997,7 +38997,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit52",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit52.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -39299,7 +39299,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit53",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit53.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -39601,7 +39601,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit54",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit54.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -39903,7 +39903,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit55",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit55.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -40205,7 +40205,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit56",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit56.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -40507,7 +40507,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit57",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit57.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -40809,7 +40809,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit58",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit58.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -41111,7 +41111,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit59",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit59.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -41413,7 +41413,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit60",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit60.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -41715,7 +41715,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit61",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit61.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -42017,7 +42017,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit62",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit62.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -42319,7 +42319,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit63",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit63.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -42621,7 +42621,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit64",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit64.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -42923,7 +42923,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit65",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit65.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -43225,7 +43225,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit66",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit66.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -43527,7 +43527,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit67",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit67.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -43829,7 +43829,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit68",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit68.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -44131,7 +44131,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit69",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit69.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -44433,7 +44433,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit70",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit70.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -44741,7 +44741,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit71",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit71.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -45049,7 +45049,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit72",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit72.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -45357,7 +45357,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit73",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit73.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -45665,7 +45665,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit74 2",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit74 2.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -45973,7 +45973,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit74",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit74.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -46281,7 +46281,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit75",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit75.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -46589,7 +46589,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit76",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit76.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -46897,7 +46897,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit77",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit77.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -47205,7 +47205,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit78",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit78.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -47513,7 +47513,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit79",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit79.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -47836,7 +47836,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit80",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit80.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -48159,7 +48159,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit81",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit81.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -48482,7 +48482,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit82",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit82.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -48805,7 +48805,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit83",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit83.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -49128,7 +49128,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit84",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit84.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -49451,7 +49451,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit85",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit85.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -49777,7 +49777,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit86",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit86.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -50100,7 +50100,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit87",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit87.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -50423,7 +50423,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit88",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit88.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -50746,7 +50746,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit89",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit89.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -51069,7 +51069,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit90",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit90.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -51392,7 +51392,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit91",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit91.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -51715,7 +51715,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit92",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit92.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -52005,7 +52005,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit93",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit93.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -52313,7 +52313,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit94",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit94.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -52564,7 +52564,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit95",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit95.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -52815,7 +52815,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit96",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit96.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -53066,7 +53066,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit97",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit97.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -53317,7 +53317,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit98",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit98.ipynb",
     "variables": {
       "si0": {
         "type": "binary",
@@ -53568,7 +53568,7 @@
     "metadata": {}
   },
   {
-    "source_file": "Qiskit99",
+    "source_file": "D:\\File Unipr\\HPC2026\\QISKIT\\Old_Qiskit\\Qiskit99.ipynb",
     "variables": {
       "si0": {
         "type": "binary",

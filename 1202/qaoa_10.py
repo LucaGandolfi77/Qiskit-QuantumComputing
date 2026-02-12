@@ -7,6 +7,17 @@ import sys
 from pathlib import Path
 from datetime import datetime
 from collections import defaultdict
+import time
+import json
+import re
+import argparse
+import sys
+import traceback
+import warnings
+
+# Suppress SciPy sparse efficiency warnings
+warnings.filterwarnings('ignore', message='.*splu converted its input to CSC format.*')
+warnings.filterwarnings('ignore', message='.*spsolve is more efficient when sparse b is in the CSC matrix format.*')
 
 # ------------------------- Optional deps -------------------------
 try:
@@ -143,6 +154,7 @@ class GurobiSolver:
         var_cfg = problem_data.get('variables_config', {})
         obj_coeffs = problem_data.get('objective_coefficients', {})
         quad_coeffs = problem_data.get('quadratic_coefficients', {})
+        constants = problem_data.get('constants', {})
 
         if not var_cfg or (not obj_coeffs and not quad_coeffs):
              # It implies empty objective, but maybe constant?
@@ -162,6 +174,10 @@ class GurobiSolver:
 
             variables = {}
             for var_name, cfg in var_cfg.items():
+                # Skip if it is actually a constant
+                if var_name in constants:
+                    continue
+
                 t = cfg.get('type', 'binary')
                 if t == 'binary':
                     variables[var_name] = mdl.addVar(vtype=GRB.BINARY, name=var_name)
@@ -196,6 +212,12 @@ class GurobiSolver:
                     'solution': sol,
                     'num_solutions': len(sol)
                 }
+            elif mdl.status == GRB.UNBOUNDED:
+                return {'status': 'unbounded', 'time': elapsed, 'error': 'Model is unbounded (Status 5)'}
+            elif mdl.status == GRB.INF_OR_UNBD:
+                return {'status': 'unbounded', 'time': elapsed, 'error': 'Model is infeasible or unbounded (Status 4)'}
+            elif mdl.status == GRB.INFEASIBLE:
+                 return {'status': 'infeasible', 'time': elapsed, 'error': 'Model is infeasible (Status 3)'}
 
             return {'status': 'infeasible', 'time': elapsed, 'error': f'Status code: {mdl.status}'}
 
@@ -252,8 +274,9 @@ class QAOASolver:
             if QISKIT_VERSION == "1.x":
                 # Qiskit 1.x
                 sampler = Sampler() # StatevectorSampler
-                qaoa_optimizer = COBYLA(maxiter=100)
-                qaoa = QAOA(optimizer=qaoa_optimizer, reps=3, sampler=sampler)
+                # Reduced maxiter and reps for speed on large datasets
+                qaoa_optimizer = COBYLA(maxiter=50) 
+                qaoa = QAOA(optimizer=qaoa_optimizer, reps=1, sampler=sampler)
                 res = MinimumEigenOptimizer(qaoa).solve(qp)
                 # Extract parameters if available
                 optimal_params = None
@@ -262,8 +285,9 @@ class QAOASolver:
             else:
                 # Old Qiskit
                 backend = Aer.get_backend('qasm_simulator')
-                qaoa_optimizer = COBYLA(maxiter=100)
-                qaoa = QAOA(optimizer=qaoa_optimizer, reps=3, quantum_instance=backend)
+                # Reduced maxiter and reps for speed on large datasets
+                qaoa_optimizer = COBYLA(maxiter=50)
+                qaoa = QAOA(optimizer=qaoa_optimizer, reps=1, quantum_instance=backend)
                 res = MinimumEigenOptimizer(qaoa).solve(qp)
                 optimal_params = None
                 if res.min_eigen_solver_result and hasattr(res.min_eigen_solver_result, 'optimal_point'):
@@ -279,8 +303,9 @@ class QAOASolver:
                 'objective_value': fval_max,
                 'time': elapsed,
                 'solution': sol,
-                'num_iterations': 100,
-                'optimal_parameters': optimal_params
+                'num_iterations': 50,
+                'optimal_parameters': optimal_params,
+                'debug_info': f"reps=1, vars={len(bin_vars)}"
             }
 
         except Exception as e:
@@ -319,6 +344,12 @@ class ModelRunner:
             result['gurobi'] = g
 
             print("  QAOA...", end=' ', flush=True)
+            # Peek at binary variable count for user info
+            vcfg = pdata.get('variables_config', {})
+            n_bin = len([v for v, cfg in vcfg.items() if cfg.get('type') == 'binary'])
+            if n_bin > 15:
+                 print(f"({n_bin} vars, ~{(2**n_bin)/1000:.0f}k states, please wait)...", end=' ', flush=True)
+            
             q = self.qaoa.solve(pdata)
             print("Done" if q.get('status') == 'completed' else "-" if q.get('status') == 'skipped' else "Fail")
             if q.get('status') != 'completed':

@@ -1,0 +1,228 @@
+[
+  {
+    "source_file": "Qiskit01",
+    "variables": {
+      "s0": {
+        "type": "binary",
+        "model_name": "s0",
+        "gurobi_type": "GRB.BINARY"
+      },
+      "s1": {
+        "type": "binary",
+        "model_name": "s1",
+        "gurobi_type": "GRB.BINARY"
+      },
+      "s2": {
+        "type": "binary",
+        "model_name": "s2",
+        "gurobi_type": "GRB.BINARY"
+      },
+      "v00": {
+        "type": "binary",
+        "model_name": "v00",
+        "gurobi_type": "GRB.BINARY"
+      },
+      "v10": {
+        "type": "binary",
+        "model_name": "v10",
+        "gurobi_type": "GRB.BINARY"
+      },
+      "v20": {
+        "type": "binary",
+        "model_name": "v20",
+        "gurobi_type": "GRB.BINARY"
+      },
+      "v30": {
+        "type": "binary",
+        "model_name": "v30",
+        "gurobi_type": "GRB.BINARY"
+      },
+      "v40": {
+        "type": "binary",
+        "model_name": "v40",
+        "gurobi_type": "GRB.BINARY"
+      },
+      "v01": {
+        "type": "binary",
+        "model_name": "v01",
+        "gurobi_type": "GRB.BINARY"
+      },
+      "v11": {
+        "type": "binary",
+        "model_name": "v11",
+        "gurobi_type": "GRB.BINARY"
+      },
+      "v21": {
+        "type": "binary",
+        "model_name": "v21",
+        "gurobi_type": "GRB.BINARY"
+      },
+      "v31": {
+        "type": "binary",
+        "model_name": "v31",
+        "gurobi_type": "GRB.BINARY"
+      },
+      "v41": {
+        "type": "binary",
+        "model_name": "v41",
+        "gurobi_type": "GRB.BINARY"
+      },
+      "v02": {
+        "type": "binary",
+        "model_name": "v02",
+        "gurobi_type": "GRB.BINARY"
+      },
+      "v12": {
+        "type": "binary",
+        "model_name": "v12",
+        "gurobi_type": "GRB.BINARY"
+      },
+      "v22": {
+        "type": "binary",
+        "model_name": "v22",
+        "gurobi_type": "GRB.BINARY"
+      },
+      "v32": {
+        "type": "binary",
+        "model_name": "v32",
+        "gurobi_type": "GRB.BINARY"
+      },
+      "v42": {
+        "type": "binary",
+        "model_name": "v42",
+        "gurobi_type": "GRB.BINARY"
+      },
+      "u00": {
+        "type": "integer",
+        "model_name": "u00",
+        "gurobi_type": "GRB.INTEGER"
+      },
+      "u10": {
+        "type": "integer",
+        "model_name": "u10",
+        "gurobi_type": "GRB.INTEGER"
+      },
+      "u20": {
+        "type": "integer",
+        "model_name": "u20",
+        "gurobi_type": "GRB.INTEGER"
+      },
+      "u30": {
+        "type": "integer",
+        "model_name": "u30",
+        "gurobi_type": "GRB.INTEGER"
+      },
+      "u40": {
+        "type": "integer",
+        "model_name": "u40",
+        "gurobi_type": "GRB.INTEGER"
+      },
+      "u01": {
+        "type": "integer",
+        "model_name": "u01",
+        "gurobi_type": "GRB.INTEGER"
+      },
+      "u11": {
+        "type": "integer",
+        "model_name": "u11",
+        "gurobi_type": "GRB.INTEGER"
+      },
+      "u21": {
+        "type": "integer",
+        "model_name": "u21",
+        "gurobi_type": "GRB.INTEGER"
+      },
+      "u31": {
+        "type": "integer",
+        "model_name": "u31",
+        "gurobi_type": "GRB.INTEGER"
+      },
+      "u41": {
+        "type": "integer",
+        "model_name": "u41",
+        "gurobi_type": "GRB.INTEGER"
+      },
+      "u02": {
+        "type": "integer",
+        "model_name": "u02",
+        "gurobi_type": "GRB.INTEGER"
+      },
+      "u12": {
+        "type": "integer",
+        "model_name": "u12",
+        "gurobi_type": "GRB.INTEGER"
+      },
+      "u22": {
+        "type": "integer",
+        "model_name": "u22",
+        "gurobi_type": "GRB.INTEGER"
+      },
+      "u32": {
+        "type": "integer",
+        "model_name": "u32",
+        "gurobi_type": "GRB.INTEGER"
+      },
+      "u42": {
+        "type": "integer",
+        "model_name": "u42",
+        "gurobi_type": "GRB.INTEGER"
+      },
+      "pi": {
+        "type": "continuous",
+        "model_name": "pi",
+        "gurobi_type": "GRB.CONTINUOUS"
+      },
+      "pd": {
+        "type": "continuous",
+        "model_name": "pd",
+        "gurobi_type": "GRB.CONTINUOUS"
+      }
+    },
+    "constraints": [
+      {
+        "name": "sum0",
+        "type": "expression",
+        "expression": "u00*v00+u10*v10+u20*v20+u30*v30+u40*v40"
+      },
+      {
+        "name": "sum1",
+        "type": "expression",
+        "expression": "u01*v01+u11*v11+u21*v21+u31*v31+u41*v41"
+      },
+      {
+        "name": "sum2",
+        "type": "expression",
+        "expression": "u02*v02+u12*v12+u22*v22+u32*v32+u42*v42"
+      },
+      {
+        "name": "cap0",
+        "type": "constraint",
+        "expression": "sum0 <= c"
+      },
+      {
+        "name": "cap1",
+        "type": "constraint",
+        "expression": "sum1 <= c"
+      },
+      {
+        "name": "cap2",
+        "type": "constraint",
+        "expression": "sum2 <= c"
+      }
+    ],
+    "objective": {
+      "type": "MAXIMIZE",
+      "expression": "(pi*s0+pd*(sum0))+(pi*s1+pd*(sum1))+(pi*s2+pd*(sum2))",
+      "gurobi_sense": "GRB.MAXIMIZE"
+    },
+    "constants": {
+      "pi": 10,
+      "pd": 5,
+      "c": 100
+    },
+    "metadata": {
+      "num_servers": 3,
+      "num_vms": 5
+    }
+  }
+]

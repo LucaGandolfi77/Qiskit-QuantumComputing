@@ -212,8 +212,7 @@
     ],
     "objective": {
       "type": "MAXIMIZE",
-      "expression": "(pi*s0+pd*(sum0))+(pi*s1+pd*(sum1))+(pi*s2+pd*(sum2))",
-      "gurobi_sense": "GRB.MAXIMIZE"
+      "expression": "(pi*s0+pd*(sum0))+(pi*s1+pd*(sum1))+(pi*s2+pd*(sum2))"
     },
     "constants": {
       "pi": 10,
@@ -378,8 +377,7 @@
     ],
     "objective": {
       "type": "MAXIMIZE",
-      "expression": "(pi*s0+pd*(sum0))+(pi*s1+pd*(sum1))+(pi*s2+pd*(sum2))",
-      "gurobi_sense": "GRB.MAXIMIZE"
+      "expression": "(pi*s0+pd*(sum0))+(pi*s1+pd*(sum1))+(pi*s2+pd*(sum2))"
     },
     "constants": {
       "pi": 10,
@@ -604,8 +602,7 @@
     ],
     "objective": {
       "type": "MAXIMIZE",
-      "expression": "((pi*s0+pd*(sum0))+(pi*s1+pd*(sum1))+(pi*s2+pd*(sum2)))",
-      "gurobi_sense": "GRB.MAXIMIZE"
+      "expression": "(pi*s0+pd*(sum0))+(pi*s1+pd*(sum1))+(pi*s2+pd*(sum2))"
     },
     "constants": {
       "pi": 10,
@@ -915,8 +912,7 @@
     ],
     "objective": {
       "type": "MAXIMIZE",
-      "expression": "(pi*s0+pd*(sum0))+(pi*s1+pd*(sum1))+(pi*s2+pd*(sum2))",
-      "gurobi_sense": "GRB.MAXIMIZE"
+      "expression": "(pi*s0+pd*(sum0))+(pi*s1+pd*(sum1))+(pi*s2+pd*(sum2))"
     },
     "constants": {
       "pi": 10,
@@ -1046,8 +1042,7 @@
     ],
     "objective": {
       "type": "MAXIMIZE",
-      "expression": "(pi*s0+pd*(sum0))+(pi*s1+pd*(sum1))",
-      "gurobi_sense": "GRB.MAXIMIZE"
+      "expression": "(pi*s0+pd*(sum0))+(pi*s1+pd*(sum1))"
     },
     "constants": {
       "pi": 10,
@@ -1263,8 +1258,7 @@
     ],
     "objective": {
       "type": "MAXIMIZE",
-      "expression": "(pi*s0+pd*(sum0))+(pi*s1+pd*(sum1))+(pi*s2+pd*(sum2))",
-      "gurobi_sense": "GRB.MAXIMIZE"
+      "expression": "(pi*s0+pd*(sum0))+(pi*s1+pd*(sum1))+(pi*s2+pd*(sum2))"
     },
     "constants": {
       "pi": 10,
@@ -1436,8 +1430,7 @@
     ],
     "objective": {
       "type": "MAXIMIZE",
-      "expression": "(pi*s0+pd*(sum0))+(pi*s1+pd*(sum1))",
-      "gurobi_sense": "GRB.MAXIMIZE"
+      "expression": "(pi*s0+pd*(sum0))+(pi*s1+pd*(sum1))"
     },
     "constants": {
       "pi": 10,
@@ -1633,8 +1626,7 @@
     ],
     "objective": {
       "type": "MAXIMIZE",
-      "expression": "maxim",
-      "gurobi_sense": "GRB.MAXIMIZE"
+      "expression": "maxim"
     },
     "constants": {
       "pi": 10,
@@ -1839,27 +1831,27 @@
       {
         "name": "sum0",
         "type": "expression",
-        "expression": "u0*(v00+v10+v20+v30+v40"
+        "expression": "u0*(v00+v10+v20+v30+v40)"
       },
       {
         "name": "sum1",
         "type": "expression",
-        "expression": "u1*(v01+v11+v21+v31+v41"
+        "expression": "u1*(v01+v11+v21+v31+v41)"
       },
       {
         "name": "sum2",
         "type": "expression",
-        "expression": "u2*(v02+v12+v22+v32+v42"
+        "expression": "u2*(v02+v12+v22+v32+v42)"
       },
       {
         "name": "sum3",
         "type": "expression",
-        "expression": "u3*(v03+v13+v23+v33+v43"
+        "expression": "u3*(v03+v13+v23+v33+v43)"
       },
       {
         "name": "sum4",
         "type": "expression",
-        "expression": "u4*(v03+v13+v23+v34+v44"
+        "expression": "u4*(v03+v13+v23+v34+v44)"
       },
       {
         "name": "sum5",
@@ -1989,8 +1981,7 @@
     ],
     "objective": {
       "type": "MAXIMIZE",
-      "expression": "(pi*s0+pd*(sum0",
-      "gurobi_sense": "GRB.MAXIMIZE"
+      "expression": "(pi*s0+pd*(sum0))+(pi*s1+pd*(sum1))+(pi*s2+pd*(sum2))+(pi*s3+pd*(sum3))"
     },
     "constants": {
       "pi": 10,
@@ -2346,8 +2337,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "(pi*s0+pd*(u0*sum0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "(pi*s0+pd*(u0*sum0))+(pi*s1+pd*(u1*sum1))+(pi*s2+pd*(u2*sum2))"
     },
     "constants": {
       "pi": 10,
@@ -2591,8 +2581,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -2872,8 +2861,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -3156,8 +3144,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -3440,8 +3427,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -3724,8 +3710,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3)"
     },
     "constants": {
       "pi": 1,
@@ -4008,8 +3993,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2)"
     },
     "constants": {
       "pi": 1,
@@ -4290,8 +4274,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3)"
     },
     "constants": {
       "pi": 1,
@@ -4574,8 +4557,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3)"
     },
     "constants": {
       "pi": 1,
@@ -4858,8 +4840,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3)"
     },
     "constants": {
       "pi": 1,
@@ -5142,8 +5123,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3)"
     },
     "constants": {
       "pi": 1,
@@ -5426,8 +5406,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3)"
     },
     "constants": {
       "pi": 1,
@@ -5790,8 +5769,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "(pi*s0+pd*(u0*sum0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "(pi*s0+pd*(u0*sum0))+(pi*s1+pd*(u1*sum1))+(pi*s2+pd*(u2*sum2))"
     },
     "constants": {
       "pi": 10,
@@ -6065,8 +6043,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3)"
     },
     "constants": {
       "pi": 1,
@@ -6349,8 +6326,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3)"
     },
     "constants": {
       "pi": 1,
@@ -6633,8 +6609,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3)"
     },
     "constants": {
       "pi": 1,
@@ -6917,8 +6892,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3)"
     },
     "constants": {
       "pi": 1,
@@ -7286,8 +7260,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi": 1,
@@ -7658,8 +7631,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi": 1,
@@ -8030,8 +8002,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi": 1,
@@ -8402,8 +8373,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi": 1,
@@ -8774,8 +8744,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi": 1,
@@ -9146,8 +9115,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi": 1,
@@ -9513,8 +9481,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "(pi*si0+pd*(uj0*sum0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "(pi*si0+pd*(uj0*sum0))+(pi*si1+pd*(uj1*sum1))+(pi*si2+pd*(uj2*sum2))"
     },
     "constants": {
       "pi": 10,
@@ -9873,8 +9840,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi": 1,
@@ -10245,8 +10211,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi": 1,
@@ -10617,8 +10582,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi": 1,
@@ -10989,8 +10953,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi": 1,
@@ -11361,8 +11324,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi": 1,
@@ -11733,8 +11695,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi": 1,
@@ -12105,8 +12066,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi": 1,
@@ -12477,8 +12437,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi": 1,
@@ -12849,8 +12808,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi": 1,
@@ -13221,8 +13179,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi": 1,
@@ -13593,8 +13550,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi": 1,
@@ -13960,8 +13916,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "(pi*si0+pd*(uj0*sum0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "(pi*si0+pd*(uj0*sum0))+(pi*si1+pd*(uj1*sum1))+(pi*si2+pd*(uj2*sum2))"
     },
     "constants": {
       "pi": 10,
@@ -14322,8 +14277,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi": 1,
@@ -14694,8 +14648,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi": 1,
@@ -15066,8 +15019,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi": 1,
@@ -15438,8 +15390,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi": 1,
@@ -15810,8 +15761,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi": 1,
@@ -16182,8 +16132,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi": 1,
@@ -16554,8 +16503,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi": 1,
@@ -16926,8 +16874,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi": 1,
@@ -17298,8 +17245,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi": 1,
@@ -17670,8 +17616,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi": 1,
@@ -18037,8 +17982,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "(pi*si0+pd*(uj0*sum0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "(pi*si0+pd*(uj0*sum0))+(pi*si1+pd*(uj1*sum1))+(pi*si2+pd*(uj2*sum2))"
     },
     "constants": {
       "pi": 10,
@@ -18398,8 +18342,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi": 1,
@@ -18680,8 +18623,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi": 1,
@@ -18962,8 +18904,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi": 1,
@@ -19244,8 +19185,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi": 1,
@@ -19526,8 +19466,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi": 1,
@@ -19808,8 +19747,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi0": 2,
@@ -20088,8 +20026,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi0": 1,
@@ -20368,8 +20305,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi0": 1,
@@ -20648,8 +20584,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi0": 1,
@@ -20928,8 +20863,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi0": 1,
@@ -21208,8 +21142,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi0": 1,
@@ -21573,8 +21506,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "(pi*si0+pd*(uj0*sum0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "(pi*si0+pd*(uj0*sum0))+(pi*si1+pd*(uj1*sum1))+(pi*si2+pd*(uj2*sum2))"
     },
     "constants": {
       "pi": 10,
@@ -21869,8 +21801,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi0": 1,
@@ -22174,8 +22105,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi0": 1,
@@ -22454,8 +22384,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi0": 1,
@@ -22759,8 +22688,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi0": 1,
@@ -23064,8 +22992,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi0": 1,
@@ -23369,8 +23296,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi0": 1,
@@ -23674,8 +23600,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi0": 1,
@@ -23979,8 +23904,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi0": 1,
@@ -24284,8 +24208,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi0": 1,
@@ -24589,8 +24512,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi0": 1,
@@ -24894,8 +24816,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi0": 1,
@@ -25199,8 +25120,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi0": 1,
@@ -25504,8 +25424,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi0": 1,
@@ -25809,8 +25728,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi0": 1,
@@ -26114,8 +26032,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi0": 1,
@@ -26394,8 +26311,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0+uj4*vj4i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1+uj4*vj4i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2+uj4*vj4i2)+pi3*si3+pd3*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3+uj4*vj4i3)+pi4*si4+pd4*(uj0*vj0i4+uj1*vj1i4+uj2*vj2i4+uj3*vj3i4+uj4*vj4i4)"
     },
     "constants": {
       "pi0": 1,
@@ -26777,8 +26693,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "(pi*si0+pd*(uj0*sum0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*uj0*(vj0i0+vj1i0+vj2i0)+pi*si1+pd*uj1*(vj0i1+vj1i1+vj2i1)+pi*si2+pd*uj2*(vj0i2+vj1i2+vj2i2)"
     },
     "constants": {
       "si0": 1,
@@ -26838,8 +26753,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "v + w + t + 5 * (u-2",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "v + w + t**2 + 5 * (u-2)"
     },
     "constants": {},
     "metadata": {}
@@ -27207,8 +27121,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "(pi*si0+pd*(uj0*sum0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0)+pi*si1+pd*(uj0*vj0i1+uj1*vj1i1)+pi*si2+pd*(uj0*vj0i1+uj1*vj1i1)"
     },
     "constants": {
       "si0": 1,
@@ -27630,8 +27543,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "(pi*si0+pd*(uj0*sum0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0)+pi*si1+pd*(uj0*vj0i1+uj1*vj1i1)+pi*si2+pd*(uj0*vj0i2+uj1*vj1i2)+pi*si3+pd*(uj0*vj0i3+uj1*vj1i3)+pi*si4+pd*(uj0*vj0i4+uj1*vj1i4)"
     },
     "constants": {
       "si0": 1,
@@ -28057,8 +27969,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "(pi*si0+pd*(uj0*sum0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0)+pi*si1+pd*(uj0*vj0i1+uj1*vj1i1)+pi*si2+pd*(uj0*vj0i2+uj1*vj1i2)+pi*si3+pd*(uj0*vj0i3+uj1*vj1i3)+pi*si4+pd*(uj0*vj0i4+uj1*vj1i4)"
     },
     "constants": {
       "si0": 1,
@@ -28509,8 +28420,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "(pi*si0+pd*(uj0*sum0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*uj0*(sum0)+pi*si1+pd*uj1*(sum1)+pi*si2+pd*uj2*(sum2)+pi*si3+pd*uj3*(sum3)+pi*si4+pd*uj4*(sum4)"
     },
     "constants": {
       "si0": 1,
@@ -28961,8 +28871,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "(pi*si0+pd*(uj0*sum0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(sum0)+pi*si1+pd*uj1*(sum1)+pi*si2+pd*(sum2)+pi*si3+pd*(sum3)+pi*si4+pd*(sum4)"
     },
     "constants": {
       "si0": 1,
@@ -29223,8 +29132,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "v + w + t + 5 * (u - 2",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "v + w + t + 5 * (u - 2) ** 2 + vj0i0"
     },
     "constants": {
       "pi": 10,
@@ -29480,8 +29388,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "v + w + t + 5 * (u - 2",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "v + w + t + 5 * (u - 2) ** 2 + vj0i0"
     },
     "constants": {
       "pi": 10,
@@ -29997,8 +29904,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "(pi*si0+pd*(uj0*sum0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(sum0)+pi*si1+pd*uj1*(sum1)+pi*si2+pd*(sum2)"
     },
     "constants": {
       "pi": 10,
@@ -30547,8 +30453,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "(pi*si0+pd*(uj0*sum0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(sum0)+pi*si1+pd*uj1*(sum1)+pi*si2+pd*(sum2)"
     },
     "constants": {
       "pi": 10,
@@ -30843,8 +30748,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(sum0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(sum0)+pi*si1+pd*uj1*(sum1)+pi*si2+pd*(sum2)+pi*si3+pd*(sum3)+pi*si4+pd*(sum4)"
     },
     "constants": {
       "pi": 10,
@@ -31140,8 +31044,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(sum0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(sum0)+pi*si1+pd*uj1*(sum1)+pi*si2+pd*(sum2)+pi*si3+pd*(sum3)+pi*si4+pd*(sum4)"
     },
     "constants": {
       "pi": 10,
@@ -31437,8 +31340,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(sum0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(sum0)+pi*si1+pd*uj1*(sum1)+pi*si2+pd*(sum2)+pi*si3+pd*(sum3)+pi*si4+pd*(sum4)"
     },
     "constants": {
       "pi": 10,
@@ -31759,8 +31661,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(sum0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(sum0)+pi*si1+pd*uj1*(sum1)+pi*si2+pd*(sum2)"
     },
     "constants": {
       "pi": 10,
@@ -32045,8 +31946,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(sum0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(sum0)+pi*si1+pd*uj1*(sum1)+pi*si2+pd*(sum2)+pi*si3+pd*(sum3)"
     },
     "constants": {
       "pi": 10,
@@ -32360,8 +32260,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(sum0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(sum0)+pi*si1+pd*uj1*(sum1)+pi*si2+pd*(sum2)+pi*si3+pd*(sum3)"
     },
     "constants": {
       "pi": 10,
@@ -32701,8 +32600,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(sum0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(sum0)+pi*si1+pd*uj1*(sum1)+pi*si2+pd*(sum2)+pi*si3+pd*(sum3)"
     },
     "constants": {
       "pi": 10,
@@ -33020,8 +32918,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(sumi0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(sumi0)+pi1*si1+pd1*(sumi1)+pi2*si2+pd2*(sumi2)"
     },
     "constants": {
       "pi0": 10,
@@ -33292,8 +33189,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pd0*(sumi0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pd0*(sumi0)+pd1*(sumi1)+pd2*(sumi2)"
     },
     "constants": {
       "si0": 1,
@@ -33604,8 +33500,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(sum0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(sum0)+pi*si1+pd*uj1*(sum1)+pi*si2+pd*(sum2)+pi*si3+pd*(sum3)"
     },
     "constants": {
       "si0": 1,
@@ -33952,8 +33847,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(sum0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(sum0)+pi*si1+pd*uj1*(sum1)+pi*si2+pd*(sum2)+pi*si3+pd*(sum3)"
     },
     "constants": {
       "si0": 1,
@@ -34345,8 +34239,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(sum0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(sum0)+pi*si1+pd*uj1*(sum1)+pi*si2+pd*(sum2)+pi*si3+pd*(sum3)"
     },
     "constants": {
       "pi": 10,
@@ -34764,8 +34657,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(sum0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(sum0)+pi*si1+pd*uj1*(sum1)+pi*si2+pd*(sum2)+pi*si3+pd*(sum3)+pi*si4+pd*(sum4)"
     },
     "constants": {
       "si0": 1,
@@ -35022,8 +34914,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi*si1+pd*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi*si2+pd*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 10,
@@ -35295,8 +35186,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi*si1+pd*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi*si2+pd*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)+pi*si3+pd*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3)"
     },
     "constants": {
       "pi": 10,
@@ -35589,8 +35479,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0)+pi*si1+pd*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1)+pi*si2+pd*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2)"
     },
     "constants": {
       "pi": 10,
@@ -35932,8 +35821,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0+uj3*vj3i0)+pi*si1+pd*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1+uj3*vj3i1)+pi*si2+pd*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2+uj3*vj3i2)+pi*si3+pd*(uj0*vj0i3+uj1*vj1i3+uj2*vj2i3+uj3*vj3i3)"
     },
     "constants": {
       "pi": 0,
@@ -36170,8 +36058,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi0": 2,
@@ -36407,8 +36294,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi0": 2,
@@ -36644,8 +36530,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi0": 3,
@@ -36881,8 +36766,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi0": 2,
@@ -37124,8 +37008,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi0": 2,
@@ -37382,8 +37265,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi*si1+pd*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi*si2+pd*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -37675,8 +37557,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "si0": 1,
@@ -37981,8 +37862,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "si0": 1,
@@ -38307,8 +38187,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "si0": 1,
@@ -38621,8 +38500,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*pd0*0+1*si0+1*(vj0i0+vj1i0+vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*pd0*0+1*si0+1*(vj0i0+vj1i0+vj2i0)+pi1*si1+1*(vj0i1+vj1i1+vj2i1)+pi2*si2+1*(vj0i2+vj1i2+vj2i2)"
     },
     "constants": {
       "si0": 1,
@@ -38927,8 +38805,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi*si1+pd*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi*si2+pd*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -39229,8 +39106,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi*si1+pd*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi*si2+pd*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -39531,8 +39407,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi*si1+pd*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi*si2+pd*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -39833,8 +39708,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi*si1+pd*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi*si2+pd*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -40135,8 +40009,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi*si1+pd*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi*si2+pd*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -40437,8 +40310,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi*si1+pd*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi*si2+pd*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -40739,8 +40611,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi*si1+pd*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi*si2+pd*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -41041,8 +40912,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi*si1+pd*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi*si2+pd*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -41343,8 +41213,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi*si1+pd*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi*si2+pd*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -41645,8 +41514,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi*si1+pd*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi*si2+pd*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -41947,8 +41815,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi*si1+pd*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi*si2+pd*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -42249,8 +42116,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi*si1+pd*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi*si2+pd*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -42551,8 +42417,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi*si1+pd*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi*si2+pd*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -42853,8 +42718,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi*si1+pd*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi*si2+pd*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -43155,8 +43019,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi*si1+pd*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi*si2+pd*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -43457,8 +43320,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi*si1+pd*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi*si2+pd*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -43759,8 +43621,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi*si1+pd*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi*si2+pd*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -44061,8 +43922,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi*si1+pd*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi*si2+pd*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -44363,8 +44223,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi*si0+pd*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi*si1+pd*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi*si2+pd*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -44665,8 +44524,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -44973,8 +44831,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -45281,8 +45138,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -45589,8 +45445,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -45897,8 +45752,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -46205,8 +46059,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -46513,8 +46366,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -46821,8 +46673,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -47129,8 +46980,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -47437,8 +47287,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -47760,8 +47609,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -48083,8 +47931,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -48406,8 +48253,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -48729,8 +48575,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -49052,8 +48897,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -49375,8 +49219,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -49698,8 +49541,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -50024,8 +49866,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -50347,8 +50188,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -50670,8 +50510,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -50993,8 +50832,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -51316,8 +51154,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -51639,8 +51476,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -51962,8 +51798,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -52237,8 +52072,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -52545,8 +52379,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -52796,8 +52629,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -53047,8 +52879,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -53298,8 +53129,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -53549,8 +53379,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,
@@ -53800,8 +53629,7 @@
     ],
     "objective": {
       "type": "MINIMIZE",
-      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0",
-      "gurobi_sense": "GRB.MINIMIZE"
+      "expression": "pi0*si0+pd0*(uj0*vj0i0+uj1*vj1i0+uj2*vj2i0)+pi1*si1+pd1*(uj0*vj0i1+uj1*vj1i1+uj2*vj2i1)+pi2*si2+pd2*(uj0*vj0i2+uj1*vj1i2+uj2*vj2i2)"
     },
     "constants": {
       "pi": 1,

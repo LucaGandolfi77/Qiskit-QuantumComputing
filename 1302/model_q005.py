@@ -2,6 +2,7 @@ import json
 import gurobipy as gp
 from gurobipy import GRB
 import time
+import multiprocessing
 from collections import defaultdict
 from pathlib import Path
 import os
@@ -310,6 +311,7 @@ def solve_model_from_json(m_data, model_id):
     # Init Gurobi Model
     mdl = gp.Model(model_name)
     mdl.setParam('OutputFlag', 1)  # Enable output to see logs in console too if needed 
+    mdl.setParam('TimeLimit', 60)  # 60s limit for Gurobi
 
     # 1. Variables
     variables = {}
@@ -850,6 +852,18 @@ def generate_html(results, filename="report_q003.html"):
     return final_filename
 
 # -------------------------------------------------------------------------
+# Process Wrapper
+# -------------------------------------------------------------------------
+def run_model_in_process(m_data, model_id, queue):
+    """Wrapper to run solve_model_from_json in a separate process"""
+    try:
+        # Redirect stdout/stderr if needed, but for now let it print
+        res = solve_model_from_json(m_data, model_id)
+        queue.put(('OK', res))
+    except Exception as e:
+        queue.put(('ERROR', str(e)))
+
+# -------------------------------------------------------------------------
 # Main
 # -------------------------------------------------------------------------
 def main():
@@ -875,13 +889,46 @@ def main():
     
     for i, m_data in enumerate(data):
         print(f"[{i+1}/{len(data)}] Solving model...")
-        try:
-            res = solve_model_from_json(m_data, i+1)
-            results.append(res)
-        except Exception as e:
-            print(f"Failed to solve model {i+1}: {e}")
-            import traceback
-            traceback.print_exc()
+        start_t = time.time()
+        
+        # Use multiprocessing to enforce timeout safely
+        queue = multiprocessing.Queue()
+        p = multiprocessing.Process(target=run_model_in_process, args=(m_data, i+1, queue))
+        p.start()
+        p.join(60) # Timeout 60 seconds
+
+        if p.is_alive():
+            elapsed = time.time() - start_t
+            print(f"  -> TIMEOUT after {elapsed:.2f}s. Kiling process...")
+            p.terminate()
+            p.join()
+            
+            # Record timeout result
+            results.append({
+                'name': m_data.get('source_file', f'Model_{i+1}'),
+                'status': 'TIMEOUT_60S',
+                'time': 60.0,
+                'obj_val': 0.0, 'vars': {}, 'constraints_count': 0
+            })
+        else:
+            elapsed = time.time() - start_t
+            print(f"  -> Finished in {elapsed:.2f}s")
+            
+            if not queue.empty():
+                status, payload = queue.get()
+                if status == 'OK':
+                    results.append(payload)
+                else:
+                    print(f"  -> Model Error: {payload}")
+            else:
+                # Should not happen unless process crashed silently
+                print("  -> Process exited without result (Crash?)")
+                results.append({
+                   'name': m_data.get('source_file', f'Model_{i+1}'),
+                   'status': 'CRASH',
+                   'time': elapsed,
+                   'obj_val': 0.0, 'vars': {}, 'constraints_count': 0
+                })
 
     out_file = generate_html(results)
     print(f"Report generated: {out_file}")

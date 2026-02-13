@@ -6,6 +6,15 @@ from collections import defaultdict
 from pathlib import Path
 import os
 from datetime import datetime
+import matplotlib.pyplot as plt
+import io
+import base64
+import math
+import numpy as np
+
+# Set non-interactive backend for matplotlib
+plt.switch_backend('Agg')
+
 
 # -------------------------------------------------------------------------
 # Symbolic Helper for Expression Parsing
@@ -206,7 +215,87 @@ def solve_model_from_json(m_data, model_id):
 # -------------------------------------------------------------------------
 # HTML Generator
 # -------------------------------------------------------------------------
-def generate_html(results, filename="report_q002.html"):
+def _generate_single_group_plots(items, title_prefix):
+    """Helper to generate hist + heatmap for a list of (name, value) tuples"""
+    if not items:
+        return None, None
+        
+    names = [x[0] for x in items]
+    values = [x[1] for x in items]
+
+    # --- 1. Histogram ---
+    plt.figure(figsize=(4, 3))
+    plt.hist(values, bins=min(20, len(values)), color='#0056b3', alpha=0.7, edgecolor='black')
+    plt.title(f'{title_prefix} Distrib.', fontsize=10)
+    plt.grid(axis='y', alpha=0.3)
+    plt.tight_layout()
+    
+    buf = io.BytesIO()
+    plt.savefig(buf, format='png', dpi=100)
+    plt.close()
+    hist_b64 = base64.b64encode(buf.getvalue()).decode('utf-8')
+
+    # --- 2. Heatmap (Square Grid) ---
+    n = len(values)
+    cols = math.ceil(math.sqrt(n))
+    rows = math.ceil(n / cols) if cols > 0 else 0
+    
+    # Pad
+    padded = np.array(values + [np.nan] * (rows * cols - n))
+    grid = padded.reshape((rows, cols))
+    
+    plt.figure(figsize=(5, 4))
+    im = plt.imshow(grid, cmap='viridis', aspect='auto', interpolation='nearest')
+    plt.colorbar(im)
+    plt.title(f'{title_prefix} Heatmap', fontsize=10)
+    plt.axis('off')
+    
+    # Annotate
+    vmin, vmax = min(values), max(values)
+    rng = vmax - vmin if vmax > vmin else 1.0
+    
+    for i in range(rows):
+        for j in range(cols):
+            idx = i * cols + j
+            if idx < n:
+                val = values[idx]
+                norm = (val - vmin) / rng
+                color = 'black' if norm > 0.6 else 'white'
+                # Dynamic font size
+                fontsize = 8
+                if n > 30: fontsize = 6
+                if n > 70: fontsize = 4
+                
+                plt.text(j, i, names[idx], ha="center", va="center", color=color, 
+                         fontsize=fontsize, fontweight='bold')
+    
+    plt.tight_layout()
+    
+    buf = io.BytesIO()
+    plt.savefig(buf, format='png', dpi=100)
+    plt.close()
+    heatmap_b64 = base64.b64encode(buf.getvalue()).decode('utf-8')
+    
+    return hist_b64, heatmap_b64
+
+def create_plots(vars_dict):
+    """Generates plots for u-vars and v-vars separately"""
+    if not vars_dict:
+        return {}
+    
+    sorted_items = sorted(vars_dict.items())
+    u_items = [x for x in sorted_items if x[0].startswith('u')]
+    v_items = [x for x in sorted_items if x[0].startswith('v')]
+    
+    plots = {}
+    if u_items:
+        plots['u'] = _generate_single_group_plots(u_items, 'u-Vars')
+    if v_items:
+        plots['v'] = _generate_single_group_plots(v_items, 'v-Vars')
+        
+    return plots
+
+def generate_html(results, filename="report_q003.html"):
     name, ext = os.path.splitext(filename)
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
     final_filename = f"{name}_{timestamp}{ext}"
@@ -260,6 +349,40 @@ def generate_html(results, filename="report_q002.html"):
         """
         
         if r['vars']:
+            # Generate plots
+            plot_data = {}
+            try:
+                plot_data = create_plots(r['vars'])
+            except Exception as e:
+                print(f"Error generating plots: {e}")
+
+            # --- Render Plots ---
+            # 1. U-Vars
+            if 'u' in plot_data and plot_data['u']:
+                u_h, u_hm = plot_data['u']
+                html += f"""
+                <div style="margin-top: 15px; border-top: 1px solid #eee; padding-top: 10px;">
+                    <h4 style="margin:5px 0; color:#555;">u-Variables Analysis</h4>
+                    <div style="display: flex; gap: 15px;">
+                        <img src="data:image/png;base64,{u_h}" style="border:1px solid #ddd; border-radius:4px;">
+                        <img src="data:image/png;base64,{u_hm}" style="border:1px solid #ddd; border-radius:4px;">
+                    </div>
+                </div>
+                """
+            
+            # 2. V-Vars
+            if 'v' in plot_data and plot_data['v']:
+                v_h, v_hm = plot_data['v']
+                html += f"""
+                <div style="margin-top: 15px; border-top: 1px dashed #eee; padding-top: 10px;">
+                    <h4 style="margin:5px 0; color:#555;">v-Variables Analysis</h4>
+                    <div style="display: flex; gap: 15px;">
+                        <img src="data:image/png;base64,{v_h}" style="border:1px solid #ddd; border-radius:4px;">
+                        <img src="data:image/png;base64,{v_hm}" style="border:1px solid #ddd; border-radius:4px;">
+                    </div>
+                </div>
+                """
+
             html += "<h3>Computed Variables</h3><table><tr><th>Variable</th><th>Value</th></tr>"
             # Sort by name for cleaner look
             sorted_vars = sorted(r['vars'].items())

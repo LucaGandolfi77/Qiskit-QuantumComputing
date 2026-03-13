@@ -1,0 +1,51 @@
+# Classical Baseline Configuration
+# Pure PyTorch MLP for binary classification
+
+experiment:
+  name: "classical-baseline"
+  framework: "classical"
+  seed: 42
+  device: "auto"  # auto: CUDA → MPS → CPU
+
+data:
+  dataset_name: "breast_cancer"  # wine, breast_cancer, moons, circles
+  test_size: 0.2
+  batch_size: 32
+  normalize: true
+  pca_components: null  # null = use all features
+
+classical:
+  architecture: "mlp"
+  input_dim: null  # auto-detected from dataset
+  hidden_dims: [64, 32, 16]
+  output_dim: 2
+  activation: "relu"
+  dropout: 0.2
+  batch_norm: true
+
+training:
+  n_epochs: 150
+  learning_rate: 0.001
+  optimizer: "adam"
+  weight_decay: 1e-4
+  scheduler:
+    type: "cosine"
+    params:
+      T_max: 150
+  patience: 25
+  min_delta: 0.001
+
+evaluation:
+  metrics: ["accuracy", "f1", "roc_auc", "precision", "recall"]
+  confusion_matrix: true
+
+logging:
+  tensorboard: true
+  log_interval: 10
+  save_best_only: true
+
+paths:
+  data_dir: "data"
+  models_dir: "outputs/models/classical"
+  plots_dir: "outputs/plots"
+  tensorboard_dir: "outputs/tensorboard"

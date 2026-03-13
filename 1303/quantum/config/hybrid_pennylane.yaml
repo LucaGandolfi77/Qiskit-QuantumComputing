@@ -1,0 +1,79 @@
+# Hybrid Quantum-Classical Neural Network — PennyLane Backend
+# Variational Quantum Circuit integrated as a PyTorch layer
+
+experiment:
+  name: "hybrid-qnn-pennylane"
+  framework: "pennylane"
+  seed: 42
+  device: "cpu"  # quantum sims always CPU
+
+data:
+  dataset_name: "breast_cancer"
+  test_size: 0.2
+  batch_size: 32
+  normalize: true
+  pca_components: 4  # reduce to n_qubits dimensions
+
+classical:
+  architecture: "mlp"
+  input_dim: 4
+  hidden_dims: [32]
+  output_dim: 2
+  activation: "relu"
+  dropout: 0.1
+  batch_norm: false
+
+quantum:
+  n_qubits: 4
+  n_layers: 3  # depth of variational circuit
+
+  encoding:
+    type: "angle"  # angle, amplitude, iqp
+    rotation_axes: ["Y"]
+
+  ansatz:
+    type: "strongly_entangling"  # strongly_entangling, hardware_efficient, basic_entangler
+    entanglement: "full"  # full, linear, circular
+    rotation_gates: ["RX", "RY", "RZ"]
+
+  measurement:
+    observables: ["Z"]  # Pauli observables
+    n_outputs: 2
+
+  backend:
+    name: "default.qubit"
+    shots: null  # null = exact, 1024 = shot-based
+
+hybrid:
+  quantum_layer_position: "middle"  # input, middle, output
+  classical_pre_layers: [32]
+  classical_post_layers: [16]
+
+training:
+  n_epochs: 100
+  learning_rate: 0.01
+  optimizer: "adam"
+  weight_decay: 1e-4
+  scheduler:
+    type: "cosine"
+    params:
+      T_max: 100
+  gradient_method: "backprop"  # backprop, parameter_shift, adjoint
+  patience: 20
+  min_delta: 0.001
+
+evaluation:
+  metrics: ["accuracy", "f1", "roc_auc"]
+  confusion_matrix: true
+
+logging:
+  tensorboard: true
+  log_interval: 5
+  save_best_only: true
+
+paths:
+  data_dir: "data"
+  models_dir: "outputs/models/hybrid_pennylane"
+  circuits_dir: "outputs/circuits"
+  plots_dir: "outputs/plots"
+  tensorboard_dir: "outputs/tensorboard"

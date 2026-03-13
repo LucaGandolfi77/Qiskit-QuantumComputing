@@ -1,0 +1,81 @@
+# Hybrid Quantum-Classical Neural Network — Qiskit Backend
+# Uses Qiskit Machine Learning EstimatorQNN / SamplerQNN
+
+experiment:
+  name: "hybrid-qnn-qiskit"
+  framework: "qiskit"
+  seed: 42
+  device: "cpu"
+
+data:
+  dataset_name: "breast_cancer"
+  test_size: 0.2
+  batch_size: 32
+  normalize: true
+  pca_components: 4
+
+classical:
+  architecture: "mlp"
+  input_dim: 4
+  hidden_dims: [32]
+  output_dim: 2
+  activation: "relu"
+  dropout: 0.1
+  batch_norm: false
+
+quantum:
+  n_qubits: 4
+  n_layers: 3
+
+  encoding:
+    type: "angle"
+    rotation_axes: ["Y"]
+
+  ansatz:
+    type: "real_amplitudes"  # real_amplitudes, efficient_su2, two_local
+    entanglement: "full"
+    rotation_gates: ["RY"]
+    reps: 3
+
+  measurement:
+    observables: ["Z"]
+    n_outputs: 2
+
+  backend:
+    name: "aer_simulator_statevector"
+    shots: null
+
+hybrid:
+  quantum_layer_position: "middle"
+  classical_pre_layers: [32]
+  classical_post_layers: [16]
+
+training:
+  n_epochs: 80
+  learning_rate: 0.01
+  optimizer: "adam"
+  weight_decay: 1e-4
+  scheduler:
+    type: "step"
+    params:
+      step_size: 30
+      gamma: 0.5
+  gradient_method: "parameter_shift"
+  patience: 20
+  min_delta: 0.001
+
+evaluation:
+  metrics: ["accuracy", "f1", "roc_auc"]
+  confusion_matrix: true
+
+logging:
+  tensorboard: true
+  log_interval: 5
+  save_best_only: true
+
+paths:
+  data_dir: "data"
+  models_dir: "outputs/models/hybrid_qiskit"
+  circuits_dir: "outputs/circuits"
+  plots_dir: "outputs/plots"
+  tensorboard_dir: "outputs/tensorboard"

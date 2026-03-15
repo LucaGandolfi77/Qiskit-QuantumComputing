@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QAOA Scaling Study — VM Allocation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0e1a;--bg2:#111827;--bg3:#1f2937;--cyan:#00d4ff;--violet:#7c3aed;--amber:#f59e0b;--green:#10b981;--red:#ef4444;--text:#e5e7eb;--text2:#9ca3af;--font:'Inter',sans-serif;--mono:'JetBrains Mono',monospace;--sidebar-w:240px}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+.sidebar{position:fixed;left:0;top:0;width:var(--sidebar-w);height:100vh;background:var(--bg2);border-right:1px solid rgba(0,212,255,.15);padding:24px 16px;overflow-y:auto;z-index:100;display:flex;flex-direction:column;gap:4px}
+.sidebar-title{font-size:13px;font-weight:700;color:var(--cyan);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid rgba(0,212,255,.2)}
+.sidebar a{display:block;padding:8px 12px;color:var(--text2);text-decoration:none;font-size:13px;border-radius:6px;transition:all .2s}
+.sidebar a:hover{background:rgba(0,212,255,.08);color:var(--text)}
+.sidebar a.active{background:rgba(0,212,255,.12);color:var(--cyan);font-weight:600}
+.main{margin-left:var(--sidebar-w);padding:32px 48px 80px}
+section{margin-bottom:64px;scroll-margin-top:24px}
+h2{font-size:26px;font-weight:700;margin-bottom:24px;display:flex;align-items:center;gap:12px}
+h2 .emoji{font-size:26px}
+h3{font-size:17px;font-weight:600;color:var(--cyan);margin:20px 0 12px}
+.card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:24px;margin-bottom:16px}
+.card-grid{display:grid;gap:16px}
+.g2{grid-template-columns:1fr 1fr}
+.g3{grid-template-columns:1fr 1fr 1fr}
+.g4{grid-template-columns:1fr 1fr 1fr 1fr}
+.kpi{text-align:center;padding:20px}
+.kpi-value{font-family:var(--mono);font-size:32px;font-weight:700;color:var(--cyan)}
+.kpi-label{font-size:13px;color:var(--text2);margin-top:4px}
+.kpi-v .kpi-value{color:var(--violet)}
+.kpi-a .kpi-value{color:var(--amber)}
+.kpi-g .kpi-value{color:var(--green)}
+.kpi-r .kpi-value{color:var(--red)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;padding:8px 12px;background:rgba(0,212,255,.06);color:var(--cyan);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.5px;cursor:pointer;user-select:none;white-space:nowrap}
+th:hover{background:rgba(0,212,255,.12)}
+td{padding:8px 12px;border-bottom:1px solid rgba(255,255,255,.04)}
+tr:hover td{background:rgba(255,255,255,.02)}
+.mono{font-family:var(--mono);font-size:12px}
+.chart-box{position:relative;width:100%;height:350px;margin:16px 0}
+.chart-sm{height:280px}
+.chart-lg{height:420px}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;font-family:var(--mono)}
+.badge-c{background:rgba(0,212,255,.12);color:var(--cyan);border:1px solid rgba(0,212,255,.3)}
+.badge-v{background:rgba(124,58,237,.12);color:var(--violet);border:1px solid rgba(124,58,237,.3)}
+.badge-a{background:rgba(245,158,11,.12);color:var(--amber);border:1px solid rgba(245,158,11,.3)}
+.badges{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.heatmap-grid{display:inline-grid;gap:4px;margin:16px 0}
+.hm-cell{border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;font-weight:600;cursor:pointer;transition:transform .15s;width:70px;height:54px;position:relative}
+.hm-cell:hover{transform:scale(1.1);z-index:2}
+.hm-cell .hm-tip{display:none;position:absolute;bottom:110%;left:50%;transform:translateX(-50%);background:var(--bg2);border:1px solid var(--cyan);border-radius:8px;padding:6px 10px;font-size:11px;white-space:nowrap;z-index:300;box-shadow:0 4px 12px rgba(0,0,0,.5)}
+.hm-cell:hover .hm-tip{display:block}
+.header{padding:48px 0 32px;border-bottom:1px solid rgba(0,212,255,.1);margin-bottom:48px}
+.header h1{font-size:34px;font-weight:700;background:linear-gradient(135deg,var(--cyan),var(--violet));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.header .sub{color:var(--text2);font-size:14px;margin-top:8px}
+.insight-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:20px;margin-bottom:12px;display:flex;gap:16px;align-items:flex-start}
+.insight-icon{font-size:24px;flex-shrink:0;margin-top:2px}
+.insight-text{font-size:14px;line-height:1.7}
+.insight-text strong{color:var(--cyan)}
+.sparkline{display:inline-block;vertical-align:middle;margin-left:8px}
+.slider-wrap{margin:16px 0;display:flex;align-items:center;gap:16px}
+.slider-wrap input[type=range]{-webkit-appearance:none;appearance:none;width:200px;height:6px;background:var(--bg3);border-radius:3px;outline:none}
+.slider-wrap input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:16px;height:16px;background:var(--cyan);border-radius:50%;cursor:pointer}
+.slider-label{font-family:var(--mono);font-size:14px;color:var(--cyan)}
+.cell-red{background:rgba(239,68,68,.2)!important;color:var(--red)}
+.cell-green{background:rgba(16,185,129,.15)!important;color:var(--green)}
+.row-warn{background:rgba(245,158,11,.08)!important}
+.row-fail{background:rgba(239,68,68,.08)!important}
+.btn{border:none;padding:10px 18px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-cyan{background:var(--cyan);color:#000}
+.btn-violet{background:var(--violet);color:#fff}
+.loading-overlay{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999}
+.spinner{width:48px;height:48px;border:4px solid var(--bg3);border-top-color:var(--cyan);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-text{margin-top:16px;color:var(--text2);font-size:14px}
+.error-box{background:rgba(239,68,68,.1);border:1px solid var(--red);border-radius:12px;padding:24px;text-align:center;color:var(--red)}
+.btn-print{position:fixed;bottom:24px;right:24px;background:var(--violet);color:#fff;border:none;padding:12px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;z-index:200;box-shadow:0 4px 20px rgba(124,58,237,.4);transition:transform .15s}
+.btn-print:hover{transform:translateY(-2px)}
+.legend-bar{display:flex;align-items:center;gap:4px;margin:12px 0;font-size:11px}
+.legend-bar span{display:inline-block;height:14px;flex:1;border-radius:3px}
+.table-wrap{max-height:600px;overflow-y:auto;border-radius:8px;border:1px solid rgba(255,255,255,.06)}
+.table-wrap table{margin:0}
+.table-wrap thead{position:sticky;top:0;z-index:2}
+.footer{border-top:1px solid rgba(255,255,255,.06);padding:32px 0;margin-top:48px;color:var(--text2);font-size:13px;text-align:center}
+.footer a{color:var(--cyan);text-decoration:none}
+@media print{
+  .sidebar,.btn-print{display:none!important}
+  .main{margin-left:0!important;padding:16px!important}
+  body{background:#fff;color:#000}
+  .card{border:1px solid #ddd;break-inside:avoid}
+  h2{color:#000}
+  .kpi-value{color:#333!important}
+  th{background:#f3f4f6;color:#333}
+}
+</style>
+</head>
+<body>
+
+<div class="loading-overlay" id="loading">
+  <div class="spinner"></div>
+  <div class="loading-text">Caricamento scaling_results.json...</div>
+</div>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-title">⚛️ Scaling Study</div>
+  <a href="#header">🏠 Header</a>
+  <a href="#mappa">🗺️ Mappa Config</a>
+  <a href="#dimensioni">📐 Dimensioni QUBO</a>
+  <a href="#tempi">⏱️ Tempi</a>
+  <a href="#convergenza">📉 Convergenza</a>
+  <a href="#qualita">🎯 Qualità QAOA</a>
+  <a href="#energia">🔋 Energia</a>
+  <a href="#server">🖥️ Server Util</a>
+  <a href="#tabella">📊 Tabella</a>
+  <a href="#insights">🔬 Insights</a>
+</nav>
+
+<div class="main" id="mainContent">
+  <div id="error-container" style="display:none"></div>
+  <div id="report" style="display:none">
+
+    <!-- 1. HEADER -->
+    <div class="header" id="header">
+      <h1>QAOA Scaling Study — VM Allocation</h1>
+      <div class="sub" id="hdr-sub"></div>
+      <div class="card-grid g4" style="margin-top:24px">
+        <div class="card kpi"><div class="kpi-value" id="kpi-configs"></div><div class="kpi-label">Configurazioni testate</div></div>
+        <div class="card kpi kpi-v"><div class="kpi-value" id="kpi-maxq"></div><div class="kpi-label">Max qubits raggiunti</div></div>
+        <div class="card kpi kpi-r"><div class="kpi-value" id="kpi-fails"></div><div class="kpi-label">Run QAOA falliti</div></div>
+        <div class="card kpi kpi-a"><div class="kpi-value" id="kpi-range"></div><div class="kpi-label">Range obiettivo (W)</div></div>
+      </div>
+    </div>
+
+    <!-- 2. MAPPA -->
+    <section id="mappa">
+      <h2><span class="emoji">🗺️</span> Mappa delle Configurazioni</h2>
+      <div class="card">
+        <p style="color:var(--text2);font-size:13px;margin-bottom:12px">Qubits richiesti per ogni coppia (M, N). Colore: verde → rosso con crescente complessità.</p>
+        <div id="config-heatmap"></div>
+        <div class="legend-bar" id="hm-legend"></div>
+      </div>
+    </section>
+
+    <!-- 3. DIMENSIONI -->
+    <section id="dimensioni">
+      <h2><span class="emoji">📐</span> Scaling delle Dimensioni QUBO</h2>
+      <div class="card">
+        <h3>Variabili vs Configurazione</h3>
+        <div class="chart-box chart-lg"><canvas id="ch-vars"></canvas></div>
+      </div>
+      <div class="card">
+        <h3>Sparsità matrice Q (%)</h3>
+        <div class="chart-box"><canvas id="ch-sparsity"></canvas></div>
+      </div>
+    </section>
+
+    <!-- 4. TEMPI -->
+    <section id="tempi">
+      <h2><span class="emoji">⏱️</span> Analisi dei Tempi</h2>
+      <div class="card-grid g3" style="margin-bottom:16px">
+        <div class="card kpi"><div class="kpi-value" id="kpi-fastest"></div><div class="kpi-label">Config più veloce (classico)</div></div>
+        <div class="card kpi kpi-r"><div class="kpi-value" id="kpi-worst-ratio"></div><div class="kpi-label">Peggior time ratio QAOA/CL</div></div>
+        <div class="card kpi kpi-a"><div class="kpi-value" id="kpi-worst-ratio-cfg"></div><div class="kpi-label">Config peggior ratio</div></div>
+      </div>
+      <div class="card">
+        <h3>Tempo Classico vs QAOA (scala log)</h3>
+        <div class="chart-box chart-lg"><canvas id="ch-time-bar"></canvas></div>
+      </div>
+      <div class="card">
+        <h3>Time Ratio (QAOA / Classico)</h3>
+        <div class="chart-box"><canvas id="ch-time-ratio"></canvas></div>
+      </div>
+    </section>
+
+    <!-- 5. CONVERGENZA -->
+    <section id="convergenza">
+      <h2><span class="emoji">📉</span> Convergenza Comparata</h2>
+      <div class="slider-wrap">
+        <label>Filtra per M:</label>
+        <input type="range" min="0" max="4" value="0" id="slider-m">
+        <span class="slider-label" id="slider-val">Tutti</span>
+      </div>
+      <div class="card">
+        <div class="chart-box chart-lg"><canvas id="ch-conv"></canvas></div>
+      </div>
+    </section>
+
+    <!-- 6. QUALITÀ -->
+    <section id="qualita">
+      <h2><span class="emoji">🎯</span> Qualità della Soluzione QAOA</h2>
+      <div class="card">
+        <h3>Scarto % QAOA vs Classico (scatter)</h3>
+        <div class="chart-box chart-lg"><canvas id="ch-quality"></canvas></div>
+      </div>
+      <div class="card">
+        <h3>Distribuzione scarto %</h3>
+        <div class="chart-box chart-sm"><canvas id="ch-hist"></canvas></div>
+      </div>
+      <div class="card" id="quality-note" style="color:var(--text2);font-size:14px"></div>
+    </section>
+
+    <!-- 7. ENERGIA -->
+    <section id="energia">
+      <h2><span class="emoji">🔋</span> Consumo Energetico Ottimizzato</h2>
+      <div class="card">
+        <h3>Energia ottima: Classico vs QAOA</h3>
+        <div class="chart-box"><canvas id="ch-energy-line"></canvas></div>
+      </div>
+      <div class="card kpi kpi-g" id="energy-best-card">
+        <div class="kpi-value" id="energy-best-val"></div>
+        <div class="kpi-label" id="energy-best-label"></div>
+      </div>
+    </section>
+
+    <!-- 8. SERVER -->
+    <section id="server">
+      <h2><span class="emoji">🖥️</span> Server Utilization</h2>
+      <div class="card">
+        <h3>Heatmap: Server accesi nella soluzione ottima</h3>
+        <div id="server-heatmap"></div>
+      </div>
+      <div class="card">
+        <h3>Server accesi / Server totali (%)</h3>
+        <div class="chart-box"><canvas id="ch-server-bar"></canvas></div>
+      </div>
+    </section>
+
+    <!-- 9. TABELLA -->
+    <section id="tabella">
+      <h2><span class="emoji">📊</span> Tabella Completa Risultati</h2>
+      <div style="margin-bottom:12px"><button class="btn btn-cyan" onclick="exportCSV()">📥 CSV Export</button></div>
+      <div class="card table-wrap"><table id="full-table"><thead><tr></tr></thead><tbody></tbody></table></div>
+    </section>
+
+    <!-- 10. INSIGHTS -->
+    <section id="insights">
+      <h2><span class="emoji">🔬</span> Insights Automatici</h2>
+      <div id="insights-container"></div>
+    </section>
+
+    <!-- 11. FOOTER -->
+    <div class="footer">
+      <p style="margin-bottom:8px">📄 Gambella C., Simonetto A., <em>"Multi-block ADMM Heuristics for Mixed-Binary Optimization on Classical and Quantum Computers"</em>, IEEE Trans. Quantum Eng. (TQE), 2020.</p>
+      <p style="margin-bottom:8px">Stack: qiskit-optimization 0.7.0 · qiskit ≥ 1.0 · Chart.js 4.x · MathJax 3</p>
+      <p><a href="../report.html">← Torna al report principale</a></p>
+    </div>
+
+  </div>
+</div>
+
+<button class="btn-print" onclick="window.print()">🖨️ Print Report</button>
+
+<script>
+const PAL=['#00d4ff','#7c3aed','#f59e0b','#10b981','#ef4444','#ec4899','#8b5cf6','#06b6d4'];
+const CYAN='#00d4ff',VIOLET='#7c3aed',AMBER='#f59e0b',GREEN='#10b981',RED='#ef4444';
+Chart.defaults.color='#9ca3af';Chart.defaults.borderColor='rgba(255,255,255,0.06)';Chart.defaults.font.family="'Inter',sans-serif";
+
+let DATA=null,RESULTS=[];
+
+async function loadData(){
+  try{const r=await fetch('./scaling_results.json');if(!r.ok)throw new Error(`HTTP ${r.status}`);return await r.json()}
+  catch(e){document.getElementById('loading').style.display='none';document.getElementById('error-container').style.display='block';
+    document.getElementById('error-container').innerHTML=`<div class="error-box" style="margin-top:80px"><h2 style="margin-bottom:12px">❌ Errore</h2><p>Impossibile caricare <code>scaling_results.json</code>.</p><p style="margin-top:8px;font-size:13px;color:var(--text2)">Esegui prima <code>python scaling_runner.py</code> nella cartella scaling_study.</p><p style="margin-top:8px;font-size:12px;color:var(--text2)">${e.message}</p></div>`;return null}
+}
+
+function lbl(r){return `M=${r.M},N=${r.N}`}
+function sorted(){return [...RESULTS].sort((a,b)=>(a.M*100+a.N)-(b.M*100+b.N))}
+function find(M,N){return RESULTS.find(r=>r.M===M&&r.N===N)}
+
+function renderAll(D){
+  DATA=D;RESULTS=D.results;const S=sorted();const meta=D.metadata;
+
+  // HEADER
+  document.getElementById('hdr-sub').textContent=`Report generato: ${new Date(meta.generated_at).toLocaleString('it-IT')} · Tempo totale: ${meta.total_time_sec}s`;
+  document.getElementById('kpi-configs').textContent=`${meta.successful_classical}/${meta.total_configs}`;
+  const maxQ=Math.max(...RESULTS.map(r=>r.n_qubits));
+  document.getElementById('kpi-maxq').textContent=maxQ;
+  const nFails=RESULTS.filter(r=>r.qaoa_error).length;
+  document.getElementById('kpi-fails').textContent=`${nFails}/${meta.total_configs}`;
+  const objs=RESULTS.filter(r=>r.classical_obj>0).map(r=>r.classical_obj);
+  document.getElementById('kpi-range').textContent=objs.length?`${Math.min(...objs).toFixed(0)} → ${Math.max(...objs).toFixed(0)}`:'—';
+
+  renderHeatmap();renderDimensions(S);renderTimes(S);renderConvergence();renderQuality(S);renderEnergy(S);renderServer();renderTable(S);renderInsights(S);
+}
+
+// 2. CONFIG HEATMAP
+function renderHeatmap(){
+  const maxM=DATA.metadata.max_M,maxN=DATA.metadata.max_N;
+  const maxQ=Math.max(...RESULTS.map(r=>r.n_qubits));const minQ=Math.min(...RESULTS.map(r=>r.n_qubits));
+  const grid=document.getElementById('config-heatmap');
+  // header row
+  let html='<div style="display:inline-grid;grid-template-columns:40px repeat('+maxN+',70px);gap:4px;align-items:center">';
+  html+='<div></div>';
+  for(let n=1;n<=maxN;n++) html+=`<div style="text-align:center;font-size:12px;color:var(--text2)">N=${n}</div>`;
+  for(let m=1;m<=maxM;m++){
+    html+=`<div style="font-size:12px;color:var(--text2)">M=${m}</div>`;
+    for(let n=1;n<=maxN;n++){
+      const r=find(m,n);
+      if(!r){html+='<div class="hm-cell" style="background:var(--bg3)">—</div>';continue}
+      const t=(r.n_qubits-minQ)/(maxQ-minQ||1);
+      const hue=120-(t*120);// green(120) to red(0)
+      const bg=`hsla(${hue},70%,40%,0.5)`;
+      const border=r.qaoa_error?'border:2px dashed var(--red)':'';
+      const warn=r.qaoa_error?'⚠️':'';
+      html+=`<div class="hm-cell" style="background:${bg};${border}"><span>${r.n_qubits}${warn}</span><div class="hm-tip">(M=${m},N=${n}): ${r.n_qubits}q, obj=${r.classical_obj.toFixed(0)}, feasible:${r.feasible?'✓':'✗'}</div></div>`;
+    }
+  }
+  html+='</div>';
+  grid.innerHTML=html;
+  // legend
+  const leg=document.getElementById('hm-legend');
+  leg.innerHTML=`<span style="color:var(--text2)">${minQ}q</span>`;
+  for(let i=0;i<10;i++){const hue=120-i*12;leg.innerHTML+=`<span style="background:hsla(${hue},70%,40%,.5)"></span>`}
+  leg.innerHTML+=`<span style="color:var(--text2)">${maxQ}q</span>`;
+}
+
+// 3. DIMENSIONS
+function renderDimensions(S){
+  const labels=S.map(lbl);
+  const origD=S.map(r=>r.n_binary_vars_original);
+  const slackD=S.map(r=>r.n_slack_vars);
+  const quboD=S.map(r=>r.n_qubo_vars);
+
+  // find first QAOA failure index for annotation
+  let failIdx=null;
+  S.forEach((r,i)=>{if(r.qaoa_error&&failIdx===null) failIdx=i});
+
+  new Chart(document.getElementById('ch-vars'),{type:'line',data:{labels,datasets:[
+    {label:'Binarie originali',data:origD,borderColor:CYAN,backgroundColor:'rgba(0,212,255,.1)',pointRadius:3,tension:.3},
+    {label:'Slack variables',data:slackD,borderColor:AMBER,backgroundColor:'rgba(245,158,11,.1)',pointRadius:3,tension:.3},
+    {label:'Totale QUBO (qubits)',data:quboD,borderColor:VIOLET,backgroundColor:'rgba(124,58,237,.1)',pointRadius:4,borderWidth:3,tension:.3},
+  ]},options:{responsive:true,maintainAspectRatio:false,animation:{duration:800},plugins:{tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${c.raw}`}}},scales:{x:{grid:{display:false}},y:{title:{display:true,text:'N. variabili'},grid:{color:'rgba(255,255,255,.04)'}}}},
+  plugins:failIdx!==null?[{id:'failLine',afterDraw(chart){const x=chart.scales.x.getPixelForValue(failIdx);const ctx=chart.ctx;ctx.save();ctx.strokeStyle=RED;ctx.setLineDash([6,4]);ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(x,chart.chartArea.top);ctx.lineTo(x,chart.chartArea.bottom);ctx.stroke();ctx.fillStyle=RED;ctx.font='11px Inter';ctx.fillText('QAOA fail →',x+4,chart.chartArea.top+14);ctx.restore()}}]:[]});
+
+  new Chart(document.getElementById('ch-sparsity'),{type:'bar',data:{labels,datasets:[
+    {label:'Sparsità Q (%)',data:S.map(r=>r.qubo_sparsity),backgroundColor:VIOLET+'99',borderRadius:4}
+  ]},options:{responsive:true,maintainAspectRatio:false,animation:{duration:800},plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{title:{display:true,text:'% termini non-zero'},grid:{color:'rgba(255,255,255,.04)'}}}}});
+}
+
+// 4. TEMPI
+function renderTimes(S){
+  const labels=S.map(lbl);
+  const tCl=S.map(r=>r.classical_time_sec);
+  const tQa=S.map(r=>r.qaoa_time_sec);
+  const ratios=S.map(r=>r.time_ratio);
+
+  // KPIs
+  const fastIdx=tCl.indexOf(Math.min(...tCl));
+  document.getElementById('kpi-fastest').textContent=labels[fastIdx]+' ('+tCl[fastIdx].toFixed(2)+'s)';
+  const validRatios=ratios.filter(x=>x!==null);
+  if(validRatios.length){
+    const worst=Math.max(...validRatios);
+    const wi=ratios.indexOf(worst);
+    document.getElementById('kpi-worst-ratio').textContent=worst.toFixed(1)+'x';
+    document.getElementById('kpi-worst-ratio-cfg').textContent=labels[wi];
+  }else{document.getElementById('kpi-worst-ratio').textContent='—';document.getElementById('kpi-worst-ratio-cfg').textContent='—'}
+
+  new Chart(document.getElementById('ch-time-bar'),{type:'bar',data:{labels,datasets:[
+    {label:'Classico (s)',data:tCl,backgroundColor:CYAN+'cc',borderRadius:4},
+    {label:'QAOA (s)',data:tQa.map(x=>x===null?0:x),backgroundColor:VIOLET+'cc',borderRadius:4},
+  ]},options:{responsive:true,maintainAspectRatio:false,animation:{duration:800},scales:{x:{grid:{display:false}},y:{type:'logarithmic',title:{display:true,text:'Secondi (log)'},grid:{color:'rgba(255,255,255,.04)'}}},plugins:{tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${c.raw.toFixed(3)}s`}}}}});
+
+  new Chart(document.getElementById('ch-time-ratio'),{type:'line',data:{labels,datasets:[
+    {label:'Time Ratio QAOA/CL',data:ratios,borderColor:VIOLET,pointRadius:4,tension:.3,spanGaps:true}
+  ]},options:{responsive:true,maintainAspectRatio:false,animation:{duration:800},scales:{x:{grid:{display:false}},y:{title:{display:true,text:'Ratio'},grid:{color:'rgba(255,255,255,.04)'}}},plugins:{tooltip:{callbacks:{label:c=>c.raw!==null?c.raw.toFixed(2)+'x':'N/A'}}}},
+  plugins:[{id:'bands',beforeDraw(chart){const ctx=chart.ctx,yA=chart.scales.y,cA=chart.chartArea;
+    // green band <2, red band >10
+    const y2=yA.getPixelForValue(2),y10=yA.getPixelForValue(10),yBot=yA.getPixelForValue(yA.min),yTop=yA.getPixelForValue(yA.max);
+    ctx.save();
+    if(y2<yBot){ctx.fillStyle='rgba(16,185,129,.06)';ctx.fillRect(cA.left,y2,cA.width,yBot-y2)}
+    if(y10>yTop){ctx.fillStyle='rgba(239,68,68,.06)';ctx.fillRect(cA.left,yTop,cA.width,y10-yTop)}
+    ctx.restore();
+  }}]});
+}
+
+// 5. CONVERGENZA
+let convChart=null;
+function renderConvergence(){
+  const canvas=document.getElementById('ch-conv');
+  const slider=document.getElementById('slider-m');
+  const valSpan=document.getElementById('slider-val');
+  slider.max=DATA.metadata.max_M;
+  function draw(filterM){
+    if(convChart)convChart.destroy();
+    const ds=[];
+    const cyanShades=['#b3f0ff','#66e0ff','#00d4ff','#009dbf','#006680'];
+    const violetShades=['#c4b5fd','#a78bfa','#7c3aed','#5b21b6','#3b0764'];
+    RESULTS.forEach(r=>{
+      if(filterM>0&&r.M!==filterM) return;
+      const shade=r.M-1;
+      if(r.classical_residuals&&r.classical_residuals.length){
+        ds.push({label:`CL M=${r.M},N=${r.N}`,data:r.classical_residuals,borderColor:cyanShades[Math.min(shade,4)],borderWidth:1.5,pointRadius:0,tension:.3})
+      }
+      if(r.qaoa_residuals&&r.qaoa_residuals.length){
+        ds.push({label:`QA M=${r.M},N=${r.N}`,data:r.qaoa_residuals,borderColor:violetShades[Math.min(shade,4)],borderWidth:1.5,pointRadius:0,tension:.3,borderDash:[4,3]})
+      }
+    });
+    convChart=new Chart(canvas,{type:'line',data:{datasets:ds},options:{responsive:true,maintainAspectRatio:false,animation:{duration:400},
+      interaction:{mode:'nearest',intersect:false},
+      plugins:{tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${c.raw?.toExponential?.(2)||c.raw}`}},legend:{display:false}},
+      scales:{x:{type:'linear',title:{display:true,text:'Iterazione'},grid:{color:'rgba(255,255,255,.04)'}},y:{type:'logarithmic',title:{display:true,text:'Residuo primale (log)'},grid:{color:'rgba(255,255,255,.04)'}}}},
+    plugins:[{id:'tolLine',afterDraw(chart){const yA=chart.scales.y,ctx=chart.ctx;const yp=yA.getPixelForValue(1e-4);ctx.save();ctx.strokeStyle=RED;ctx.setLineDash([6,4]);ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(chart.chartArea.left,yp);ctx.lineTo(chart.chartArea.right,yp);ctx.stroke();ctx.fillStyle=RED;ctx.font='11px Inter';ctx.fillText('tol=1e-4',chart.chartArea.left+4,yp-6);ctx.restore()}}]})
+  }
+  draw(0);
+  slider.addEventListener('input',()=>{const v=parseInt(slider.value);valSpan.textContent=v===0?'Tutti':'M='+v;draw(v)});
+}
+
+// 6. QUALITÀ
+function renderQuality(S){
+  const valid=S.filter(r=>!r.qaoa_error&&r.obj_diff_pct!==null);
+  const failed=S.filter(r=>r.qaoa_error);
+
+  const pointsOK=valid.map(r=>{
+    const col=Math.abs(r.obj_diff_pct)<1?GREEN:Math.abs(r.obj_diff_pct)<5?AMBER:RED;
+    return{x:r.M*r.N,y:r.obj_diff_pct,r:Math.max(r.n_qubits/3,4),backgroundColor:col,label:lbl(r)}
+  });
+  const pointsFail=failed.map(r=>({x:r.M*r.N,y:0,r:6,backgroundColor:RED,label:lbl(r)+' ✗'}));
+
+  new Chart(document.getElementById('ch-quality'),{type:'bubble',data:{datasets:[
+    {label:'QAOA OK',data:pointsOK,backgroundColor:pointsOK.map(p=>p.backgroundColor)},
+    {label:'QAOA Fallito',data:pointsFail,backgroundColor:RED,pointStyle:'crossRot',borderColor:RED,borderWidth:2},
+  ]},options:{responsive:true,maintainAspectRatio:false,animation:{duration:800},
+    plugins:{tooltip:{callbacks:{label:c=>{const d=c.raw;return `${d.label||''}: diff=${d.y?.toFixed(2)||'ERR'}%, qubits=${Math.round(d.r*3)}`}}}},
+    scales:{x:{title:{display:true,text:'M × N'},grid:{color:'rgba(255,255,255,.04)'}},y:{title:{display:true,text:'Scarto % (QAOA - Classico)'},grid:{color:'rgba(255,255,255,.04)'}}}},
+  plugins:[{id:'zeroLine',afterDraw(ch){const y=ch.scales.y.getPixelForValue(0);const ctx=ch.ctx;ctx.save();ctx.strokeStyle='rgba(255,255,255,.2)';ctx.setLineDash([6,4]);ctx.beginPath();ctx.moveTo(ch.chartArea.left,y);ctx.lineTo(ch.chartArea.right,y);ctx.stroke();ctx.restore()}}]});
+
+  // Histogram
+  const diffs=valid.map(r=>r.obj_diff_pct);
+  const bins=['<-5%','-5 a -1%','-1 a 0%','0 a 1%','1 a 5%','>5%'];
+  const counts=[0,0,0,0,0,0];
+  diffs.forEach(d=>{if(d<-5)counts[0]++;else if(d<-1)counts[1]++;else if(d<0)counts[2]++;else if(d<1)counts[3]++;else if(d<5)counts[4]++;else counts[5]++});
+  new Chart(document.getElementById('ch-hist'),{type:'bar',data:{labels:bins,datasets:[{data:counts,backgroundColor:[GREEN,GREEN,GREEN,GREEN,AMBER,RED],borderRadius:6}]},
+    options:{responsive:true,maintainAspectRatio:false,animation:{duration:800},plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{title:{display:true,text:'N. config'},ticks:{stepSize:1},grid:{color:'rgba(255,255,255,.04)'}}}}});
+
+  const sameOpt=valid.filter(r=>Math.abs(r.obj_diff_pct)<1).length;
+  document.getElementById('quality-note').innerHTML=`In <strong>${sameOpt}/${valid.length}</strong> configurazioni QAOA trova una soluzione equivalente al classico (scarto &lt; 1%).`;
+}
+
+// 7. ENERGIA
+function renderEnergy(S){
+  const labels=S.map(lbl);
+  new Chart(document.getElementById('ch-energy-line'),{type:'line',data:{labels,datasets:[
+    {label:'Energia Classico',data:S.map(r=>r.classical_energy_total),borderColor:CYAN,pointRadius:3,tension:.3},
+    {label:'Energia QAOA',data:S.map(r=>r.qaoa_energy_total),borderColor:VIOLET,pointRadius:3,tension:.3,borderDash:S.map(r=>r.qaoa_error?[4,3]:[]),spanGaps:true},
+  ]},options:{responsive:true,maintainAspectRatio:false,animation:{duration:800},plugins:{tooltip:{callbacks:{label:c=>c.raw!==null?`${c.dataset.label}: ${c.raw.toFixed(0)} W`:'N/A'}}},scales:{x:{grid:{display:false}},y:{title:{display:true,text:'Watt'},grid:{color:'rgba(255,255,255,.04)'}}}}});
+
+  // Best energy saving
+  const validE=S.filter(r=>r.classical_obj>0);
+  if(validE.length){
+    const best=validE.reduce((a,b)=>a.classical_servers_on/a.M<b.classical_servers_on/b.M?a:b);
+    document.getElementById('energy-best-val').textContent=`${best.classical_energy_total.toFixed(0)} W`;
+    document.getElementById('energy-best-label').textContent=`Config M=${best.M}, N=${best.N} — ${best.classical_servers_on}/${best.M} server accesi`;
+  }
+}
+
+// 8. SERVER
+function renderServer(){
+  const maxM=DATA.metadata.max_M,maxN=DATA.metadata.max_N;
+  const grid=document.getElementById('server-heatmap');
+  let html='<div style="display:inline-grid;grid-template-columns:40px repeat('+maxN+',70px);gap:4px;align-items:center">';
+  html+='<div></div>';
+  for(let n=1;n<=maxN;n++) html+=`<div style="text-align:center;font-size:12px;color:var(--text2)">N=${n}</div>`;
+  for(let m=1;m<=maxM;m++){
+    html+=`<div style="font-size:12px;color:var(--text2)">M=${m}</div>`;
+    for(let n=1;n<=maxN;n++){
+      const r=find(m,n);
+      if(!r){html+='<div class="hm-cell" style="background:var(--bg3)">—</div>';continue}
+      const pct=m>0?r.classical_servers_on/m:0;
+      const hue=120-pct*120;
+      html+=`<div class="hm-cell" style="background:hsla(${hue},60%,35%,.5)"><span>${r.classical_servers_on}/${m}</span><div class="hm-tip">${lbl(r)}: ${r.classical_servers_on}/${m} server accesi</div></div>`;
+    }
+  }
+  html+='</div>';
+  grid.innerHTML=html;
+
+  // Bar chart
+  const S=sorted();
+  new Chart(document.getElementById('ch-server-bar'),{type:'bar',data:{labels:S.map(lbl),datasets:[{label:'Server accesi %',data:S.map(r=>r.M>0?(r.classical_servers_on/r.M*100):0),backgroundColor:CYAN+'99',borderRadius:4}]},
+    options:{responsive:true,maintainAspectRatio:false,animation:{duration:800},plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>`${c.raw.toFixed(0)}% (${S[c.dataIndex].classical_servers_on}/${S[c.dataIndex].M})`}}},scales:{x:{grid:{display:false}},y:{title:{display:true,text:'%'},max:100,grid:{color:'rgba(255,255,255,.04)'}}}}});
+}
+
+// 9. TABELLA
+let sortCol=-1,sortAsc=true;
+const COLS=['M','N','Qubits','Obj(CL)','Obj(QA)','Diff%','Time(CL)','Time(QA)','Ratio','Iter(CL)','Iter(QA)','Feasi.','QAOA OK'];
+function renderTable(S){
+  const thead=document.querySelector('#full-table thead tr');
+  thead.innerHTML='';
+  COLS.forEach((c,i)=>{const th=document.createElement('th');th.textContent=c;th.onclick=()=>sortTable(i);thead.appendChild(th)});
+  fillTable(S);
+}
+function getVal(r,i){return[r.M,r.N,r.n_qubits,r.classical_obj,r.qaoa_obj,r.obj_diff_pct,r.classical_time_sec,r.qaoa_time_sec,r.time_ratio,r.classical_iter,r.qaoa_iter,r.feasible?1:0,r.qaoa_error?0:1][i]}
+function sortTable(col){
+  if(sortCol===col)sortAsc=!sortAsc;else{sortCol=col;sortAsc=true}
+  const S=[...RESULTS].sort((a,b)=>{let va=getVal(a,col),vb=getVal(b,col);if(va===null)va=-Infinity;if(vb===null)vb=-Infinity;return sortAsc?va-vb:vb-va});
+  fillTable(S);
+}
+function fillTable(S){
+  const tbody=document.querySelector('#full-table tbody');tbody.innerHTML='';
+  S.forEach(r=>{
+    const tr=document.createElement('tr');
+    if(r.qaoa_error)tr.classList.add('row-warn');
+    if(!r.feasible)tr.classList.add('row-fail');
+    const diff=r.obj_diff_pct;
+    const vals=[r.M,r.N,r.n_qubits,r.classical_obj?.toFixed(2),r.qaoa_obj!==null?r.qaoa_obj.toFixed(2):'—',
+      diff!==null?diff.toFixed(2)+'%':'—',r.classical_time_sec?.toFixed(3),r.qaoa_time_sec!==null?r.qaoa_time_sec.toFixed(3):'—',
+      r.time_ratio!==null?r.time_ratio.toFixed(2):'—',r.classical_iter,r.qaoa_iter!==null?r.qaoa_iter:'—',r.feasible?'✓':'✗',r.qaoa_error?'✗':'✓'];
+    vals.forEach((v,i)=>{
+      const td=document.createElement('td');td.className='mono';td.textContent=v;
+      if(i===5&&diff!==null){if(Math.abs(diff)>5)td.classList.add('cell-red');else if(Math.abs(diff)<1)td.classList.add('cell-green')}
+      tr.appendChild(td);
+    });
+    tbody.appendChild(tr);
+  });
+}
+
+function exportCSV(){
+  const S=sorted();
+  let csv=COLS.join(',')+'\n';
+  S.forEach(r=>{csv+=[r.M,r.N,r.n_qubits,r.classical_obj,r.qaoa_obj??'',r.obj_diff_pct??'',r.classical_time_sec,r.qaoa_time_sec??'',r.time_ratio??'',r.classical_iter,r.qaoa_iter??'',r.feasible,!r.qaoa_error].join(',')+'\n'});
+  const blob=new Blob([csv],{type:'text/csv'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='scaling_results.csv';a.click();URL.revokeObjectURL(a.href);
+}
+
+// 10. INSIGHTS
+function renderInsights(S){
+  const c=document.getElementById('insights-container');
+  const valid=S.filter(r=>!r.qaoa_error&&r.obj_diff_pct!==null);
+  const total=S.length;
+
+  const ins=[];
+
+  // 1. Convergence match
+  const sameOpt=valid.filter(r=>Math.abs(r.obj_diff_pct)<1).length;
+  ins.push({icon:'✅',text:`Il solver QAOA converge alla stessa soluzione del classico in <strong>${(sameOpt/valid.length*100).toFixed(0)}%</strong> dei casi (${sameOpt}/${valid.length} configurazioni con scarto &lt; 1%).`});
+
+  // 2. QAOA failures
+  const fails=S.filter(r=>r.qaoa_error);
+  if(fails.length){
+    const firstFail=fails.reduce((a,b)=>a.n_qubits<b.n_qubits?a:b);
+    ins.push({icon:'⚠️',text:`Oltre <strong>${firstFail.n_qubits} qubits</strong> (config M=${firstFail.M}, N=${firstFail.N}), QAOA inizia a fallire. ${fails.length}/${total} configurazioni non completate.`});
+  }else{
+    ins.push({icon:'✅',text:'<strong>Tutti</strong> i run QAOA sono andati a buon fine su tutte le configurazioni.'});
+  }
+
+  // 3. Slack growth
+  const slacks=S.map(r=>({mn:r.M*r.N,s:r.n_slack_vars}));
+  if(slacks.length>2){
+    // Approximate per-VM slack increase
+    const byN=S.reduce((acc,r)=>{if(!acc[r.M])acc[r.M]=[];acc[r.M].push(r);return acc},{});
+    let avgInc=0,cnt=0;
+    Object.values(byN).forEach(rs=>{rs.sort((a,b)=>a.N-b.N);for(let i=1;i<rs.length;i++){avgInc+=rs[i].n_slack_vars-rs[i-1].n_slack_vars;cnt++}});
+    const perVM=cnt>0?(avgInc/cnt).toFixed(1):'?';
+    ins.push({icon:'📈',text:`Il numero di slack variables cresce di ~<strong>${perVM}</strong> per ogni VM aggiuntiva.`});
+  }
+
+  // 4. Time ratio
+  const validT=S.filter(r=>r.time_ratio!==null);
+  if(validT.length){
+    const avgRatio=(validT.reduce((s,r)=>s+r.time_ratio,0)/validT.length).toFixed(1);
+    const peakRatio=Math.max(...validT.map(r=>r.time_ratio)).toFixed(1);
+    const peakR=validT.find(r=>r.time_ratio===Math.max(...validT.map(r=>r.time_ratio)));
+    ins.push({icon:'⏱️',text:`Il time ratio medio QAOA/Classico è <strong>${avgRatio}x</strong> con picco di <strong>${peakRatio}x</strong> nella config ${peakR?lbl(peakR):''}.`});
+  }
+
+  // 5. Best energy
+  const bestE=S.filter(r=>r.classical_obj>0).reduce((a,b)=>a.classical_energy_total<b.classical_energy_total?a:b,S[0]);
+  if(bestE)ins.push({icon:'🔋',text:`La configurazione <strong>${lbl(bestE)}</strong> minimizza il consumo energetico a <strong>${bestE.classical_energy_total.toFixed(0)} W</strong>.`});
+
+  // 6. Server consolidation
+  const avgOn=S.reduce((s,r)=>s+(r.M>0?r.classical_servers_on/r.M:0),0)/total*100;
+  ins.push({icon:'🖥️',text:`In media, solo <strong>${avgOn.toFixed(0)}%</strong> dei server vengono accesi nella soluzione ottima — il solver riesce a consolidare le VM efficacemente.`});
+
+  c.innerHTML=ins.map(i=>`<div class="insight-card"><div class="insight-icon">${i.icon}</div><div class="insight-text">${i.text}</div></div>`).join('');
+}
+
+// NAV highlight
+function setupNav(){
+  const sects=document.querySelectorAll('section,.header');
+  const links=document.querySelectorAll('.sidebar a');
+  const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('active'));const t=document.querySelector(`.sidebar a[href="#${e.target.id}"]`);if(t)t.classList.add('active')}})},{rootMargin:'-20% 0px -70% 0px'});
+  sects.forEach(s=>{if(s.id)obs.observe(s)});
+}
+
+(async()=>{
+  const data=await loadData();if(!data)return;
+  document.getElementById('loading').style.display='none';
+  document.getElementById('report').style.display='block';
+  renderAll(data);setupNav();
+})();
+</script>
+</body>
+</html>

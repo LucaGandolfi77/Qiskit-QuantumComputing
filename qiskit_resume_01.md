@@ -1,0 +1,703 @@
+REPORT TECNICO — QUANTUM OPTIMIZATION: ALLOCAZIONE VM A SERVER FISICI
+Versione: 1.0 · Data run: 16 marzo 2026, ore 11:37 · Autore: Report automatico
+
+SEZIONE 1 — PANORAMICA DEL PROGETTO [PPT]
+Titolo e Obiettivo
+Questo progetto implementa un algoritmo ibrido classico-quantistico per risolvere un problema di ottimizzazione combinatoria: allocare N macchine virtuali (VM) su M server fisici, minimizzando il consumo energetico totale dell'infrastruttura. Il cuore del progetto è l'algoritmo ADMM (Alternating Direction Method of Multipliers), che decompone il problema misto-intero in un sottoproblema binario (QUBO) e uno convesso (continuo). Il sottoproblema QUBO viene risolto con due approcci alternativi: un solver classico deterministico (NumPy) e un solver quantistico variazionale (QAOA su simulatore Qiskit).
+Stack Tecnologico
+Libreria	Versione richiesta	Ruolo
+qiskit	≥ 1.0	Framework quantum computing
+qiskit-optimization	0.7.0	ADMM, QUBO, converters
+qiskit-algorithms	ultima	NumPyMinimumEigensolver, COBYLA
+numpy	ultima stabile	Algebra lineare numerica
+matplotlib	ultima stabile	Visualizzazione convergenza
+docplex	opzionale	Modellazione IBM (con fallback)
+cupy	opzionale	Accelerazione GPU (con fallback numpy)
+cvxpy	ultima stabile	Solver QP convesso
+Riferimento Scientifico
+    Gambella C., Simonetto A., "Multi-block ADMM Heuristics for Mixed-Binary Optimization on Classical and Quantum Computers", IEEE Transactions on Quantum Engineering (TQE), 2020. DOI: 10.1109/TQE.2020.2994748
+Questo paper è la base teorica del progetto: dimostra come l'ADMM a 3 blocchi possa essere usato per risolvere problemi misti-interi su computer quantistici, separando le variabili discrete (che vanno al QAOA) da quelle continue (che vanno a un solver classico convesso).
+Schema a Blocchi del Flusso
+
+text
+[QuadraticProgram (QP)]
+         │  variabili miste: binarie (s_i, v_ji) + continue (l_i)
+         ▼
+[Analisi QUBO]  ←  penalizzazione vincoli + variabili slack
+         │  14 variabili binarie (8 originali + 6 slack)
+         ▼
+[Hamiltoniano di Ising]  ←  x_i = (1 - Z_i) / 2
+         │  14 qubit, termini ZZ e Z di Pauli
+         ▼
+[ADMM 3-block]
+    ┌────┴─────────────────────────┐
+    ▼                              ▼
+[QUBO sub-problem]         [Continuous sub-problem]
+[variabili binarie x0]     [variabili consenso z, l_i]
+    │                              │
+    ├── Classico: NumPy            └── Solver convesso (COBYLA)
+    └── Quantistico: QAOA (reps=2)
+         │
+         ▼
+[Aggiornamento duali u]  →  u ← u + ρ(x0 - z)
+         │
+         ▼
+[Risultato: allocazione ottima + consumo energetico minimizzato]
+
+
+SEZIONE 2 — FORMULAZIONE MATEMATICA [PPT + EXCEL]
+Problema di Ottimizzazione
+Funzione obiettivo:
+
+(min⁡ )┬(s,v,l) ∑129_(i=1)^M▒[P_i^I⋅s_i+P_i^D⋅l_i ] 
+ 
+Variabili decisionali:
+Variabile	Tipo	Dominio	Significato fisico
+s_i	Binaria	{0ⓜ,1}	Server i acceso (1) o spento (0)
+v_ji	Binaria	{0ⓜ,1}	VM j assegnata al server i (1) o no (0)
+l_i	Continua	[0ⓜ,C_i ]	Carico CPU totale sul server i
+Vincoli:
+Tipo	Formula	Nome	Significato
+Uguaglianza	l_i=∑130_j▒u_j ⋅v_ji	load_def_i	Il carico è la somma dei carichi delle VM assegnate
+Disuguaglianza	l_i≤C_i⋅s_i	capacity_i	Il carico è ammissibile solo se il server è acceso
+Uguaglianza	∑130_i▒v_ji =1"  "∀j	assign_j	Ogni VM deve essere assegnata a esattamente un server
+[EXCEL] Tabella Parametri dell'Istanza (M=2, N=3)
+Parametro	Server 0	Server 1	Significato
+P_i^I  — Potenza idle (W)	100	120	Consumo del server acceso ma senza carico
+P_i^D  — Potenza dinamica (W/unità)	50	60	Consumo aggiuntivo per unità di carico CPU
+C_i  — Capacità CPU (unità)	4	5	Carico massimo supportato
+Parametro	VM 0	VM 1	VM 2	Significato
+u_j  — Carico CPU (unità)	2	1	3	Domanda CPU di ciascuna VM
+Dimensioni del problema:
+Grandezza	Valore	Formula
+Variabili s_i  (server)	2	M
+Variabili v_ji  (assegnamento)	6	N × M
+Variabili l_i  (carico continuo)	2	M
+Totale variabili originali	10	M + N×M + M
+Vincoli uguaglianza	5	M (load_def) + N (assign)
+Vincoli disuguaglianza	2	M (capacity)
+
+SEZIONE 3 — DOCUMENTAZIONE FILE PYTHON
+3.1 — main.py
+Scopo generale: Entry point del progetto. Orchestra l'intero flusso in 6 fasi sequenziali: costruzione del problema, analisi QUBO, risoluzione classica, risoluzione QAOA, ispezione sottoproblemi, visualizzazione risultati e salvataggio JSON.
+Funzioni documentate:
+Funzione	Input	Output	Logica principale
+main()	nessuno	nessuno (side effects)	Chiama in sequenza tutte le fasi del progetto, stampa report finale, salva results.json
+_to_serializable(obj)	oggetto numpy/python	tipo Python nativo	Converte np.integer, np.floating, np.ndarray, np.bool_ in tipi serializzabili da json.dump
+_extract_admm_data(result, decoded, label)	ADMMOptimizationResult, dict decodificato, stringa	dict con metriche ADMM	Estrae residui, iterazioni, convergenza, energia idle/dinamica/totale, CPU usage per server
+Particolarità tecniche:
+    • Usa try/except per tentare prima build_quadratic_program_docplex(), con fallback a build_quadratic_program() se docplex non è installato
+    • Il salvataggio JSON gestisce tutti i tipi numpy con default=_to_serializable
+    • I parametri gamma/beta di QAOA vengono stimati con np.random.seed(42) perché non sono direttamente accessibili dal risultato ADMM
+    • Calcola il depth del circuito QAOA costruendo un QAOAAnsatz reale e decomponendolo
+Snippet chiave — Costruzione circuito QAOA per misurare il depth:
+
+python
+from qiskit.circuit.library import QAOAAnsatz
+ansatz = QAOAAnsatz(cost_operator=ising_op_for_circuit, reps=2)
+decomposed = ansatz.decompose()
+qaoa_circuit_info["depth"] = decomposed.depth()
+[PPT] Bullet per slide:
+    • Entry point unico: esegue tutto con python main.py
+    • 6 fasi ordinate: da problema → QUBO → ADMM classico → ADMM+QAOA → ispezione → report
+    • Salva results.json e convergence.png automaticamente
+    • Gestione errori con fallback per docplex e serializzazione numpy
+
+3.2 — problem_formulation.py
+Scopo generale: Definisce e costruisce il QuadraticProgram del problema di allocazione VM. Fornisce due metodi di costruzione (manuale e tramite DOcplex) e una funzione per analizzare la conversione verso QUBO e Ising.
+Funzioni documentate:
+Funzione	Input	Output	Logica principale
+build_quadratic_program(M, N, PI, PD, C, U)	interi, liste float	QuadraticProgram	Costruisce variabili binarie s/v, continue l, obiettivo lineare, 3 gruppi di vincoli lineari usando l'API nativa di qiskit-optimization
+build_quadratic_program_docplex(M, N, PI, PD, C, U)	interi, liste float	QuadraticProgram	Costruisce prima un modello DOcplex mdl, poi lo converte con from_docplex_mp(mdl); fallback a build_quadratic_program se docplex non disponibile
+analyze_qubo_conversion(qp)	QuadraticProgram	dict con dimensioni	Analizza struttura QP, costruisce una versione solo-binaria ausiliaria, converte a QUBO e Ising, stampa statistiche e dimensioni
+Costanti di default:
+
+python
+DEFAULT_M = 2; DEFAULT_N = 3
+DEFAULT_PI = [100, 120]; DEFAULT_PD = [50, 60]
+DEFAULT_C = [4, 5]; DEFAULT_U = [2, 1, 3]
+Particolarità tecniche:
+    • Le variabili continue l_i sono fondamentali per la decomposizione ADMM: senza di esse il problema non potrebbe essere separato in QUBO + convex
+    • Per la conversione QUBO usa convert_qubo_cached da performance_utils (caching)
+    • La conversione Ising viene fatta sul QP ausiliario solo-binario (il QP misto non è convertibile direttamente)
+    • Gestisce il fallback silenzioso se la conversione QUBO/Ising fallisce
+Snippet chiave — Vincolo di definizione del carico (link binarie↔continue):
+
+python
+for i in range(M):
+    coeff = {f"l_{i}": 1}
+    for j in range(N):
+        coeff[f"v_{j}_{i}"] = -U[j]
+    qp.linear_constraint(linear=coeff, sense="==", rhs=0, name=f"load_def_{i}")
+[PPT] Bullet per slide:
+    • Doppia modalità: costruzione manuale + DOcplex con fallback automatico
+    • Variabili miste: 8 binarie (s,v) + 2 continue (l) = 10 totali
+    • 7 vincoli lineari: 2 load_def + 2 capacity + 3 assign
+    • Analisi QUBO: 14 variabili (8 binarie + 6 slack), 14 qubit Ising
+
+3.3 — admm_solver.py
+Scopo generale: Configura e lancia l'ADMMOptimizer con due solver diversi per il sottoproblema QUBO: NumPy (classico) e QAOA (quantistico). Fornisce i parametri ADMM condivisi.
+Funzioni documentate:
+Funzione	Input	Output	Logica principale
+get_admm_parameters()	nessuno	ADMMParameters	Restituisce parametri condivisi: rho=10, factor_c=100000, beta=10000, maxiter=100, tol=1e-4, three_block=True
+solve_classical(qp)	QuadraticProgram	ADMMOptimizationResult	Crea NumPyMinimumEigensolver → MinimumEigenOptimizer → ADMMOptimizer, chiama .solve(qp)
+solve_qaoa(qp)	QuadraticProgram	ADMMOptimizationResult	Crea StatevectorSampler → QAOA(reps=2, COBYLA(maxiter=200)) → MinimumEigenOptimizer → ADMMOptimizer, chiama .solve(qp)
+Parametri ADMM spiegati:
+Parametro	Valore	Significato
+rho_initial	10	Penalità iniziale del termine quadratico ρ/2∥x_0−z∥^2
+factor_c	100000	Fattore di scaling per i vincoli (deve dominare su rho per garantire fattibilità)
+beta	10000	Penalità per i vincoli di uguaglianza
+maxiter	100	Numero massimo di iterazioni ADMM
+tol	1e-4	Tolleranza sui residui primali per convergenza
+three_block	True	Decomposizione a 3 blocchi: binario, continuo, slack
+Particolarità tecniche:
+    • QAOA importata da qiskit_optimization.minimum_eigensolvers (wrapper compatibile con V2)
+    • StatevectorSampler da qiskit.primitives — simula il circuito in modo esatto senza rumore
+    • Il ContinuousOptimizer non viene passato esplicitamente: usa il default interno di ADMMOptimizer
+Snippet chiave — Configurazione QAOA:
+
+python
+sampler = StatevectorSampler()
+qaoa = QAOA(sampler=sampler, reps=2, optimizer=COBYLA(maxiter=200))
+qubo_optimizer = MinimumEigenOptimizer(qaoa)
+admm = ADMMOptimizer(params=params, qubo_optimizer=qubo_optimizer)
+[PPT] Bullet per slide:
+    • Stesso oggetto ADMMParameters per classico e QAOA (confronto equo)
+    • QAOA: 2 strati (reps=2), ottimizzazione parametri con COBYLA (max 200 valutazioni)
+    • Simulatore statevector: esatto, noiseless, costo esponenziale in memoria (2^14 = 16384 stati)
+    • factor_c=100000 >> rho=10: garantisce che i vincoli vengano rispettati
+
+3.4 — inspect_subproblems.py
+Scopo generale: Ispezione e analisi della struttura interna dell'ADMM dopo la risoluzione. Estrae e stampa le variabili di stato (x0, z, u), analizza le dimensioni dei sottoproblemi QUBO e convesso, descrive l'Hamiltoniano di Ising.
+Funzioni documentate:
+Funzione	Input	Output	Logica principale
+inspect_admm_result(result, qp, label)	ADMMOptimizationResult, QuadraticProgram, str	dict con info interne	Accede a result.state per estrarre x0, z, u, residuals, converge; conta variabili binarie/continue; stima dimensioni QUBO; calcola numero qubit Ising
+print_admm_decomposition_summary(info)	dict da inspect_admm_result	nessuno (stampa)	Stampa un riassunto testuale della decomposizione ADMM con spiegazione del Lagrangiano Aumentato e dei 3 blocchi
+Struttura ADMM a 3 blocchi (dalla docstring del file):
+Il Lagrangiano Aumentato è:
+
+Lρ (x_0ⓜ,zⓜ,u)=f(x_0 )+g(z)+u^T (x_0−z)+ρ/2∥x_0−z∥^2
+ 
+dove:
+    • f(x_0 )  = obiettivo sulle variabili binarie
+    • g(z)  = obiettivo + vincoli sulle variabili continue
+    • ρ = parametro di penalità
+Particolarità tecniche:
+    • Usa hasattr(result, "state") per accesso sicuro allo stato interno (API non pubblica di qiskit-optimization)
+    • Distingue variabili per v.vartype.name: "BINARY" vs "CONTINUOUS"
+    • Stima n_vars_qubo = n_binary nel contesto ADMM (l'ADMM non aggiunge slack nel sub-problem QUBO, li gestisce internamente)
+[PPT] Bullet per slide:
+    • Espone l'interno dell'ADMM: x0 (binario), z (consenso), u (moltiplicatori)
+    • Il QUBO sub-problem ha 8 variabili binarie nel contesto ADMM
+    • La mappatura QUBO→Ising usa: x_i=(1−Z_i )/2
+    • Il residuo primale ∥x_0−z∥ misura la distanza dal consenso
+
+3.5 — results_analysis.py
+Scopo generale: Visualizzazione e analisi dei risultati post-ottimizzazione. Decodifica il vettore soluzione, stampa tabelle di allocazione, confronta classico vs QAOA, genera il plot di convergenza.
+Funzioni documentate:
+Funzione	Input	Output	Logica principale
+decode_solution(result, M, N)	ADMMOptimizationResult, int, int	dict con s, v, l, fval	Estrae result.x, suddivide in s (primi M), v (successivi N×M, reshape NxM), l (ultimi M); arrotonda binarie con np.round
+print_allocation_table(decoded, M, N, PI, PD, C, U)	dict, parametri	nessuno (stampa)	Stampa 4 sezioni: stato server, assegnamento VM, utilizzo CPU per server, consumo energetico
+compare_results(result_classical, result_qaoa, M, N)	due ADMMOptimizationResult, int, int	nessuno (stampa)	Confronta fval, server accesi, gap assoluto/relativo, identità delle soluzioni
+plot_convergence(result_classical, result_qaoa, save_path)	due ADMMOptimizationResult, str	file PNG	Plotta residui primali su scala log; fallback a bar chart se state.residuals non disponibile
+Particolarità tecniche:
+    • decode_solution usa result.x[:M] per i server, result.x[M:M+N*M].reshape(N,M) per le VM, result.x[M+N*M:M+N*M+M] per i carichi continui
+    • plot_convergence usa matplotlib.use("Agg") per backend non-interattivo (compatibile con ambienti senza display)
+    • Il calcolo energetico nel confronto usa la formula: idle = Σ P^I_i * s_i, dinamico = Σ P^D_i * u_j * v_ji
+Snippet chiave — Decodifica soluzione:
+
+python
+x = np.array(result.x)
+s = np.round(x[:M]).astype(int)
+v_flat = np.round(x[M: M + N * M]).astype(int)
+v = v_flat.reshape(N, M)
+l = x[M + N * M: M + N * M + M]
+[PPT] Bullet per slide:
+    • Decodifica automatica del vettore x in variabili fisicamente significative
+    • Plot convergenza: scala logaritmica, linea tratteggiata rossa a tol=1e-4
+    • Confronto tabulare: obiettivo, server, gap, identità soluzione
+    • Output: convergence.png a 150 DPI
+
+3.6 — performance_utils.py
+Scopo generale: Utility per migliorare le performance tramite caching della conversione QP→QUBO e wrapper opzionale per GPU (CuPy). Evita conversioni ripetute dello stesso QuadraticProgram in loop.
+Funzioni documentate:
+Funzione	Input	Output	Logica principale
+_make_qp_key(qp)	QuadraticProgram	tupla (name, nvars, nconstr)	Costruisce una chiave hash dal nome del QP e dal numero di variabili/vincoli
+convert_qubo_cached(qp)	QuadraticProgram	oggetto QUBO	Controlla la cache dict; se miss, applica QuadraticProgramToQubo().convert(qp) e salva; se hit, restituisce direttamente
+clear_qubo_cache()	nessuno	nessuno	Svuota la cache globale (utile per test/unit)
+scipy_to_cupy(scipy_mat)	matrice scipy.sparse	matrice cupyx.sparse o scipy.sparse	Tenta conversione CSR su GPU; se fallisce, restituisce l'originale
+Particolarità tecniche:
+    • Cache implementata come dizionario globale a livello modulo: cache: dict[Tuple[str,int,int], Any] = {}
+    • scipy_to_cupy è definita in due versioni: una reale (se import cupy ha successo) e una no-op (fallback)
+    • Il caching è utile soprattutto nello scaling study dove lo stesso problema viene risolto più volte
+[PPT] Bullet per slide:
+    • Caching in-memory della conversione QUBO (costosa per problemi grandi)
+    • Chiave cache: (nome, n_variabili, n_vincoli) — lightweight e sicura
+    • Supporto GPU opzionale: nessuna modifica al codice chiamante necessaria
+    • Clear cache per unit testing: clear_qubo_cache()
+
+3.7 — cupy_utils.py
+Scopo generale: Wrapper leggero (drop-in) per usare CuPy quando disponibile, altrimenti NumPy. Permette al resto del codice di usare un unico modulo xp indipendentemente dall'hardware disponibile.
+Funzioni documentate:
+Funzione	Input	Output	Logica principale
+asarray(x)	array-like qualsiasi	array su device (GPU o CPU)	Se CuPy disponibile: xp.asarray(x) con fallback a numpy.asarray; altrimenti numpy.asarray
+asnumpy(x)	array CuPy o NumPy	numpy.ndarray	Se l'input è cupy.ndarray, chiama xp.asnumpy(x); altrimenti numpy.asarray(x)
+scipy_to_gpu(scipy_mat)	matrice scipy.sparse	cupyx.sparse.csr_matrix o originale	Tenta cusparse.csr_matrix(scipy_mat); se fallisce o CuPy non c'è, restituisce l'originale
+has_cupy()	nessuno	bool	Restituisce _HAS_CUPY (True se import cupy ha avuto successo)
+Variabili esportate:
+    • xp: il modulo array (cupy o numpy)
+    • _HAS_CUPY: flag booleano
+Particolarità tecniche:
+    • Il pattern try: import cupy; except: import numpy as xp è il modo standard per fallback GPU trasparente
+    • Le conversioni sparse sono "best-effort" e possono fallire silenziosamente
+[PPT] Bullet per slide:
+    • Trasparente: il codice chiamante usa sempre xp.array(...) senza sapere se è GPU o CPU
+    • Test rapido: python -c "import cupy_utils; print(cupy_utils.has_cupy())"
+    • Conversione sparse GPU: best-effort, fallback automatico
+    • Compatibile con WSL2 + driver NVIDIA
+
+SEZIONE 4 — ANALISI DEL FILE results.json [EXCEL]
+Timestamp del run: 2026-03-16T11:37:51.836954
+[EXCEL] Struttura Completa results.json
+Campo JSON	Valore	Descrizione
+timestamp	2026-03-16T11:37:51.836954	Data/ora del run
+problema.M	2	Numero server
+problema.N	3	Numero VM
+problema.P_idle		Potenza idle per server (W)
+problema.P_dynamic		Potenza dinamica per server (W/unità)
+problema.C_capacity		Capacità CPU massima per server
+problema.u_cpu		Carico CPU per VM
+qubo_info.n_variabili_originali	8	Binarie prima della conversione
+qubo_info.n_continuous	2	Continue escluse dal QUBO
+qubo_info.n_original_total	10	Totale variabili nel QP misto
+qubo_info.n_slack_variables	6	Slack introdotte per vincoli ≤
+qubo_info.n_variabili_totali_qubo	14	Variabili binarie dopo QUBO
+qubo_info.n_termini_quadratici	59	Termini off-diagonale in Q
+qubo_info.n_termini_lineari	8	Termini diagonali in Q
+continuous_subproblem.n_variabili_continue	2	Variabili l_i nel sottoproblema continuo
+continuous_subproblem.n_vincoli	7	Vincoli totali del sottoproblema convesso
+continuous_subproblem.n_eq	5	Vincoli uguaglianza (2 load_def + 3 assign)
+continuous_subproblem.n_ineq	2	Vincoli disuguaglianza (2 capacity)
+Analisi Qualitativa della Matrice Q (14×14)
+La matrice Q è simmetrica e ha queste caratteristiche:
+    • Valori diagonali principali: 14196.0 (s_0), 22145.0 (s_1), poi valori più piccoli per le variabili di assegnamento VM (2743, 2763, 50, 60, ...) e per le slack. I valori grandi su s_0 e s_1 derivano dalla somma dei termini di penalità dei vincoli che coinvolgono i server.
+    • Valori off-diagonali dominanti: −21144.0 (s_0, v_2_0), −26430.0 (s_1, v_2_1) — le interazioni più forti sono tra il server e la VM con carico maggiore (u_2=3).
+    • Sparsità: 59 termini quadratici + 8 lineari su una matrice 14×14 triangolare superiore (105 posizioni totali): ~63% delle posizioni sono non-zero — la matrice è relativamente densa.
+    • Struttura a blocchi: Si distingue chiaramente un blocco server (righe/colonne 0-1), un blocco VM (righe/colonne 2-7) e un blocco slack (righe/colonne 8-13).
+[EXCEL] Tabella Comparativa ADMM Classico vs QAOA
+Metrica	ADMM Classico	ADMM + QAOA	Differenza
+Valore obiettivo (W)	538.4725	538.5600	+0.0875
+Iterazioni eseguite	68	100	+32
+Convergenza raggiunta	No	No	—
+Residuo finale	9.61e-05	8.84e-04	QAOA ~9× peggio
+s_servers			Identici
+v_allocation (VM0)			Identici
+v_allocation (VM1)			Identici
+v_allocation (VM2)			Identici
+l_continuous (S0)	3.9694	3.9712	+0.0018
+l_continuous (S1)	2.0000	2.0000	0.0000
+CPU usage Server 0	4.0	4.0	Identici
+CPU usage Server 1	2.0	2.0	Identici
+Energia idle (W)	220.0	220.0	0
+Energia dinamica (W)	320.0	320.0	0
+Energia totale (W)	540.0	540.0	0
+[EXCEL] Andamento Residui Primali — Selezione iterazioni chiave
+Iter.	Classico	QAOA	Note
+1	1.7303	1.7303	Partenza identica
+5	1.7257	1.7269	QAOA leggermente peggio
+10	1.4229	1.4230	Quasi identici
+15	1.1733	1.1756	Stessa velocità
+20	1.0091	1.1047	Classico inizia a divergere meno
+22	0.3826	0.5006	Classico scende bruscamente
+30	0.3902	0.3616	QAOA recupera
+40	0.3411	0.2245	QAOA più aggressivo
+45	0.3260	0.3221	Simili
+46	0.0318	0.5569	Classico scende sotto 0.1
+50	0.0140	0.0850	Classico molto più regolare
+60	0.0022	0.2747	QAOA ancora oscillante
+65	0.0007	0.0502	Classico quasi converge
+68	9.61e-05	—	Classico termina a iter. 68
+80	—	0.0077	QAOA scende lentamente
+90	—	0.0018	QAOA sotto 0.01
+95	—	0.0009	QAOA quasi 1e-3
+100	—	8.84e-04	QAOA termina — non converge
+[EXCEL] Allocazione VM — Soluzione Finale
+VM	Carico CPU (u_j)	Assegnata a	Motivazione
+VM 0	2 unità	Server 1	v_0_1 = 1
+VM 1	1 unità	Server 0	v_1_0 = 1
+VM 2	3 unità	Server 0	v_2_0 = 1
+[EXCEL] Breakdown Energetico
+Componente	Server 0	Server 1	Totale
+Energia idle (W)	100 (s_0=1)	120 (s_1=1)	220
+Carico binario (unità)	1+3 = 4	2	—
+Energia dinamica (W)	50 × 4 = 200	60 × 2 = 120	320
+Energia totale (W)	300	240	540
+
+SEZIONE 5 — CONFRONTO CLASSICO vs QAOA [PPT + EXCEL]
+Analisi della Convergenza
+Entrambi i solver non raggiungono la convergenza entro tol = 1e-4 nelle iterazioni disponibili. Le motivazioni sono diverse:
+    • Classico (NumPy): Termina a iterazione 68 con residuo 9.61e-05, quasi convergente — è al 96% della tolleranza richiesta. La curva di discesa è regolare e monotona nella fase finale.
+    • QAOA: Termina alla iterazione massima (100) con residuo 8.84e-04 — circa 9 volte peggiore del classico. Il profilo di convergenza è molto oscillante: balzi improvvisi in su e in giù indicano che il circuito variazionale a ogni iterazione ADMM non trova sempre il minimo del QUBO sub-problem, introducendo rumore algoritmico.
+[EXCEL] Tabella Comparativa Metriche Principali
+Metrica	Classico	QAOA	Unità	Delta
+Valore obiettivo	538.4725	538.5600	W	+0.0875
+Gap relativo	—	+0.016%	%	—
+Iterazioni	68	100	iter	+32
+Residuo finale	9.61e-05	8.84e-04	—	×9.2 peggio
+Convergenza	No (quasi)	No	—	—
+Energia totale	540	540	W	0
+Server accesi	2/2	2/2	—	0
+Soluzione identica	—	Sì	—	—
+[PPT] Slide "Classico vs QAOA — Risultati"
+    • Entrambi trovano la stessa soluzione ottima (stessa allocazione VM, stessa energia)
+    • Il gap di obiettivo è minimo: 0.016% — QAOA praticamente equivalente al classico
+    • Il classico è più rapido (68 vs 100 iterazioni) e più regolare nella convergenza
+    • Il QAOA oscilla perché il circuito variazionale è euristico
+    • Su hardware reale, il QAOA soffrirebbe di ulteriore rumore (decoerenza, gate errors)
+    • Conclusione: per questa dimensione, il classico è superiore; il QAOA è competitivo solo per problemi più grandi dove il classico non scala
+
+SEZIONE 6 — DECOMPOSIZIONE ADMM [PPT]
+Il Lagrangiano Aumentato
+
+Lρ (x_0ⓜ,zⓜ,u)=f(x_0 )+g(z)+u^T (x_0−z)+ρ/2∥x_0−z∥^2
+ 
+I 3 Blocchi ADMM
+Blocco 1 — QUBO Sub-problem (variabili binarie x_0):
+
+(min⁡ )┬(x_0∈{01├ }┤^8 , ) f(x_0 )+u^T x_0+ρ/2∥x_0−z∥^2
+ 
+    • Contiene: s_i (server on/off), v_ji (assegnamento VM)
+    • La matrice Q include i costi originali + penalità ADMM + moltiplicatori u
+    • Risolto con: NumPy (classico) o QAOA (quantistico)
+Blocco 2 — Continuous Sub-problem (variabili di consenso z,l_i):
+
+(min⁡ )┬z g(z)−u^T z+ρ/2∥x_0−z∥^2  "s.t. vincoli lineari"
+ 
+    • Contiene: copia continua delle binarie + variabili l_i (carico CPU)
+    • Vincoli: load_def, capacity, assign
+    • Risolto con: solver QP convesso (COBYLA interno)
+Blocco 3 — Aggiornamento Duale:
+
+u←u+ρ(x_0−z)
+ 
+    • Forza la convergenza verso il consenso x_0 = z
+    • Il residuo primale ∥x_0−z∥ è il criterio di stop
+Perché Serve la Decomposizione
+Il problema originale è misto-intero (MIQP). QAOA può ottimizzare solo problemi puramente binari (QUBO). La decomposizione ADMM separa il problema in un QUBO (risolto da QAOA) e un QP convesso continuo (risolto classicamente), rendendo il problema accessibile al quantum computing.
+
+SEZIONE 7 — PIPELINE QP → QUBO → ISING [PPT + EXCEL]
+Passaggio QP → QUBO
+    1. Penalizzazione dei vincoli di uguaglianza (load_def, assign): aggiunta alla funzione obiettivo come termini "penalty"⋅("vincolo" ├ )┤^2 ┤
+    2. Introduzione di variabili slack per i vincoli di disuguaglianza (capacity): 1 slack per vincolo ≤ → 2 slack per 2 vincoli capacity; ulteriori slack per encoding binario
+    3. Totale: 8 variabili originali + 6 slack = 14 variabili QUBO
+Passaggio QUBO → Ising
+La mappatura è:
+
+x_i=(1−Z_i)/2, Z_i∈{−ⓜ,1+1}
+ 
+Sostituendo nella funzione QUBO ∑130_ij▒Q_ij  x_i x_j  si ottiene l'Hamiltoniano:
+
+H=∑129_(i<j)▒J_ij  Z_i Z_j+∑129_i▒hi  Z_i+"costante"
+ 
+dove J_ij  sono i coefficienti ZZ e hi  i coefficienti Z.
+[EXCEL] Coefficienti ZZ dell'Hamiltoniano di Ising (dal results.json)
+Qubit 1	Qubit 2	Coefficiente ZZ	Interpretazione
+0	2	-3524.0	Accoppiamento s_0 ↔ v_0_0
+0	4	-1762.0	Accoppiamento s_0 ↔ v_1_0
+0	6	-5286.0	Accoppiamento s_0 ↔ v_2_0 (più forte: u_2=3)
+0	8	-1762.0	Accoppiamento s_0 ↔ slack
+0	9	-3524.0	Accoppiamento s_0 ↔ slack
+0	10	-1762.0	Accoppiamento s_0 ↔ slack
+1	3	-4405.0	Accoppiamento s_1 ↔ v_0_1
+1	5	-2202.5	Accoppiamento s_1 ↔ v_1_1
+Nota: I coefficienti negativi (ferromagnetici) tendono a far coincidere i qubit collegati, coerentemente con la logica "se un server è acceso, gli accoppiamenti favoriscono l'assegnamento delle VM a quel server".
+[EXCEL] Tabella Dimensioni — Pipeline Completa
+Fase	Variabili	Dimensione	Note
+Problema fisico	s_i + v_ji + l_i	2 + 6 + 2 = 10	Misto: binario + continuo
+QuadraticProgram (QP)	Tutte	10	API qiskit-optimization
+QUBO (solo binarie)	s_i + v_ji + slack	8 + 6 = 14	Le continue escluse
+Ising Hamiltoniano	qubit	14	1 qubit per variabile QUBO
+ADMM QUBO sub-problem	x_0	8	Solo le binarie originali
+ADMM Continuous sub-prob	z + l_i	2	Solo le continue
+
+SEZIONE 8 — SOLUZIONE FINALE DECODIFICATA [PPT + EXCEL]
+[EXCEL] Tabella Stato Server
+Server	Stato	P_idle (W)	P_dyn (W/u)	Capacità CPU	Carico attuale	Utilizzo %
+Server 0	✅ ACCESO	100	50	4	4.0	100%
+Server 1	✅ ACCESO	120	60	5	2.0	40%
+[EXCEL] Tabella Allocazione VM
+VM	Carico CPU (u_j)	Server assegnato	v_ji classico	v_ji QAOA
+VM 0	2 unità	Server 1	v_0_1 = 1	v_0_1 = 1
+VM 1	1 unità	Server 0	v_1_0 = 1	v_1_0 = 1
+VM 2	3 unità	Server 0	v_2_0 = 1	v_2_0 = 1
+[EXCEL] Breakdown Energetico Completo
+Voce	Calcolo	Valore (W)
+Idle Server 0	100 × s_0 = 100 × 1	100
+Idle Server 1	120 × s_1 = 120 × 1	120
+Subtotale Idle		220
+Dyn. Server 0	50 × (u_1×v_1_0 + u_2×v_2_0) = 50×(1+3)	200
+Dyn. Server 1	60 × (u_0×v_0_1) = 60×2	120
+Subtotale Dinamico		320
+TOTALE ENERGIA		540 W
+Analisi: Si può fare meglio spegnendo un server?
+Scenario ipotetico: spegnere Server 1, tutte VM su Server 0.
+    • Carico Server 0 = u_0 + u_1 + u_2 = 2 + 1 + 3 = 6 unità
+    • Capacità Server 0 = 4 → INFEASIBLE (violazione vincolo capacity)
+Scenario alternativo: spegnere Server 0, tutte VM su Server 1.
+    • Carico Server 1 = 6 unità, capacità = 5 → INFEASIBLE anche questo
+Conclusione: Con questi parametri, nessun singolo server può ospitare tutte le VM. La soluzione con entrambi i server accesi è necessaria e ottima. Il solver ADMM ha trovato la configurazione globalmente ottima.
+[PPT] Slide "Soluzione Ottima Trovata"
+    • Entrambi i server devono restare accesi (carico totale = 6, max singolo server = 5)
+    • VM 2 (più pesante, u=3) su Server 0 con VM 1 (u=1): carico = 4/4 = 100%
+    • VM 0 (u=2) su Server 1: carico = 2/5 = 40% (margine di sicurezza)
+    • Energia ottima: 540 W (non migliorabile con questi parametri)
+    • Classico e QAOA trovano identica allocazione
+
+SEZIONE 9 — ARCHITETTURA DEL PROGETTO [PPT]
+Diagramma Testuale Dipendenze
+
+text
+main.py
+├── problem_formulation.py
+│   ├── performance_utils.py  (convert_qubo_cached)
+│   └── [docplex]             (opzionale, fallback)
+├── admm_solver.py
+│   └── [qiskit-optimization] (ADMMOptimizer, ADMMParameters)
+├── inspect_subproblems.py
+│   └── problem_formulation.py
+└── results_analysis.py
+    └── [matplotlib]
+
+cupy_utils.py               (importato da performance_utils.py)
+performance_utils.py        (importato da problem_formulation.py)
+Dipendenze Esterne
+Libreria	Tipo	Usata in
+qiskit ≥ 1.0	Essenziale	admm_solver, problem_formulation
+qiskit-optimization 0.7.0	Essenziale	tutti
+qiskit-algorithms	Essenziale	admm_solver, main
+numpy	Essenziale	tutti
+matplotlib	Essenziale	results_analysis
+docplex	Opzionale	problem_formulation
+cupy	Opzionale	cupy_utils, performance_utils
+cvxpy	Raccomandato	ADMMOptimizer (solver convesso)
+[PPT] Suggerimento Diagramma UML
+Per PowerPoint, disegnare un diagramma a componenti con:
+    • Box main.py al centro con frecce uscenti verso i 4 moduli
+    • Box performance_utils.py e cupy_utils.py in basso come "utility"
+    • Freccia esterna da admm_solver.py verso il cloud "Qiskit Framework"
+    • Freccia esterna da problem_formulation.py verso "DOcplex (opzionale)"
+
+SEZIONE 10 — PUNTI DI FORZA E LIMITAZIONI [PPT]
+Punti di Forza
+#	Punto di forza	Dettaglio
+1	Modularità	Ogni file è autonomo e testabile con if __name__ == "__main__"
+2	Fallback robusti	docplex→manuale; cupy→numpy; tutti i fallback silenziosi
+3	Documentazione interna	Docstring complete con formule matematiche nei commenti
+4	Output strutturato	results.json con tutte le metriche, pronto per analisi
+5	Ispezione ADMM	inspect_subproblems.py espone stato interno (x0, z, u)
+6	Caching	convert_qubo_cached evita conversioni ripetute
+7	Confronto equo	Stesso ADMMParameters per classico e QAOA
+Limitazioni
+#	Limitazione	Impatto
+1	QAOA costoso	reps=2 + COBYLA(maxiter=200): ogni iterazione ADMM lancia 200 valutazioni del circuito
+2	Non convergenza	Nessuno dei due solver raggiunge tol=1e-4 con i parametri attuali
+3	Statevector esponenziale	2^14 = 16384 stati in memoria; con 20 qubit sarebbero 1M stati
+4	Parametri QAOA non estratti	gamma/beta ottimali generati con np.random.seed(42), non dal vero risultato
+5	Densità matrice Q	~63% non-zero: problemi più grandi renderebbero QAOA ancora più costoso
+6	Un solo run	Nessuna statistica su più esecuzioni (QAOA è stocastico)
+7	Scala fissa	M=2, N=3: lo scaling study richiederebbe istanze più grandi
+
+SEZIONE 11 — TABELLA RIASSUNTIVA FINALE [EXCEL + PPT]
+Metrica	Valore	Categoria
+M (server)	2	Problema
+N (VM)	3	Problema
+Variabili binarie originali	8	Dimensioni
+Variabili continue	2	Dimensioni
+Variabili totali QP	10	Dimensioni
+Variabili slack	6	Dimensioni
+Variabili QUBO totali	14	Dimensioni
+Qubit Ising	14	Quantum
+Vincoli uguaglianza	5	Struttura
+Vincoli disuguaglianza	2	Struttura
+Termini quadratici Q	59	Struttura
+Termini lineari Q	8	Struttura
+Sparsità matrice Q	~37% zero	Struttura
+Obj. classico (W)	538.4725	Risultati
+Obj. QAOA (W)	538.5600	Risultati
+Gap assoluto (W)	0.0875	Risultati
+Gap relativo (%)	0.016%	Risultati
+Iterazioni classico	68	Performance
+Iterazioni QAOA	100	Performance
+Converged classico	No (residuo 9.61e-05)	Convergenza
+Converged QAOA	No (residuo 8.84e-04)	Convergenza
+Server accesi	2/2	Soluzione
+Allocazione identica	Sì	Soluzione
+Energia idle (W)	220	Energia
+Energia dinamica (W)	320	Energia
+Energia totale (W)	540	Energia
+QAOA reps	2	QAOA Config
+COBYLA maxiter	200	QAOA Config
+rho ADMM	10	ADMM Config
+factor_c ADMM	100000	ADMM Config
+beta ADMM	10000	ADMM Config
+tol ADMM	1e-4	ADMM Config
+three_block	True	ADMM Config
+
+SEZIONE 12 — SUGGERIMENTI SLIDE POWERPOINT [PPT]
+Slide 1 — Titolo e Agenda
+Titolo: Quantum Optimization per l'Allocazione di VM a Server Fisici
+    • Problema: minimizzazione del consumo energetico in data center
+    • Approccio: algoritmo ibrido classico-quantistico (ADMM + QAOA)
+    • Istanza testata: M=2 server, N=3 VM
+    • Riferimento: Gambella & Simonetto, IEEE TQE 2020
+Slide 2 — Il Problema
+Titolo: Allocazione VM e Risparmio Energetico
+    • Ogni VM ha un carico CPU da allocare su un server fisico
+    • Ogni server ha consumo idle (sempre acceso) + dinamico (proporzionale al carico)
+    • Obiettivo: minimizzare il totale dei Watt consumati
+    • Vincoli: un server può ospitare VM solo se è acceso e non supera la capacità CPU
+    • Applicazione reale: ottimizzazione di cloud data center
+Slide 3 — Formulazione Matematica
+Titolo: Il Modello Matematico (MIQP)
+    • Funzione obiettivo: min Σ [P_idle × s_i + P_dyn × l_i]
+    • Variabili: s_i ∈ {0,1} (server), v_ji ∈ {0,1} (assegnamento), l_i ∈ ℝ (carico)
+    • 3 gruppi di vincoli: definizione carico, capacità, assegnamento unico
+    • Problema misto-intero (MIQP): NP-difficile in generale
+    • Soluzione esatta per M=2, N=3: 10 variabili, 7 vincoli
+Slide 4 — Architettura del Progetto
+Titolo: Struttura del Codice
+    • main.py: entry point, orchestra tutto il flusso
+    • problem_formulation.py: costruisce il QuadraticProgram
+    • admm_solver.py: configura e lancia ADMM (classico e QAOA)
+    • inspect_subproblems.py: analisi struttura interna ADMM
+    • results_analysis.py: decodifica risultati e genera plot
+    • cupy_utils.py / performance_utils.py: utility GPU e caching
+Slide 5 — Pipeline QP → QUBO → Ising → ADMM
+Titolo: Il Flusso di Trasformazione
+    • QP misto → QUBO: penalizzazione vincoli + 6 variabili slack
+    • QUBO → Ising: mappatura x_i = (1-Z_i)/2, 14 qubit
+    • ADMM separa il problema in 2 blocchi: binario (QUBO) + continuo (QP convesso)
+    • Il blocco QUBO va al solver classico (NumPy) o quantistico (QAOA)
+    • Il blocco continuo va sempre a un solver convesso classico
+Slide 6 — Il Circuito QAOA
+Titolo: QAOA — Quantum Approximate Optimization Algorithm
+    • Circuito variazionale con reps=2 livelli (layer)
+    • Ogni livello: gate di costo (dipende dall'Hamiltoniano) + gate di mixing
+    • Parametri ottimizzati: γ₁, γ₂ (costo) e β₁, β₂ (mixing)
+    • Ottimizzazione classica dei parametri: COBYLA, max 200 iterazioni
+    • Simulato su statevector (esatto, noiseless): 2¹⁴ = 16.384 stati
+Slide 7 — Risultati Numerici
+Titolo: Classico vs QAOA — Confronto
+    • Obiettivo: Classico 538.47 W vs QAOA 538.56 W (gap: 0.016%)
+    • Iterazioni: Classico 68 vs QAOA 100 (+47%)
+    • Entrambi non convergono formalmente, ma trovano la stessa soluzione
+    • Il classico è più regolare; il QAOA oscilla per natura euristica
+    • Su hardware reale (rumore quantistico), il gap sarebbe molto maggiore
+Slide 8 — Soluzione Ottima Trovata
+Titolo: Allocazione Ottima: M=2, N=3
+    • VM 2 (carica, u=3) + VM 1 (u=1) → Server 0: utilizzo 100% (4/4 CPU)
+    • VM 0 (u=2) → Server 1: utilizzo 40% (2/5 CPU)
+    • Entrambi i server devono restare accesi (carico totale 6 > max singolo 5)
+    • Energia: 220 W idle + 320 W dinamica = 540 W totali
+    • Impossibile fare meglio: vincoli di capacità impongono 2 server
+Slide 9 — Convergenza ADMM
+Titolo: Andamento della Convergenza
+    • Residuo primale ||x₀ - z||: misura il disaccordo tra variabili binarie e consenso
+    • Entrambi partono da residuo ≈ 1.73 e scendono verso 0
+    • Classico: discesa regolare, quasi convergente a iter. 68 (residuo 9.6×10⁻⁵)
+    • QAOA: oscillazioni marcate per natura stocastica, residuo finale 8.8×10⁻⁴
+    • Linea di riferimento: tol = 1×10⁻⁴ (convergenza formale)
+Slide 10 — Conclusioni e Sviluppi Futuri
+Titolo: Conclusioni e Prossimi Passi
+    • QAOA trova la stessa soluzione del classico con gap < 0.02%
+    • Per problemi piccoli (14 qubit), il classico è più efficiente
+    • Il vantaggio del QAOA emerge per problemi più grandi (scaling study necessario)
+    • Sviluppi futuri: test su M=3,4,5 e N=4,5,6; uso di hardware reale IBM Q
+    • Miglioramenti: aumentare reps, warm-start QAOA, rumore realistico
+
+DATI DA COPIARE IN EXCEL — Blocco Aggregato
+Tutte le tabelle precedenti sono pronte per il copia-incolla. Di seguito le principali in formato compatto:
+TAB_1: Parametri Problema
+
+text
+Parametro,        Server 0, Server 1
+P_idle (W),       100,      120
+P_dynamic (W/u),  50,       60
+Capacità CPU,     4,        5
+VM,   Carico CPU (u)
+VM 0, 2
+VM 1, 1
+VM 2, 3
+TAB_2: Dimensioni Pipeline
+
+text
+Fase,             N. variabili
+QP originale,     10
+Binarie originali,8
+Continue,         2
+Slack introdotte, 6
+QUBO totale,      14
+Qubit Ising,      14
+TAB_3: Risultati Comparativi
+
+text
+Metrica,             Classico,    QAOA,       Delta
+Obiettivo (W),       538.4725,    538.5600,   +0.0875
+Gap relativo,        —,           +0.016%,    —
+Iterazioni,          68,          100,        +32
+Residuo finale,      9.61E-05,    8.84E-04,   x9.2
+Convergenza,         No,          No,         —
+Energia totale (W),  540,         540,        0
+Server accesi,       2/2,         2/2,        0
+Soluzione identica,  —,           Sì,         —
+
+TAB_4: Allocazione VM
+
+text
+VM, Carico (u), Server, Utilizzo server
+0,  2,          1,      40% (2/5)
+1,  1,          0,      100% (4/4)
+2,  3,          0,      100% (4/4)
+TAB_5: Breakdown Energetico
+
+text
+Voce,              Server 0 (W), Server 1 (W), Totale (W)
+Idle,              100,          120,          220
+Dinamica,          200,          120,          320
+Totale per server, 300,          240,          540
+TAB_6: Mega-tabella Metriche (Sezione 11 completa)
+
+text
+Metrica,                     Valore
+M (server),                  2
+N (VM),                      3
+Variabili binarie originali, 8
+Variabili continue,          2
+Variabili totali QP,         10
+Variabili slack,             6
+Variabili QUBO totali,       14
+Qubit Ising,                 14
+Vincoli uguaglianza,         5
+Vincoli disuguaglianza,      2
+Termini quadratici Q,        59
+Termini lineari Q,           8
+Obj. classico (W),           538.4725
+Obj. QAOA (W),               538.5600
+Gap assoluto (W),            0.0875
+Gap relativo (%),            0.016%
+Iterazioni classico,         68
+Iterazioni QAOA,             100
+Converged classico,          No
+Converged QAOA,              No
+Residuo finale classico,     9.61E-05
+Residuo finale QAOA,         8.84E-04
+Server accesi,               2/2
+Energia idle (W),            220
+Energia dinamica (W),        320
+Energia totale (W),          540
+QAOA reps,                   2
+COBYLA maxiter,              200
+rho ADMM,                    10
+factor_c ADMM,               100000
+beta ADMM,                   10000
+tol ADMM,                    1E-04

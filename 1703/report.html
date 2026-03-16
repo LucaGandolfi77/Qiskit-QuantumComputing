@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quantum VM Allocation — ADMM + QAOA Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0e1a;--bg2:#111827;--bg3:#1f2937;--cyan:#00d4ff;--violet:#7c3aed;--amber:#f59e0b;--green:#10b981;--red:#ef4444;--text:#e5e7eb;--text2:#9ca3af;--font:'Inter',sans-serif;--mono:'JetBrains Mono',monospace;--sidebar-w:240px}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+/* Sidebar */
+.sidebar{position:fixed;left:0;top:0;width:var(--sidebar-w);height:100vh;background:var(--bg2);border-right:1px solid rgba(0,212,255,.15);padding:24px 16px;overflow-y:auto;z-index:100;display:flex;flex-direction:column;gap:4px}
+.sidebar-title{font-size:13px;font-weight:700;color:var(--cyan);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid rgba(0,212,255,.2)}
+.sidebar a{display:block;padding:8px 12px;color:var(--text2);text-decoration:none;font-size:13px;border-radius:6px;transition:all .2s}
+.sidebar a:hover{background:rgba(0,212,255,.08);color:var(--text)}
+.sidebar a.active{background:rgba(0,212,255,.12);color:var(--cyan);font-weight:600}
+/* Main */
+.main{margin-left:var(--sidebar-w);padding:32px 48px 80px}
+section{margin-bottom:64px;scroll-margin-top:24px}
+h2{font-size:28px;font-weight:700;margin-bottom:24px;display:flex;align-items:center;gap:12px}
+h2 .emoji{font-size:28px}
+h3{font-size:18px;font-weight:600;color:var(--cyan);margin:20px 0 12px}
+/* Cards */
+.card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:24px;margin-bottom:16px}
+.card-grid{display:grid;gap:16px}
+.card-grid-2{grid-template-columns:1fr 1fr}
+.card-grid-3{grid-template-columns:1fr 1fr 1fr}
+.card-grid-4{grid-template-columns:1fr 1fr 1fr 1fr}
+/* KPI */
+.kpi{text-align:center;padding:20px}
+.kpi-value{font-family:var(--mono);font-size:32px;font-weight:700;color:var(--cyan)}
+.kpi-label{font-size:13px;color:var(--text2);margin-top:4px}
+.kpi-violet .kpi-value{color:var(--violet)}
+.kpi-amber .kpi-value{color:var(--amber)}
+.kpi-green .kpi-value{color:var(--green)}
+/* Badge */
+.badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;font-family:var(--mono)}
+.badge-cyan{background:rgba(0,212,255,.12);color:var(--cyan);border:1px solid rgba(0,212,255,.3)}
+.badge-violet{background:rgba(124,58,237,.12);color:var(--violet);border:1px solid rgba(124,58,237,.3)}
+.badge-amber{background:rgba(245,158,11,.12);color:var(--amber);border:1px solid rgba(245,158,11,.3)}
+.badges{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
+/* Table */
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;padding:10px 14px;background:rgba(0,212,255,.06);color:var(--cyan);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+td{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.04)}
+tr:hover td{background:rgba(255,255,255,.02)}
+.mono{font-family:var(--mono);font-size:13px}
+/* Chart container */
+.chart-container{position:relative;width:100%;height:350px;margin:16px 0}
+.chart-container-sm{height:280px}
+.chart-container-lg{height:420px}
+/* Flow */
+.flow{display:flex;align-items:center;justify-content:center;gap:0;margin:24px 0;flex-wrap:wrap}
+.flow-step{background:var(--bg2);border:2px solid rgba(0,212,255,.3);border-radius:12px;padding:16px 20px;text-align:center;min-width:180px;position:relative}
+.flow-step h4{color:var(--cyan);font-size:14px;margin-bottom:6px}
+.flow-step p{font-size:12px;color:var(--text2);font-family:var(--mono)}
+.flow-step .highlight{color:var(--amber);font-weight:700}
+.flow-arrow{font-size:28px;color:var(--violet);padding:0 8px;flex-shrink:0}
+/* Heatmap */
+.heatmap-grid{display:inline-grid;gap:3px;margin:16px 0}
+.heatmap-cell{width:48px;height:48px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:11px;font-weight:600;cursor:pointer;transition:transform .15s}
+.heatmap-cell:hover{transform:scale(1.15);z-index:2}
+/* Gauge */
+.gauge-wrap{text-align:center;padding:16px}
+.gauge-label{font-size:14px;font-weight:600;margin-bottom:8px}
+.gauge-bar{height:12px;background:var(--bg);border-radius:6px;overflow:hidden;margin-top:8px}
+.gauge-fill{height:100%;border-radius:6px;transition:width .8s ease}
+.gauge-pct{font-family:var(--mono);font-size:20px;font-weight:700;margin-top:6px}
+/* Circuit */
+.circuit{display:flex;align-items:stretch;gap:0;margin:16px 0;overflow-x:auto;padding:16px 0}
+.circuit-wire{display:flex;align-items:center}
+.circuit-block{padding:8px 16px;border-radius:8px;font-size:12px;font-weight:600;text-align:center;min-width:100px;border:2px solid}
+.circuit-conn{width:40px;height:2px;background:var(--text2)}
+/* Header */
+.header{padding:48px 0 32px;border-bottom:1px solid rgba(0,212,255,.1);margin-bottom:48px}
+.header h1{font-size:36px;font-weight:700;background:linear-gradient(135deg,var(--cyan),var(--violet));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.header .sub{color:var(--text2);font-size:15px;margin-top:8px}
+/* Server status */
+.server-icon{font-size:24px;text-align:center;margin-bottom:4px}
+/* Loading */
+.loading-overlay{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999}
+.spinner{width:48px;height:48px;border:4px solid var(--bg3);border-top-color:var(--cyan);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-text{margin-top:16px;color:var(--text2);font-size:14px}
+.error-box{background:rgba(239,68,68,.1);border:1px solid var(--red);border-radius:12px;padding:24px;text-align:center;color:var(--red)}
+/* Print */
+.btn-print{position:fixed;bottom:24px;right:24px;background:var(--violet);color:#fff;border:none;padding:12px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;z-index:200;box-shadow:0 4px 20px rgba(124,58,237,.4);transition:transform .15s}
+.btn-print:hover{transform:translateY(-2px)}
+@media print{
+  .sidebar,.btn-print{display:none!important}
+  .main{margin-left:0!important;padding:16px!important}
+  body{background:#fff;color:#000}
+  .card{border:1px solid #ddd;break-inside:avoid}
+  .chart-container{break-inside:avoid}
+  h2{color:#000}
+  .kpi-value{color:#333!important}
+  th{background:#f3f4f6;color:#333}
+}
+/* Tooltip for heatmap */
+.tooltip-custom{position:absolute;background:var(--bg2);border:1px solid var(--cyan);border-radius:8px;padding:8px 12px;font-size:12px;pointer-events:none;z-index:300;white-space:nowrap;box-shadow:0 4px 12px rgba(0,0,0,.5)}
+/* Footer */
+.footer{border-top:1px solid rgba(255,255,255,.06);padding:32px 0;margin-top:48px;color:var(--text2);font-size:13px;text-align:center}
+.footer a{color:var(--cyan);text-decoration:none}
+</style>
+</head>
+<body>
+
+<div class="loading-overlay" id="loading">
+  <div class="spinner"></div>
+  <div class="loading-text">Caricamento results.json...</div>
+</div>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-title">⚛️ Navigation</div>
+  <a href="#header">🏠 Header</a>
+  <a href="#problema">⚛️ Problema</a>
+  <a href="#conversione">🔄 Conversione</a>
+  <a href="#qubo">🧮 QUBO</a>
+  <a href="#ising">⚡ Ising</a>
+  <a href="#circuito">🔬 Circuito QAOA</a>
+  <a href="#convergenza">📉 Convergenza</a>
+  <a href="#allocazione">🖥️ Allocazione</a>
+  <a href="#energia">🔋 Energia</a>
+  <a href="#cpu">⚙️ CPU</a>
+  <a href="#confronto">📊 Confronto</a>
+</nav>
+
+<div class="main" id="mainContent">
+  <div id="error-container" style="display:none"></div>
+  <div id="report-content" style="display:none">
+
+    <!-- 1. HEADER -->
+    <div class="header" id="header">
+      <h1>Quantum VM Allocation — ADMM + QAOA Report</h1>
+      <div class="sub" id="timestamp-sub"></div>
+      <div class="badges" id="header-badges"></div>
+      <div class="card" style="margin-top:20px">
+        <p style="color:var(--text2);font-size:14px;margin-bottom:8px">Funzione obiettivo:</p>
+        <div id="obj-formula">
+          \[\min \sum_{i=1}^{M}\left[P^I_i \cdot s_i + P^D_i \cdot l_i\right]\]
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. PARAMETRI -->
+    <section id="problema">
+      <h2><span class="emoji">⚛️</span> Parametri del Problema</h2>
+      <div class="card">
+        <table id="params-table"><thead><tr><th>Parametro</th><th>Simbolo</th><th>Valore</th></tr></thead><tbody></tbody></table>
+      </div>
+      <div class="card-grid card-grid-2">
+        <div class="card">
+          <h3>🖥️ Server Configuration</h3>
+          <div id="server-cards"></div>
+        </div>
+        <div class="card">
+          <h3>📦 Virtual Machines</h3>
+          <div id="vm-cards"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. PIPELINE -->
+    <section id="conversione">
+      <h2><span class="emoji">🔄</span> Pipeline di Conversione</h2>
+      <div class="card">
+        <div class="flow" id="flow-diagram"></div>
+      </div>
+    </section>
+
+    <!-- 4. QUBO -->
+    <section id="qubo">
+      <h2><span class="emoji">🧮</span> Analisi QUBO</h2>
+      <div class="card-grid card-grid-3">
+        <div class="card kpi"><div class="kpi-value" id="qubo-dim"></div><div class="kpi-label">Dimensione QUBO</div></div>
+        <div class="card kpi kpi-amber"><div class="kpi-value" id="qubo-sparsity"></div><div class="kpi-label">Sparsità matrice Q</div></div>
+        <div class="card kpi kpi-violet"><div class="kpi-value" id="qubo-terms"></div><div class="kpi-label">Termini quadratici</div></div>
+      </div>
+      <div class="card">
+        <h3>Variabili originali vs Slack</h3>
+        <div class="chart-container chart-container-sm"><canvas id="chart-slack"></canvas></div>
+      </div>
+      <div class="card">
+        <h3>Heatmap Matrice Q</h3>
+        <div style="overflow-x:auto"><div id="q-heatmap"></div></div>
+      </div>
+    </section>
+
+    <!-- 5. ISING -->
+    <section id="ising">
+      <h2><span class="emoji">⚡</span> Ising Hamiltonian</h2>
+      <div class="card">
+        <div id="ising-formula" style="margin-bottom:16px">
+          \[H = \sum_{i<j}\tilde{A}_{ij}\,\sigma^Z_i\otimes\sigma^Z_j + \sum_i \tilde{b}_i\,\sigma^Z_i + \tilde{c}\]
+        </div>
+        <div class="card-grid card-grid-3" style="margin-bottom:16px">
+          <div class="card kpi"><div class="kpi-value" id="ising-zz-count"></div><div class="kpi-label">Coefficienti ZZ</div></div>
+          <div class="card kpi kpi-violet"><div class="kpi-value" id="ising-z-count"></div><div class="kpi-label">Coefficienti Z</div></div>
+          <div class="card kpi kpi-amber"><div class="kpi-value" id="ising-offset-val"></div><div class="kpi-label">Offset c̃</div></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Coefficienti ZZ e Z</h3>
+        <div class="chart-container"><canvas id="chart-ising"></canvas></div>
+      </div>
+    </section>
+
+    <!-- 6. CIRCUITO QAOA -->
+    <section id="circuito">
+      <h2><span class="emoji">🔬</span> Circuito QAOA</h2>
+      <div class="badges" id="qaoa-badges"></div>
+      <div class="card">
+        <h3>Schema Circuito (p=2)</h3>
+        <div id="circuit-diagram" style="overflow-x:auto"></div>
+      </div>
+      <div class="card">
+        <h3>Parametri Ottimizzati</h3>
+        <table id="qaoa-params-table"><thead><tr><th>Parametro</th><th>Layer 1</th><th>Layer 2</th></tr></thead><tbody></tbody></table>
+      </div>
+    </section>
+
+    <!-- 7. CONVERGENZA -->
+    <section id="convergenza">
+      <h2><span class="emoji">📉</span> Convergenza ADMM</h2>
+      <div class="card-grid card-grid-4">
+        <div class="card kpi"><div class="kpi-value" id="conv-cl-iter"></div><div class="kpi-label">Iterazioni Classico</div></div>
+        <div class="card kpi kpi-violet"><div class="kpi-value" id="conv-qa-iter"></div><div class="kpi-label">Iterazioni QAOA</div></div>
+        <div class="card kpi kpi-green"><div class="kpi-value" id="conv-cl-obj"></div><div class="kpi-label">Obiettivo Classico</div></div>
+        <div class="card kpi kpi-amber"><div class="kpi-value" id="conv-qa-obj"></div><div class="kpi-label">Obiettivo QAOA</div></div>
+      </div>
+      <div class="card">
+        <h3>Residui Primali vs Iterazione</h3>
+        <div class="chart-container chart-container-lg"><canvas id="chart-conv"></canvas></div>
+      </div>
+    </section>
+
+    <!-- 8. ALLOCAZIONE -->
+    <section id="allocazione">
+      <h2><span class="emoji">🖥️</span> Risultati — Allocazione VM</h2>
+      <div class="card-grid card-grid-2">
+        <div class="card">
+          <h3>Classico (NumPy)</h3>
+          <div id="alloc-cl"></div>
+        </div>
+        <div class="card">
+          <h3>QAOA (Quantistico)</h3>
+          <div id="alloc-qa"></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Tabella Allocazione</h3>
+        <table id="alloc-table"><thead><tr><th>VM</th><th>Carico CPU</th><th>Server (Classico)</th><th>Server (QAOA)</th><th>Consumo contribuito</th></tr></thead><tbody></tbody></table>
+      </div>
+    </section>
+
+    <!-- 9. ENERGIA -->
+    <section id="energia">
+      <h2><span class="emoji">🔋</span> Analisi Energetica</h2>
+      <div class="card-grid card-grid-3">
+        <div class="card kpi"><div class="kpi-value" id="en-total-cl"></div><div class="kpi-label">Energia Classico (W)</div></div>
+        <div class="card kpi kpi-violet"><div class="kpi-value" id="en-total-qa"></div><div class="kpi-label">Energia QAOA (W)</div></div>
+        <div class="card kpi kpi-green"><div class="kpi-value" id="en-optimized"></div><div class="kpi-label">Energia Totale Ottimizzata</div></div>
+      </div>
+      <div class="card-grid card-grid-2">
+        <div class="card">
+          <h3>Consumo per Server</h3>
+          <div class="chart-container"><canvas id="chart-energy-bar"></canvas></div>
+        </div>
+        <div class="card">
+          <h3>Breakdown Energetico</h3>
+          <div class="chart-container"><canvas id="chart-energy-donut"></canvas></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. CPU -->
+    <section id="cpu">
+      <h2><span class="emoji">⚙️</span> Utilizzo CPU per Server</h2>
+      <div class="card-grid card-grid-2" id="cpu-gauges"></div>
+    </section>
+
+    <!-- 11. CONFRONTO -->
+    <section id="confronto">
+      <h2><span class="emoji">📊</span> Confronto Classico vs QAOA</h2>
+      <div class="card">
+        <div class="chart-container"><canvas id="chart-compare"></canvas></div>
+      </div>
+      <div class="card">
+        <h3>Tabella Differenze</h3>
+        <table id="compare-table"><thead><tr><th>Metrica</th><th>Classico</th><th>QAOA</th><th>Scarto %</th></tr></thead><tbody></tbody></table>
+        <p id="compare-note" style="margin-top:16px;color:var(--text2);font-size:14px"></p>
+      </div>
+    </section>
+
+    <!-- 12. FOOTER -->
+    <div class="footer" id="footer-section">
+      <p style="margin-bottom:8px">📄 Gambella C., Simonetto A., <em>"Multi-block ADMM Heuristics for Mixed-Binary Optimization on Classical and Quantum Computers"</em>, IEEE Trans. Quantum Eng. (TQE), 2020. <a href="https://doi.org/10.1109/TQE.2020.3033139" target="_blank">doi:10.1109/TQE.2020.3033139</a></p>
+      <p style="margin-bottom:8px">Stack: qiskit-optimization 0.7.0 · qiskit ≥ 1.0 · Python 3.x · Chart.js 4.x · MathJax 3</p>
+      <p id="footer-ts"></p>
+    </div>
+
+  </div>
+</div>
+
+<button class="btn-print" onclick="window.print()">📥 Esporta PDF</button>
+
+<script>
+const PALETTE = ['#00d4ff','#7c3aed','#f59e0b','#10b981','#ef4444','#ec4899','#8b5cf6','#06b6d4'];
+const CYAN = '#00d4ff', VIOLET = '#7c3aed', AMBER = '#f59e0b', GREEN = '#10b981';
+
+Chart.defaults.color = '#9ca3af';
+Chart.defaults.borderColor = 'rgba(255,255,255,0.06)';
+Chart.defaults.font.family = "'Inter', sans-serif";
+
+async function loadData() {
+  try {
+    const resp = await fetch('./results.json');
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    return await resp.json();
+  } catch (e) {
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('error-container').style.display = 'block';
+    document.getElementById('error-container').innerHTML = `
+      <div class="error-box" style="margin-top:80px">
+        <h2 style="margin-bottom:12px">❌ Errore nel caricamento</h2>
+        <p>Impossibile caricare <code>results.json</code>.</p>
+        <p style="margin-top:8px;font-size:13px;color:var(--text2)">Esegui prima <code>python main.py</code> nella cartella QAOA per generare i dati.</p>
+        <p style="margin-top:8px;font-size:12px;color:var(--text2)">${e.message}</p>
+      </div>`;
+    return null;
+  }
+}
+
+function renderReport(D) {
+  // --- HEADER ---
+  const ts = D.timestamp ? new Date(D.timestamp) : new Date();
+  document.getElementById('timestamp-sub').textContent = `Report generato: ${ts.toLocaleString('it-IT')}`;
+  const nq = D.qaoa_circuit?.n_qubits || D.qubo_info?.n_variabili_totali_qubo || '?';
+  const nQubo = D.qubo_info?.n_variabili_totali_qubo || '?';
+  const iterCl = D.admm_classico?.iterazioni || 0;
+  const iterQa = D.admm_qaoa?.iterazioni || 0;
+  document.getElementById('header-badges').innerHTML = `
+    <span class="badge badge-cyan">${nq} qubits</span>
+    <span class="badge badge-violet">${nQubo} variabili QUBO</span>
+    <span class="badge badge-amber">${iterCl}/${iterQa} iter ADMM</span>`;
+
+  // --- PARAMETRI ---
+  const P = D.problema;
+  const paramRows = [
+    ['Server', 'M', P.M],
+    ['VM', 'N', P.N],
+    ['Consumo idle', 'P<sup>I</sup>', JSON.stringify(P.P_idle) + ' W'],
+    ['Consumo dinamico', 'P<sup>D</sup>', JSON.stringify(P.P_dynamic) + ' W'],
+    ['Capacità CPU', 'C', JSON.stringify(P.C_capacity)],
+    ['Carico VM', 'u', JSON.stringify(P.u_cpu)],
+  ];
+  const ptb = document.querySelector('#params-table tbody');
+  paramRows.forEach(r => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${r[0]}</td><td class="mono">${r[1]}</td><td class="mono">${r[2]}</td>`;
+    ptb.appendChild(tr);
+  });
+
+  // Server cards
+  let serverHtml = '';
+  for (let i = 0; i < P.M; i++) {
+    serverHtml += `<div style="display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04)">
+      <span style="font-size:20px">🖥️</span>
+      <div><div style="font-weight:600">Server ${i}</div>
+      <div style="font-size:12px;color:var(--text2)">P<sup>I</sup>=${P.P_idle[i]}W · P<sup>D</sup>=${P.P_dynamic[i]}W · C=${P.C_capacity[i]}</div></div></div>`;
+  }
+  document.getElementById('server-cards').innerHTML = serverHtml;
+
+  let vmHtml = '';
+  for (let j = 0; j < P.N; j++) {
+    vmHtml += `<div style="display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04)">
+      <span style="font-size:20px">📦</span>
+      <div><div style="font-weight:600">VM ${j}</div>
+      <div style="font-size:12px;color:var(--text2)">Carico CPU: ${P.u_cpu[j]}</div></div></div>`;
+  }
+  document.getElementById('vm-cards').innerHTML = vmHtml;
+
+  // --- FLOW DIAGRAM ---
+  const Q = D.qubo_info;
+  const flowSteps = [
+    {title:'Quadratic Program',desc:`${Q.n_original_total || Q.n_variabili_originali + Q.n_continuous} var (${Q.n_variabili_originali} bin + ${Q.n_continuous} cont)`},
+    {title:'QUBO',desc:`${Q.n_variabili_totali_qubo} var totali`,extra:`<span class="highlight">+${Q.n_slack_variables} slack</span>`},
+    {title:'Ising Hamiltonian',desc:`${nq} qubit`},
+    {title:'ADMM + QAOA',desc:`${iterQa} iterazioni`},
+  ];
+  let flowHtml = '';
+  flowSteps.forEach((s, i) => {
+    if (i > 0) flowHtml += '<div class="flow-arrow">→</div>';
+    flowHtml += `<div class="flow-step"><h4>${s.title}</h4><p>${s.desc}</p>${s.extra ? '<p>' + s.extra + '</p>' : ''}</div>`;
+  });
+  document.getElementById('flow-diagram').innerHTML = flowHtml;
+
+  // --- QUBO ---
+  document.getElementById('qubo-dim').textContent = Q.n_variabili_totali_qubo;
+  const totalCells = Q.n_variabili_totali_qubo * Q.n_variabili_totali_qubo;
+  const nonZero = Q.n_termini_quadratici + Q.n_termini_lineari;
+  const sparsity = totalCells > 0 ? ((1 - nonZero / totalCells) * 100).toFixed(1) : '0';
+  document.getElementById('qubo-sparsity').textContent = sparsity + '%';
+  document.getElementById('qubo-terms').textContent = Q.n_termini_quadratici;
+
+  // Slack bar chart
+  new Chart(document.getElementById('chart-slack'), {
+    type: 'bar',
+    data: {
+      labels: ['Variabili binarie originali', 'Slack variables'],
+      datasets: [{
+        data: [Q.n_variabili_originali, Q.n_slack_variables],
+        backgroundColor: [CYAN, AMBER],
+        borderRadius: 6, barThickness: 40,
+      }]
+    },
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      animation: {duration: 800},
+      plugins: {legend: {display: false},
+        tooltip: {callbacks: {label: ctx => ctx.raw + ' variabili'}}},
+      scales: {x: {grid: {display: false}}, y: {grid: {display: false}}}
+    }
+  });
+
+  // Q Heatmap
+  if (Q.matrice_Q && Q.matrice_Q.length > 0) {
+    const n = Q.matrice_Q.length;
+    const maxAbs = Math.max(...Q.matrice_Q.flat().map(Math.abs)) || 1;
+    const grid = document.getElementById('q-heatmap');
+    grid.style.gridTemplateColumns = `repeat(${n}, 1fr)`;
+    grid.classList.add('heatmap-grid');
+    const cellSize = n > 20 ? 20 : n > 14 ? 28 : 36;
+    grid.style.gridTemplateColumns = `repeat(${n}, ${cellSize}px)`;
+    for (let i = 0; i < n; i++) {
+      for (let j = 0; j < n; j++) {
+        const v = Q.matrice_Q[i][j];
+        const norm = v / maxAbs;
+        let bg;
+        if (Math.abs(v) < 1e-10) bg = 'rgba(255,255,255,0.02)';
+        else if (v > 0) bg = `rgba(239,68,68,${Math.abs(norm) * 0.8 + 0.1})`;
+        else bg = `rgba(0,212,255,${Math.abs(norm) * 0.8 + 0.1})`;
+        const cell = document.createElement('div');
+        cell.className = 'heatmap-cell';
+        cell.style.width = cellSize + 'px';
+        cell.style.height = cellSize + 'px';
+        cell.style.background = bg;
+        cell.style.fontSize = (cellSize < 24 ? 8 : 10) + 'px';
+        cell.title = `Q[${i}][${j}] = ${v.toFixed(2)}`;
+        if (cellSize >= 28 && Math.abs(v) > 1e-10) cell.textContent = v.toFixed(0);
+        grid.appendChild(cell);
+      }
+    }
+  }
+
+  // --- ISING ---
+  const IS = D.ising;
+  document.getElementById('ising-zz-count').textContent = IS.coefficienti_zz?.length || 0;
+  document.getElementById('ising-z-count').textContent = IS.coefficienti_z?.length || 0;
+  document.getElementById('ising-offset-val').textContent = (IS.offset || 0).toFixed(1);
+
+  // Ising scatter
+  const zzData = (IS.coefficienti_zz || []).map((c, i) => ({x: i, y: c.value}));
+  const zData = (IS.coefficienti_z || []).map((c, i) => ({x: i, y: c.value}));
+  new Chart(document.getElementById('chart-ising'), {
+    type: 'scatter',
+    data: {
+      datasets: [
+        {label: 'Coefficienti ZZ (J_ij)', data: zzData, backgroundColor: CYAN, pointRadius: 4},
+        {label: 'Coefficienti Z (h_i)', data: zData, backgroundColor: VIOLET, pointRadius: 5, pointStyle: 'rectRot'},
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      animation: {duration: 800},
+      plugins: {tooltip: {callbacks: {label: ctx => `Indice ${ctx.raw.x}: ${ctx.raw.y.toFixed(4)}`}}},
+      scales: {
+        x: {title: {display: true, text: 'Indice'}, grid: {color: 'rgba(255,255,255,0.04)'}},
+        y: {title: {display: true, text: 'Valore coefficiente'}, grid: {color: 'rgba(255,255,255,0.04)'}},
+      }
+    }
+  });
+
+  // --- CIRCUITO QAOA ---
+  const QC = D.qaoa_circuit;
+  document.getElementById('qaoa-badges').innerHTML = `
+    <span class="badge badge-cyan">${QC.n_qubits} qubits</span>
+    <span class="badge badge-violet">depth ${QC.depth}</span>
+    <span class="badge badge-amber">reps ${QC.reps}</span>`;
+
+  // Circuit diagram
+  let circHtml = '<div style="display:flex;flex-direction:column;gap:12px;padding:16px">';
+  circHtml += '<div style="display:flex;align-items:center;gap:0">';
+  circHtml += '<div style="width:80px;font-size:13px;color:var(--text2);font-family:var(--mono)">|0⟩<sup>⊗' + QC.n_qubits + '</sup></div>';
+  circHtml += '<div class="circuit-conn"></div>';
+  circHtml += '<div class="circuit-block" style="border-color:var(--cyan);color:var(--cyan);background:rgba(0,212,255,.08)">H<sup>⊗n</sup></div>';
+  circHtml += '<div class="circuit-conn"></div>';
+  for (let p = 1; p <= QC.reps; p++) {
+    circHtml += `<div class="circuit-block" style="border-color:var(--violet);color:var(--violet);background:rgba(124,58,237,.08)">U<sub>C</sub>(γ<sub>${p}</sub>)</div>`;
+    circHtml += '<div class="circuit-conn"></div>';
+    circHtml += `<div class="circuit-block" style="border-color:var(--cyan);color:var(--cyan);background:rgba(0,212,255,.08)">U<sub>B</sub>(β<sub>${p}</sub>)</div>`;
+    circHtml += '<div class="circuit-conn"></div>';
+  }
+  circHtml += '<div class="circuit-block" style="border-color:var(--amber);color:var(--amber);background:rgba(245,158,11,.08)">Misura</div>';
+  circHtml += '</div></div>';
+  document.getElementById('circuit-diagram').innerHTML = circHtml;
+
+  // QAOA params table
+  const qptb = document.querySelector('#qaoa-params-table tbody');
+  const g = QC.gamma || []; const b = QC.beta || [];
+  qptb.innerHTML = `<tr><td>γ (Cost Unitary)</td><td class="mono">${g[0] !== undefined ? g[0].toFixed(4) : '—'}</td><td class="mono">${g[1] !== undefined ? g[1].toFixed(4) : '—'}</td></tr>
+    <tr><td>β (Mixer Unitary)</td><td class="mono">${b[0] !== undefined ? b[0].toFixed(4) : '—'}</td><td class="mono">${b[1] !== undefined ? b[1].toFixed(4) : '—'}</td></tr>`;
+
+  // --- CONVERGENZA ---
+  const CL = D.admm_classico, QA = D.admm_qaoa;
+  document.getElementById('conv-cl-iter').textContent = CL.iterazioni;
+  document.getElementById('conv-qa-iter').textContent = QA.iterazioni;
+  document.getElementById('conv-cl-obj').textContent = CL.valore_obiettivo.toFixed(2);
+  document.getElementById('conv-qa-obj').textContent = QA.valore_obiettivo.toFixed(2);
+
+  const maxLen = Math.max(CL.residui_primali.length, QA.residui_primali.length);
+  const labels = Array.from({length: maxLen}, (_, i) => i + 1);
+
+  new Chart(document.getElementById('chart-conv'), {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        {label: 'Classico (NumPy)', data: CL.residui_primali, borderColor: CYAN, backgroundColor: 'rgba(0,212,255,.1)', pointRadius: 2, tension: 0.3, fill: false},
+        {label: 'QAOA', data: QA.residui_primali, borderColor: VIOLET, backgroundColor: 'rgba(124,58,237,.1)', pointRadius: 2, tension: 0.3, fill: false},
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      animation: {duration: 800},
+      plugins: {
+        tooltip: {callbacks: {label: ctx => `${ctx.dataset.label}: ${ctx.raw?.toExponential(2)}`}},
+        annotation: undefined,
+      },
+      scales: {
+        x: {title: {display: true, text: 'Iterazione'}, grid: {color: 'rgba(255,255,255,0.04)'}},
+        y: {type: 'logarithmic', title: {display: true, text: 'Residuo primale'}, grid: {color: 'rgba(255,255,255,0.04)'}},
+      }
+    },
+    plugins: [{
+      id: 'tolBand',
+      beforeDraw(chart) {
+        const yAxis = chart.scales.y;
+        const ctx = chart.ctx;
+        const tolPixel = yAxis.getPixelForValue(1e-4);
+        const bottomPixel = yAxis.getPixelForValue(yAxis.min);
+        if (tolPixel < bottomPixel) {
+          ctx.save();
+          ctx.fillStyle = 'rgba(16,185,129,0.08)';
+          ctx.fillRect(chart.chartArea.left, tolPixel, chart.chartArea.width, bottomPixel - tolPixel);
+          ctx.strokeStyle = GREEN;
+          ctx.setLineDash([6, 4]);
+          ctx.beginPath();
+          ctx.moveTo(chart.chartArea.left, tolPixel);
+          ctx.lineTo(chart.chartArea.right, tolPixel);
+          ctx.stroke();
+          ctx.restore();
+          ctx.fillStyle = GREEN;
+          ctx.font = '11px Inter';
+          ctx.fillText('tol = 1e-4', chart.chartArea.left + 6, tolPixel - 4);
+        }
+      }
+    }]
+  });
+
+  // --- ALLOCAZIONE ---
+  function buildAllocHeatmap(container, data, M, N) {
+    const s = data.s_servers;
+    const v = data.v_allocation;
+    let html = '<div style="text-align:center">';
+    // Server headers
+    html += '<div style="display:flex;justify-content:center;gap:8px;margin-bottom:8px">';
+    html += '<div style="width:48px"></div>';
+    for (let i = 0; i < M; i++) {
+      html += `<div style="width:52px;text-align:center"><div class="server-icon">${s[i] ? '🟢' : '🔴'}</div><div style="font-size:11px;color:var(--text2)">S${i}</div></div>`;
+    }
+    html += '</div>';
+    // VM rows
+    for (let j = 0; j < N; j++) {
+      html += '<div style="display:flex;justify-content:center;gap:8px;margin-bottom:4px">';
+      html += `<div style="width:48px;line-height:44px;font-size:12px;color:var(--text2)">VM ${j}</div>`;
+      for (let i = 0; i < M; i++) {
+        const assigned = v[j][i];
+        const bg = assigned ? 'rgba(0,212,255,.4)' : 'rgba(255,255,255,.03)';
+        const txt = assigned ? '✓' : '';
+        html += `<div style="width:52px;height:44px;background:${bg};border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:16px" title="VM ${j} → Server ${i}: ${assigned ? 'Assegnata' : 'No'}, CPU ${P.u_cpu[j]}">${txt}</div>`;
+      }
+      html += '</div>';
+    }
+    html += '</div>';
+    document.getElementById(container).innerHTML = html;
+  }
+  buildAllocHeatmap('alloc-cl', CL, P.M, P.N);
+  buildAllocHeatmap('alloc-qa', QA, P.M, P.N);
+
+  // Alloc table
+  const atb = document.querySelector('#alloc-table tbody');
+  for (let j = 0; j < P.N; j++) {
+    const srvCl = CL.v_allocation[j].indexOf(1);
+    const srvQa = QA.v_allocation[j].indexOf(1);
+    const contrib = srvCl >= 0 ? P.P_dynamic[srvCl] * P.u_cpu[j] : 0;
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>VM ${j}</td><td class="mono">${P.u_cpu[j]}</td><td>${srvCl >= 0 ? 'Server ' + srvCl : '—'}</td><td>${srvQa >= 0 ? 'Server ' + srvQa : '—'}</td><td class="mono">${contrib} W</td>`;
+    atb.appendChild(tr);
+  }
+
+  // --- ENERGIA ---
+  document.getElementById('en-total-cl').textContent = CL.energia_totale.toFixed(0);
+  document.getElementById('en-total-qa').textContent = QA.energia_totale.toFixed(0);
+  const best = Math.min(CL.energia_totale, QA.energia_totale);
+  document.getElementById('en-optimized').textContent = best.toFixed(0) + ' W';
+
+  // Stacked bar per server
+  const idlePerServer = [], dynPerServer = [], serverLabels = [];
+  for (let i = 0; i < P.M; i++) {
+    serverLabels.push('Server ' + i);
+    const sOn = QA.s_servers[i];
+    idlePerServer.push(sOn ? P.P_idle[i] : 0);
+    let dyn = 0;
+    for (let j = 0; j < P.N; j++) dyn += QA.v_allocation[j][i] * P.u_cpu[j] * P.P_dynamic[i];
+    dynPerServer.push(sOn ? dyn : 0);
+  }
+  new Chart(document.getElementById('chart-energy-bar'), {
+    type: 'bar',
+    data: {
+      labels: serverLabels,
+      datasets: [
+        {label: 'Energia Idle', data: idlePerServer, backgroundColor: CYAN, borderRadius: {topLeft: 0, topRight: 0, bottomLeft: 6, bottomRight: 6}},
+        {label: 'Energia Dinamica', data: dynPerServer, backgroundColor: VIOLET, borderRadius: {topLeft: 6, topRight: 6, bottomLeft: 0, bottomRight: 0}},
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      animation: {duration: 800},
+      plugins: {tooltip: {callbacks: {label: ctx => `${ctx.dataset.label}: ${ctx.raw} W`}}},
+      scales: {x: {stacked: true, grid: {display: false}}, y: {stacked: true, title: {display: true, text: 'Watt'}, grid: {color: 'rgba(255,255,255,0.04)'}}}
+    }
+  });
+
+  // Donut
+  const totalIdle = QA.energia_idle;
+  const totalDyn = QA.energia_dynamic;
+  new Chart(document.getElementById('chart-energy-donut'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Idle', 'Dinamica'],
+      datasets: [{data: [totalIdle, totalDyn], backgroundColor: [CYAN, VIOLET], borderWidth: 0, hoverOffset: 8}]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      animation: {duration: 800},
+      cutout: '60%',
+      plugins: {
+        legend: {position: 'bottom'},
+        tooltip: {callbacks: {label: ctx => `${ctx.label}: ${ctx.raw} W (${((ctx.raw / (totalIdle + totalDyn)) * 100).toFixed(1)}%)`}}
+      }
+    }
+  });
+
+  // --- CPU GAUGES ---
+  const gaugeContainer = document.getElementById('cpu-gauges');
+  for (let i = 0; i < P.M; i++) {
+    const sOn = QA.s_servers[i];
+    const load = QA.cpu_usage_per_server[i];
+    const cap = P.C_capacity[i];
+    const pct = sOn ? ((load / cap) * 100).toFixed(1) : 0;
+    const color = !sOn ? 'var(--text2)' : pct > 90 ? 'var(--red)' : pct > 70 ? 'var(--amber)' : 'var(--green)';
+    const card = document.createElement('div');
+    card.className = 'card gauge-wrap';
+    card.innerHTML = `<div class="gauge-label">Server ${i} ${sOn ? '🟢' : '🔴 SPENTO'}</div>
+      <div class="chart-container" style="height:180px"><canvas id="gauge-${i}"></canvas></div>
+      <div class="gauge-pct" style="color:${color}">${sOn ? pct + '%' : 'OFF'}</div>
+      <div style="font-size:12px;color:var(--text2)">${load.toFixed(1)} / ${cap} CPU</div>
+      <div class="gauge-bar"><div class="gauge-fill" style="width:${sOn ? pct : 0}%;background:${color}"></div></div>`;
+    gaugeContainer.appendChild(card);
+
+    // Semi-doughnut gauge
+    setTimeout(() => {
+      const usedPct = sOn ? parseFloat(pct) : 0;
+      new Chart(document.getElementById(`gauge-${i}`), {
+        type: 'doughnut',
+        data: {
+          datasets: [{
+            data: [usedPct, 100 - usedPct],
+            backgroundColor: [color, 'rgba(255,255,255,0.05)'],
+            borderWidth: 0,
+          }]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          circumference: 180, rotation: -90,
+          cutout: '75%',
+          animation: {duration: 800},
+          plugins: {legend: {display: false}, tooltip: {enabled: false}}
+        }
+      });
+    }, 50);
+  }
+
+  // --- CONFRONTO ---
+  const clRes = CL.residui_primali, qaRes = QA.residui_primali;
+  const clFinal = clRes.length > 0 ? clRes[clRes.length - 1] : 0;
+  const qaFinal = qaRes.length > 0 ? qaRes[qaRes.length - 1] : 0;
+
+  new Chart(document.getElementById('chart-compare'), {
+    type: 'bar',
+    data: {
+      labels: ['Obiettivo', 'Iterazioni', 'Residuo finale (×10⁴)'],
+      datasets: [
+        {label: 'Classico', data: [CL.valore_obiettivo, CL.iterazioni, clFinal * 1e4], backgroundColor: CYAN, borderRadius: 6, barPercentage: 0.6},
+        {label: 'QAOA', data: [QA.valore_obiettivo, QA.iterazioni, qaFinal * 1e4], backgroundColor: VIOLET, borderRadius: 6, barPercentage: 0.6},
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      animation: {duration: 800},
+      plugins: {tooltip: {callbacks: {label: ctx => `${ctx.dataset.label}: ${ctx.raw.toFixed(4)}`}}},
+      scales: {x: {grid: {display: false}}, y: {grid: {color: 'rgba(255,255,255,0.04)'}}}
+    }
+  });
+
+  // Compare table
+  const ctb = document.querySelector('#compare-table tbody');
+  const metrics = [
+    ['Valore obiettivo', CL.valore_obiettivo, QA.valore_obiettivo, 'W'],
+    ['Iterazioni', CL.iterazioni, QA.iterazioni, ''],
+    ['Residuo finale', clFinal, qaFinal, ''],
+    ['Energia totale', CL.energia_totale, QA.energia_totale, 'W'],
+  ];
+  metrics.forEach(m => {
+    const diff = m[1] !== 0 ? (((m[2] - m[1]) / Math.abs(m[1])) * 100).toFixed(2) : '0';
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${m[0]}</td><td class="mono">${typeof m[1] === 'number' ? (m[1] < 0.01 && m[1] !== 0 ? m[1].toExponential(2) : m[1].toFixed(4)) : m[1]} ${m[3]}</td><td class="mono">${typeof m[2] === 'number' ? (m[2] < 0.01 && m[2] !== 0 ? m[2].toExponential(2) : m[2].toFixed(4)) : m[2]} ${m[3]}</td><td class="mono">${diff}%</td>`;
+    ctb.appendChild(tr);
+  });
+
+  const gap = ((QA.valore_obiettivo - CL.valore_obiettivo) / Math.abs(CL.valore_obiettivo) * 100);
+  let noteText;
+  if (Math.abs(gap) < 0.5) noteText = 'La soluzione QAOA è sostanzialmente equivalente al solver classico (gap < 0.5%).';
+  else if (gap < 0) noteText = `La soluzione QAOA è ${Math.abs(gap).toFixed(2)}% migliore del solver classico.`;
+  else noteText = `La soluzione QAOA è ${gap.toFixed(2)}% peggiore del solver classico.`;
+  document.getElementById('compare-note').textContent = noteText;
+
+  // Footer timestamp
+  document.getElementById('footer-ts').textContent = `Report generato: ${ts.toLocaleString('it-IT')}`;
+
+  // Re-render MathJax
+  if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise();
+}
+
+// Intersection Observer for sidebar
+function setupNav() {
+  const sections = document.querySelectorAll('section, .header');
+  const links = document.querySelectorAll('.sidebar a');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const target = document.querySelector(`.sidebar a[href="#${e.target.id}"]`);
+        if (target) target.classList.add('active');
+      }
+    });
+  }, {rootMargin: '-20% 0px -70% 0px'});
+  sections.forEach(s => { if (s.id) obs.observe(s); });
+}
+
+// Init
+(async function() {
+  const data = await loadData();
+  if (!data) return;
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('report-content').style.display = 'block';
+  renderReport(data);
+  setupNav();
+})();
+</script>
+</body>
+</html>

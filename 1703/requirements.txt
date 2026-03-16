@@ -1,0 +1,8 @@
+qiskit>=1.0
+qiskit-optimization==0.7.0
+qiskit-algorithms
+docplex
+cvxpy
+numpy
+matplotlib
+scipy

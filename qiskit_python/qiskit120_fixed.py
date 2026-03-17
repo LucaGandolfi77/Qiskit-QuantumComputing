@@ -30,6 +30,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import json
 from pathlib import Path
+from datetime import datetime
+import argparse
+import sys
 from docplex.mp.model import Model
 
 # Qiskit 1.x – nuovi package
@@ -63,112 +66,114 @@ qaoa_algo = QAOA(
 qaoa  = MinimumEigenOptimizer(qaoa_algo)
 exact = MinimumEigenOptimizer(NumPyMinimumEigensolver())
 
-# ── Modello Docplex ──────────────────────────────────────────
-# 5 server (i0..i4), 5 VM (j0..j4)
+# ── Modello Docplex dinamico con parsing CLI ────────────────
+# Parametri di default
+MAX_N = 7
+default_n_servers = 5
+default_n_vms = 5
+default_require_all_on = True
+default_min_cpu_per_vm = 1
+
+# helper per parsing liste
+def parse_list_of_numbers(s, cast=float):
+    if s is None or s == "":
+        return None
+    try:
+        parts = [p.strip() for p in s.split(",") if p.strip() != ""]
+        return [cast(p) for p in parts]
+    except Exception:
+        print("Errore: formato lista non valido:\n", s)
+        sys.exit(1)
+
+parser = argparse.ArgumentParser(description="Esegui Qiskit120 con parametri dinamici")
+parser.add_argument("--n_servers", type=int, default=default_n_servers)
+parser.add_argument("--n_vms", type=int, default=default_n_vms)
+parser.add_argument("--require_all_on", type=int, choices=[0,1], default=1,
+                    help="1 per forzare tutti i server ON, 0 per no")
+parser.add_argument("--min_cpu_per_vm", type=float, default=default_min_cpu_per_vm)
+parser.add_argument("--pi_list", type=str, default="",
+                    help="Lista separata da virgole per pi, es: 1,1,1")
+parser.add_argument("--pd_list", type=str, default="",
+                    help="Lista separata da virgole per pd")
+parser.add_argument("--capacities", type=str, default="",
+                    help="Lista separata da virgole per capacities (int)")
+parser.add_argument("--vm_allocation_limits", type=str, default="",
+                    help="Lista separata da virgole per limiti di VM (int)")
+
+args, unknown = parser.parse_known_args()
+
+n_servers = args.n_servers
+n_vms = args.n_vms
+require_all_on = bool(args.require_all_on)
+min_cpu_per_vm = args.min_cpu_per_vm
+
+# costruisci liste usando input CLI o default
+pi_list = parse_list_of_numbers(args.pi_list, cast=float) or [1.0 for _ in range(n_servers)]
+pd_list = parse_list_of_numbers(args.pd_list, cast=float) or [1.0 for _ in range(n_servers)]
+capacities = parse_list_of_numbers(args.capacities, cast=int) or [11 if i < 3 else 10 for i in range(n_servers)]
+default_vm_alloc = [12, 11, 10, 10, 10, 10, 10]
+vm_allocation_limits = parse_list_of_numbers(args.vm_allocation_limits, cast=int) or default_vm_alloc[:n_vms]
+
+# Validazioni rapide
+if n_servers > MAX_N or n_vms > MAX_N:
+    print(f"Errore: n_servers e n_vms devono essere <= {MAX_N}")
+    sys.exit(1)
+
+if len(pi_list) != n_servers:
+    print(f"Errore: la lista pi_list deve avere lunghezza n_servers ({n_servers})")
+    sys.exit(1)
+if len(pd_list) != n_servers:
+    print(f"Errore: la lista pd_list deve avere lunghezza n_servers ({n_servers})")
+    sys.exit(1)
+if len(capacities) != n_servers:
+    print(f"Errore: la lista capacities deve avere lunghezza n_servers ({n_servers})")
+    sys.exit(1)
+if len(vm_allocation_limits) < n_vms:
+    print(f"Errore: la lista vm_allocation_limits deve avere almeno n_vms ({n_vms}) elementi")
+    sys.exit(1)
+
 mdl = Model("ex120_server")
 
-# Variabili binarie: server acceso/spento
-si0 = mdl.binary_var(name="si0")
-si1 = mdl.binary_var(name="si1")
-si2 = mdl.binary_var(name="si2")
-si3 = mdl.binary_var(name="si3")
-si4 = mdl.binary_var(name="si4")
+# Variabili: server on/off
+s_vars = [mdl.binary_var(name=f"si{i}") for i in range(n_servers)]
 
-# Variabili continue: frazione di VM j allocata su server i
-vj0i0 = mdl.continuous_var(name="vj0i0")
-vj1i0 = mdl.continuous_var(name="vj1i0")
-vj2i0 = mdl.continuous_var(name="vj2i0")
-vj3i0 = mdl.continuous_var(name="vj3i0")
-vj4i0 = mdl.continuous_var(name="vj4i0")
+# Variabili: frazione di VM j su server i (non negative)
+v_vars = {}
+for j in range(n_vms):
+    for i in range(n_servers):
+        v_vars[(j, i)] = mdl.continuous_var(lb=0.0, name=f"vj{j}i{i}")
 
-vj0i1 = mdl.continuous_var(name="vj0i1")
-vj1i1 = mdl.continuous_var(name="vj1i1")
-vj2i1 = mdl.continuous_var(name="vj2i1")
-vj3i1 = mdl.continuous_var(name="vj3i1")
-vj4i1 = mdl.continuous_var(name="vj4i1")
+# Variabili: utilizzo CPU di ciascuna VM
+u_vars = [mdl.continuous_var(lb=0.0, name=f"uj{j}") for j in range(n_vms)]
 
-vj0i2 = mdl.continuous_var(name="vj0i2")
-vj1i2 = mdl.continuous_var(name="vj1i2")
-vj2i2 = mdl.continuous_var(name="vj2i2")
-vj3i2 = mdl.continuous_var(name="vj3i2")
-vj4i2 = mdl.continuous_var(name="vj4i2")
+# ── Funzione obiettivo costruita dinamicamente
+obj = mdl.sum(pi_list[i] * s_vars[i] + pd_list[i] * mdl.sum(u_vars[j] * v_vars[(j, i)] for j in range(n_vms)) for i in range(n_servers))
+mdl.minimize(obj)
 
-vj0i3 = mdl.continuous_var(name="vj0i3")
-vj1i3 = mdl.continuous_var(name="vj1i3")
-vj2i3 = mdl.continuous_var(name="vj2i3")
-vj3i3 = mdl.continuous_var(name="vj3i3")
-vj4i3 = mdl.continuous_var(name="vj4i3")
+# ── Vincoli dinamici
+# Carico totale per server >= capacity-1
+for i in range(n_servers):
+    mdl.add_constraint(mdl.sum(v_vars[(j, i)] for j in range(n_vms)) >= capacities[i] - 1, f"cons_server_load_{i}")
 
-vj0i4 = mdl.continuous_var(name="vj0i4")
-vj1i4 = mdl.continuous_var(name="vj1i4")
-vj2i4 = mdl.continuous_var(name="vj2i4")
-vj3i4 = mdl.continuous_var(name="vj3i4")
-vj4i4 = mdl.continuous_var(name="vj4i4")
+# Prime 3 VM coprono capacità piena per i < 3 (se presenti)
+for i in range(min(3, n_servers)):
+    m = min(3, n_vms)
+    if m > 0:
+        mdl.add_constraint(mdl.sum(v_vars[(j, i)] for j in range(m)) >= capacities[i], f"cons_first3vm_server_{i}")
 
-# Variabili continue: utilizzo CPU di ciascuna VM
-uj0 = mdl.continuous_var(name="uj0")
-uj1 = mdl.continuous_var(name="uj1")
-uj2 = mdl.continuous_var(name="uj2")
-uj3 = mdl.continuous_var(name="uj3")
-uj4 = mdl.continuous_var(name="uj4")
-
-# Parametri energetici
-pi0 = pi1 = pi2 = pi3 = pi4 = 1   # potenza idle
-pd0 = pd1 = pd2 = pd3 = pd4 = 1   # potenza dinamica
-
-# Capacità CPU dei server
-ci0 = ci1 = ci2 = 11
-ci3 = ci4 = 10
-
-# ── Funzione obiettivo (minimizzazione energia totale) ───────
-mdl.minimize(
-    pi0*si0 + pd0*(uj0*vj0i0 + uj1*vj1i0 + uj2*vj2i0 + uj3*vj3i0 + uj4*vj4i0) +
-    pi1*si1 + pd1*(uj0*vj0i1 + uj1*vj1i1 + uj2*vj2i1 + uj3*vj3i1 + uj4*vj4i1) +
-    pi2*si2 + pd2*(uj0*vj0i2 + uj1*vj1i2 + uj2*vj2i2 + uj3*vj3i2 + uj4*vj4i2) +
-    pi3*si3 + pd3*(uj0*vj0i3 + uj1*vj1i3 + uj2*vj2i3 + uj3*vj3i3 + uj4*vj4i3) +
-    pi4*si4 + pd4*(uj0*vj0i4 + uj1*vj1i4 + uj2*vj2i4 + uj3*vj3i4 + uj4*vj4i4)
-)
-
-# ── Vincoli ──────────────────────────────────────────────────
-# Carico totale per server >= capacità-1
-mdl.add_constraint(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0 >= ci0-1, "cons2")
-mdl.add_constraint(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1 >= ci1-1, "cons3")
-mdl.add_constraint(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2 >= ci2-1, "cons4")
-mdl.add_constraint(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3 >= ci3-1, "cons5")
-mdl.add_constraint(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4 >= ci4-1, "cons5a")
-
-# Non-negatività esplicita
-mdl.add_constraint(vj0i0+vj1i0+vj2i0+vj3i0+vj4i0 >= 0, "cons6")
-mdl.add_constraint(vj0i1+vj1i1+vj2i1+vj3i1+vj4i1 >= 0, "cons7")
-mdl.add_constraint(vj0i2+vj1i2+vj2i2+vj3i2+vj4i2 >= 0, "cons8")
-mdl.add_constraint(vj0i3+vj1i3+vj2i3+vj3i3+vj4i3 >= 0, "cons9")
-mdl.add_constraint(vj0i4+vj1i4+vj2i4+vj3i4+vj4i4 >= 0, "cons9a")
-
-# Prime 3 VM coprono capacità piena (per server i0, i1, i2)
-mdl.add_constraint(vj0i0+vj1i0+vj2i0 >= ci0, "cons10")
-mdl.add_constraint(vj0i1+vj1i1+vj2i1 >= ci1, "cons11")
-mdl.add_constraint(vj0i2+vj1i2+vj2i2 >= ci2, "cons12")
-
-# Tutti i server devono essere accesi
-mdl.add_constraint(si0 == 1, "cons14")
-mdl.add_constraint(si1 == 1, "cons15")
-mdl.add_constraint(si2 == 1, "cons16")
-mdl.add_constraint(si3 == 1, "cons17")
-mdl.add_constraint(si4 == 1, "cons17a")
+# Tutti i server possono essere forzati accesi se richiesto
+if require_all_on:
+    for i in range(n_servers):
+        mdl.add_constraint(s_vars[i] == 1, f"cons_server_on_{i}")
 
 # Limite totale di allocazione per ogni VM (su tutti i server)
-mdl.add_constraint(vj0i0+vj0i1+vj0i2+vj0i3+vj0i4 <= 12, "cons18")
-mdl.add_constraint(vj1i0+vj1i1+vj1i2+vj1i3+vj1i4 <= 11, "cons19")
-mdl.add_constraint(vj2i0+vj2i1+vj2i2+vj2i3+vj2i4 <= 10, "cons20")
-mdl.add_constraint(vj3i0+vj3i1+vj3i2+vj3i3+vj3i4 <= 10, "cons21")
-mdl.add_constraint(vj4i0+vj4i1+vj4i2+vj4i3+vj4i4 <= 10, "cons21a")
+for j in range(n_vms):
+    limit = vm_allocation_limits[j] if j < len(vm_allocation_limits) else vm_allocation_limits[-1]
+    mdl.add_constraint(mdl.sum(v_vars[(j, i)] for i in range(n_servers)) <= limit, f"cons_vm_alloc_{j}")
 
 # Utilizzo CPU minimo per ogni VM
-mdl.add_constraint(uj0 >= 1, "cons22")
-mdl.add_constraint(uj1 >= 1, "cons23")
-mdl.add_constraint(uj2 >= 1, "cons24")
-mdl.add_constraint(uj3 >= 1, "cons25")
-mdl.add_constraint(uj4 >= 1, "cons25a")
+for j in range(n_vms):
+    mdl.add_constraint(u_vars[j] >= min_cpu_per_vm, f"cons_min_cpu_vm_{j}")
 
 # ── Converti in QuadraticProgram ─────────────────────────────
 qp = from_docplex_mp(mdl)
@@ -176,10 +181,7 @@ print("=== Quadratic Program (LP) ===")
 print(qp.export_as_lp_string())
 
 # Nome base file (usa il nome del file script senza estensione)
-try:
-    script_name = Path(__file__).stem
-except NameError:
-    script_name = "qiskit120_fixed"
+script_name = "q"
 
 # ── SOLUZIONE CLASSICA: ADMM + Exact QUBO + COBYLA ───────────
 print("\n" + "="*60)
@@ -226,8 +228,6 @@ axes[1].set_title("Classico – Soluzione")
 axes[1].grid(True, axis="y")
 
 plt.tight_layout()
-classic_img = f"{script_name}_risultati_classici.png"
-plt.savefig(classic_img, dpi=150)
 plt.show()
 
 # ── SOLUZIONE QUANTISTICA: ADMM + QAOA + COBYLA ──────────────
@@ -272,8 +272,6 @@ axes[1].set_title("Quantistico – Soluzione")
 axes[1].grid(True, axis="y")
 
 plt.tight_layout()
-quantum_img = f"{script_name}_risultati_quantistici.png"
-plt.savefig(quantum_img, dpi=150)
 plt.show()
 
 # ── Confronto finale ─────────────────────────────────────────
@@ -292,11 +290,17 @@ def as_list(x):
 
 results_data = {
     "script": script_name,
+    "meta": {
+        "n_servers": n_servers,
+        "n_vms": n_vms,
+        "require_all_on": require_all_on,
+    },
     "input": {
-        "pi": [pi0, pi1, pi2, pi3, pi4],
-        "pd": [pd0, pd1, pd2, pd3, pd4],
-        "capacities": [ci0, ci1, ci2, ci3, ci4],
-        "vm_allocation_limits": {"vj0_total": 12, "vj1_total": 11, "vj2_total": 10, "vj3_total": 10, "vj4_total": 10},
+        "pi": pi_list,
+        "pd": pd_list,
+        "capacities": capacities,
+        "vm_allocation_limits": vm_allocation_limits,
+        "min_cpu_per_vm": min_cpu_per_vm,
     },
     "qp_lp": qp.export_as_lp_string(),
     "classic": {
@@ -305,7 +309,6 @@ results_data = {
         "x": as_list(np.array(result_classic.x).tolist()),
         "residuals": as_list(getattr(result_classic.state, "residuals", [])),
         "duration_seconds": duration_classic,
-        "image": classic_img,
     },
     "quantum": {
         "objective": float(result_quantum.fval),
@@ -313,12 +316,53 @@ results_data = {
         "x": as_list(np.array(result_quantum.x).tolist()),
         "residuals": as_list(getattr(result_quantum.state, "residuals", [])),
         "duration_seconds": duration_quantum,
-        "image": quantum_img,
     },
 }
+# Genera nome file con timestamp nel formato richiesto: q_annomesegiorno_oraminutosecondo
+ts = datetime.now().strftime("%Y%m%d_%H%M%S")
 
-results_file = f"{script_name}_results.json"
+# Grafico combinato (classico + quantistico) in un'unica immagine
+combined_img = f"{script_name}_{ts}_risultati.png"
+fig, axes = plt.subplots(2, 2, figsize=(12, 8))
+
+# Classico residuals
+axes[0, 0].plot(result_classic.state.residuals, color="steelblue")
+axes[0, 0].set_xlabel("Iterazioni")
+axes[0, 0].set_ylabel("Residuals")
+axes[0, 0].set_title("Classico – Residuals ADMM")
+axes[0, 0].grid(True)
+
+# Classico soluzione
+axes[0, 1].bar(range(len(result_classic.x)), result_classic.x, color="steelblue")
+axes[0, 1].set_xlabel("Indice variabile")
+axes[0, 1].set_ylabel("Valore")
+axes[0, 1].set_title("Classico – Soluzione")
+axes[0, 1].grid(True, axis="y")
+
+# Quantistico residuals
+axes[1, 0].plot(result_quantum.state.residuals, color="darkorange")
+axes[1, 0].set_xlabel("Iterazioni")
+axes[1, 0].set_ylabel("Residuals")
+axes[1, 0].set_title("Quantistico – Residuals ADMM")
+axes[1, 0].grid(True)
+
+# Quantistico soluzione
+axes[1, 1].bar(range(len(result_quantum.x)), result_quantum.x, color="darkorange")
+axes[1, 1].set_xlabel("Indice variabile")
+axes[1, 1].set_ylabel("Valore")
+axes[1, 1].set_title("Quantistico – Soluzione")
+axes[1, 1].grid(True, axis="y")
+
+plt.tight_layout()
+plt.savefig(combined_img, dpi=150)
+plt.show()
+
+# Aggiorna JSON con riferimento all'immagine combinata e nome file con timestamp
+results_data["combined_image"] = combined_img
+
+results_file = f"{script_name}_{ts}_results.json"
 with open(results_file, "w", encoding="utf-8") as fh:
     json.dump(results_data, fh, indent=2, ensure_ascii=False)
 
 print(f"Risultati salvati in: {results_file}")
+print(f"Immagine combinata salvata in: {combined_img}")

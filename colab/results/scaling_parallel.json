@@ -1,0 +1,38 @@
+[
+  {
+    "M": 2,
+    "N": 3,
+    "worker_status": "future_error",
+    "worker_error": "A process in the process pool was terminated abruptly while the future was running or pending."
+  },
+  {
+    "M": 3,
+    "N": 3,
+    "worker_status": "future_error",
+    "worker_error": "A process in the process pool was terminated abruptly while the future was running or pending."
+  },
+  {
+    "M": 3,
+    "N": 4,
+    "worker_status": "future_error",
+    "worker_error": "A process in the process pool was terminated abruptly while the future was running or pending."
+  },
+  {
+    "M": 4,
+    "N": 4,
+    "worker_status": "future_error",
+    "worker_error": "A process in the process pool was terminated abruptly while the future was running or pending."
+  },
+  {
+    "M": 4,
+    "N": 5,
+    "worker_status": "future_error",
+    "worker_error": "A process in the process pool was terminated abruptly while the future was running or pending."
+  },
+  {
+    "M": 5,
+    "N": 5,
+    "worker_status": "future_error",
+    "worker_error": "A process in the process pool was terminated abruptly while the future was running or pending."
+  }
+]

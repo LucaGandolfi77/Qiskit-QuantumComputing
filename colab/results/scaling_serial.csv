@@ -1,0 +1,73 @@
+M,N,worker_status,worker_error,worker_traceback,n_binary_vars_original,n_slack_vars,n_qubo_vars,n_qubits,qubo_sparsity,continuous_vars,feasible,classical_obj,classical_iter,classical_converged,classical_time_sec,classical_residuals,classical_energy_total,classical_servers_on,qaoa_obj,qaoa_iter,qaoa_converged,qaoa_time_sec,qaoa_residuals,qaoa_energy_total,qaoa_error,qaoa_error_msg,qaoa_skipped,qaoa_skip_reason,obj_diff_pct,iter_ratio,time_ratio,worker_wall_time_sec
+2,3,error,'P_idle',"Traceback (most recent call last):
+  File ""C:\Users\lgandolfi\AppData\Local\Temp\ipykernel_29788\3856639277.py"", line 10, in _worker_run
+    result = run_configuration(
+             ^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\lgandolfi\AppData\Local\Temp\ipykernel_29788\4002674371.py"", line 18, in run_configuration
+    qp = _build_qp(M, N, params)
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\lgandolfi\AppData\Local\Temp\ipykernel_29788\4286199268.py"", line 3, in _build_qp
+    PI = params[""P_idle""]
+         ~~~~~~^^^^^^^^^^
+KeyError: 'P_idle'
+",,,,,,,,,,,,,,,,,,,,,True,'P_idle',,,,,,0.0006
+3,3,error,'P_idle',"Traceback (most recent call last):
+  File ""C:\Users\lgandolfi\AppData\Local\Temp\ipykernel_29788\3856639277.py"", line 10, in _worker_run
+    result = run_configuration(
+             ^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\lgandolfi\AppData\Local\Temp\ipykernel_29788\4002674371.py"", line 18, in run_configuration
+    qp = _build_qp(M, N, params)
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\lgandolfi\AppData\Local\Temp\ipykernel_29788\4286199268.py"", line 3, in _build_qp
+    PI = params[""P_idle""]
+         ~~~~~~^^^^^^^^^^
+KeyError: 'P_idle'
+",,,,,,,,,,,,,,,,,,,,,True,'P_idle',,,,,,0.0002
+3,4,error,'P_idle',"Traceback (most recent call last):
+  File ""C:\Users\lgandolfi\AppData\Local\Temp\ipykernel_29788\3856639277.py"", line 10, in _worker_run
+    result = run_configuration(
+             ^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\lgandolfi\AppData\Local\Temp\ipykernel_29788\4002674371.py"", line 18, in run_configuration
+    qp = _build_qp(M, N, params)
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\lgandolfi\AppData\Local\Temp\ipykernel_29788\4286199268.py"", line 3, in _build_qp
+    PI = params[""P_idle""]
+         ~~~~~~^^^^^^^^^^
+KeyError: 'P_idle'
+",,,,,,,,,,,,,,,,,,,,,True,'P_idle',,,,,,0.0001
+4,4,error,'P_idle',"Traceback (most recent call last):
+  File ""C:\Users\lgandolfi\AppData\Local\Temp\ipykernel_29788\3856639277.py"", line 10, in _worker_run
+    result = run_configuration(
+             ^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\lgandolfi\AppData\Local\Temp\ipykernel_29788\4002674371.py"", line 18, in run_configuration
+    qp = _build_qp(M, N, params)
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\lgandolfi\AppData\Local\Temp\ipykernel_29788\4286199268.py"", line 3, in _build_qp
+    PI = params[""P_idle""]
+         ~~~~~~^^^^^^^^^^
+KeyError: 'P_idle'
+",,,,,,,,,,,,,,,,,,,,,True,'P_idle',,,,,,0.0001
+4,5,error,'P_idle',"Traceback (most recent call last):
+  File ""C:\Users\lgandolfi\AppData\Local\Temp\ipykernel_29788\3856639277.py"", line 10, in _worker_run
+    result = run_configuration(
+             ^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\lgandolfi\AppData\Local\Temp\ipykernel_29788\4002674371.py"", line 18, in run_configuration
+    qp = _build_qp(M, N, params)
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\lgandolfi\AppData\Local\Temp\ipykernel_29788\4286199268.py"", line 3, in _build_qp
+    PI = params[""P_idle""]
+         ~~~~~~^^^^^^^^^^
+KeyError: 'P_idle'
+",,,,,,,,,,,,,,,,,,,,,True,'P_idle',,,,,,0.0001
+5,5,error,'P_idle',"Traceback (most recent call last):
+  File ""C:\Users\lgandolfi\AppData\Local\Temp\ipykernel_29788\3856639277.py"", line 10, in _worker_run
+    result = run_configuration(
+             ^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\lgandolfi\AppData\Local\Temp\ipykernel_29788\4002674371.py"", line 18, in run_configuration
+    qp = _build_qp(M, N, params)
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\lgandolfi\AppData\Local\Temp\ipykernel_29788\4286199268.py"", line 3, in _build_qp
+    PI = params[""P_idle""]
+         ~~~~~~^^^^^^^^^^
+KeyError: 'P_idle'
+",,,,,,,,,,,,,,,,,,,,,True,'P_idle',,,,,,0.0001

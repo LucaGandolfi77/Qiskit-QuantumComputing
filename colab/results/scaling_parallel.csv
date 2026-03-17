@@ -1,0 +1,7 @@
+M,N,worker_status,worker_error
+2,3,future_error,A process in the process pool was terminated abruptly while the future was running or pending.
+3,3,future_error,A process in the process pool was terminated abruptly while the future was running or pending.
+3,4,future_error,A process in the process pool was terminated abruptly while the future was running or pending.
+4,4,future_error,A process in the process pool was terminated abruptly while the future was running or pending.
+4,5,future_error,A process in the process pool was terminated abruptly while the future was running or pending.
+5,5,future_error,A process in the process pool was terminated abruptly while the future was running or pending.

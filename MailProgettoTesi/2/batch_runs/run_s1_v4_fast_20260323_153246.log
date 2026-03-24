@@ -1,0 +1,9 @@
+Command: C:\Users\lgandolfi\AppData\Local\Programs\Python\Python311\python.exe D:\File Unipr\HPC2026\MailProgettoTesi\2\qiskit_opt.py --n_servers 1 --n_vms 4 --fast
+
+C:\Users\lgandolfi\AppData\Local\Programs\Python\Python311\Lib\site-packages\_distutils_hack\__init__.py:30: UserWarning: Setuptools is replacing distutils. Support for replacing an already imported distutils is deprecated. In the future, this condition will fail. Register concerns at https://github.com/pypa/setuptools/issues/new?template=distutils-deprecation.yml
+  warnings.warn(
+Traceback (most recent call last):
+  File "D:\File Unipr\HPC2026\MailProgettoTesi\2\qiskit_opt.py", line 93, in <module>
+    fast_mode = args.fast
+                ^^^^
+NameError: name 'args' is not defined

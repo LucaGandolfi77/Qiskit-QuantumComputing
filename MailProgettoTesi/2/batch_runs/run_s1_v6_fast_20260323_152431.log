@@ -1,0 +1,16 @@
+Command: C:\Users\lgandolfi\AppData\Local\Programs\Python\Python311\python.exe D:\File Unipr\HPC2026\MailProgettoTesi\2\qiskit.py --n_servers 1 --n_vms 6 --fast
+
+C:\Users\lgandolfi\AppData\Local\Programs\Python\Python311\Lib\site-packages\_distutils_hack\__init__.py:30: UserWarning: Setuptools is replacing distutils. Support for replacing an already imported distutils is deprecated. In the future, this condition will fail. Register concerns at https://github.com/pypa/setuptools/issues/new?template=distutils-deprecation.yml
+  warnings.warn(
+C:\Users\lgandolfi\AppData\Local\Programs\Python\Python311\Lib\site-packages\_distutils_hack\__init__.py:30: UserWarning: Setuptools is replacing distutils. Support for replacing an already imported distutils is deprecated. In the future, this condition will fail. Register concerns at https://github.com/pypa/setuptools/issues/new?template=distutils-deprecation.yml
+  warnings.warn(
+Traceback (most recent call last):
+  File "D:\File Unipr\HPC2026\MailProgettoTesi\2\qiskit.py", line 42, in <module>
+    from qiskit_algorithms import QAOA, NumPyMinimumEigensolver
+  File "C:\Users\lgandolfi\AppData\Local\Programs\Python\Python311\Lib\site-packages\qiskit_algorithms\__init__.py", line 252, in <module>
+    from .algorithm_job import AlgorithmJob
+  File "C:\Users\lgandolfi\AppData\Local\Programs\Python\Python311\Lib\site-packages\qiskit_algorithms\algorithm_job.py", line 16, in <module>
+    from qiskit.primitives.primitive_job import PrimitiveJob
+  File "D:\File Unipr\HPC2026\MailProgettoTesi\2\qiskit.py", line 42, in <module>
+    from qiskit_algorithms import QAOA, NumPyMinimumEigensolver
+ImportError: cannot import name 'QAOA' from partially initialized module 'qiskit_algorithms' (most likely due to a circular import) (C:\Users\lgandolfi\AppData\Local\Programs\Python\Python311\Lib\site-packages\qiskit_algorithms\__init__.py)

@@ -1,0 +1,2 @@
+Command: /opt/anaconda3/bin/python /Users/lgandolfi/Desktop/AI/Github/Qiskit-QuantumComputing/MailProgettoTesi/9/qiskit_opt.py --n_servers 1 --n_vms 6 --capacities 11 --vm_allocation_limits 6,8,6,8,7,5 --pi_list 1.0 --pd_list 1.0
+

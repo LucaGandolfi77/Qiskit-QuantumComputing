@@ -1,0 +1,2 @@
+total_runs,all_classical_success,all_quantum_success,mean_classical_time,mean_quantum_time,median_speedup,mean_speedup
+36,True,True,2.262916666666667,10.834111111111111,0.2205,0.2296111111111111
